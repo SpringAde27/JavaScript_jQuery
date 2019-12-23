@@ -1,0 +1,39 @@
+#main_img{
+	margin-top : 30px;
+	margin-bottom : 20px;
+	text-align: center;
+}
+
+section{
+	width: 90%;
+	height: 120px;
+	text-align: center;
+	margin: 0 auto;	
+}
+
+section ul{
+	list-style: none;
+}
+
+section ul li{
+	border-bottom: 1px solid white;	
+}
+
+section ul li:FIRST-CHILD a{
+	border-radius: 10px 10px 0 0 ;
+}
+
+section ul li:LAST-CHILD a{
+	border-radius: 0 0 10px 10px ;
+}
+
+section ul li a{
+	display:inline-block;
+	height: 50px;
+	width:100%;
+	line-height : 50px;
+	text-decoration: none;
+	color: #008299;
+	font-weight:bold;
+	background-color: #EAEAEA;	
+}

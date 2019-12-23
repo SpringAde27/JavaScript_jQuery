@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<link rel="stylesheet" type="text/css" href="css/intro2.css" />
+<title>독도</title>
+<style type="text/css">	
+	.selected{
+		background-color: #B2EBF4  !important;		/* 우선순위를 위해 !important 삽입 */
+	}
+</style>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(".collapsible").eq(0).find("a").addClass("selected");
+		
+		// 첫 번째 항목 이외의 나머지 항목들 안에 있는 content를 숨긴다.
+		$(".collapsible").not(":eq(0)").find(".content").hide();
+		
+		$(".collapsible a").click(function() {
+			// 클릭된 자기 자신은 selected 클래스를 적용한다. 만약 적용된 상태라면 제거한다.
+			$(this).toggleClass("selected");
+			
+			// 클릭된 나 자신을 제외한 나머지 링크들은 selected 클래스를 무조건 삭제한다.
+			$(".collapsible a").not(this).removeClass("selected");
+			
+			// 펼칠 대상(.content) 선택
+			var target = $(this).parent().next();
+			target.slideToggle(500);
+			
+			// 나머지 대상을 선택
+			var other = $(".collapsible a").not(this).parents(".collapsible").find(".content");
+			other.slideUp(200);
+			
+			return false; // a tag link 취소
+		});
+	});
+</script>
+</head>
+<body>
+	<header>
+		<a href="page_intro.html"><img src="image/home.png"/></a>
+		<h3>독도 소개</h3>		
+	</header>
+		
+	<div id="sub_img">
+		<img src="image/bgdokdo2.png">	
+	</div>
+	<section>	
+		<ul>
+			<li class="collapsible"><h3 class="title"><a href="">독도역사</a></h3>
+				<p class="content">독도(獨島)라는 명칭은 한국어와 중국어 화자들이 일반적으로 사용하는 이름이다.
+				인도유럽어권에서는 리앙쿠르 바위섬, 일본어권에서는 다케시마섬이라 부른다.
+				20세기 초까지는 독도, 석도 또는 다케시마라고 불리었다.</p>
+			</li>
+			<li class="collapsible"><h3 class="title"><a href="">독도지리</a></h3>
+				<p class="content">독도는 주로 두 개의 섬으로 이루어지며 150미터 떨어진 두 섬은 동도와 서도로 불린다.
+				약 90개의 섬과 암초로 이루어진 신생대 화산암으로 구성 되어 있다.
+				독도는 동경 약 131˚52' 위도 약 37˚14'에 위치한다.</p>
+			</li>
+			<li class="collapsible"><h3 class="title"><a href="">독도생활</a></h3>
+				<p class="content">900명이 넘는 한국인 시민들이 이 섬에 거주하며, 실제로 영구거주를 하는 사람은 단 두 사람이다.
+				한국 정부는 거주 주장을 하기 위하여 이들에게 보조금을 지불하고 있다.</p>
+			</li>			
+		</ul>
+	</section>
+	<footer>
+		<p>독도사랑_황인영</p>
+	</footer>
+</body>
+</html>

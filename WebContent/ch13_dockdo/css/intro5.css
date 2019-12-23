@@ -1,0 +1,54 @@
+<style type="text/css">
+
+header{
+	width: 100%;
+	height: 45px;
+	background-color: #24A6BD;
+}
+
+header a{
+	text-decoration: none;
+	float: left;
+	line-height: 45px;
+	color: white;
+	padding-left: 10px;
+	
+}
+
+header h3{
+	text-align: center;
+	line-height: 45px;
+	color: white;
+	padding-right: 45px;
+}
+
+ 	#gallery{
+		text-align: center;
+		/* position: relative; */
+		margin-top: 30px;		
+	}
+	
+ 	ul{
+		list-style: none;
+		padding: 0 5px;
+		/* margin: 25px 0 0 0; */
+	} 
+	
+	li{
+		display: inline;		
+	} 
+	
+	.bigpic{
+		display: none;			/* 화면상 표시도 안되고 , 자리도 차지 안함 */
+		position: absolute;		/* 위치를 붕뜨게 만든다 */
+		width: 298px;
+		height: 330px;
+		left: 30px;
+		top: 100px;
+	} 
+	
+	.smallPic{
+		width: 95px;
+		height: 95px;
+	}
+</style>

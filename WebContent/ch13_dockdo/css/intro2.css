@@ -1,0 +1,44 @@
+#sub_img{
+	margin-top : 30px;
+	margin-bottom : 20px;
+	text-align: center;
+}
+
+header a{
+	text-decoration: none;
+	float: left;
+	line-height: 45px;
+	color: white;
+	padding-left: 10px;
+	
+}
+
+header h3{
+	text-align: center;
+	line-height: 45px;
+	color: white;
+	padding-right: 45px;
+}
+
+
+section{
+	width: 90%;
+	margin: 0 auto;	
+}
+
+section ul{
+	list-style: none;
+}
+
+section ul li{
+	padding-bottom: 15px;	
+}
+
+section ul li a{
+	text-decoration: none;
+	color:#008299; 
+	display : block;
+	width: 100%;
+	padding: 5px 0;
+	text-shadow: 1px 1px 1px #6CC3D2;
+}
