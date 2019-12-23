@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+    #carousel {
+    width:800px;
+    height: 300px;
+    display: relative;
+  }
+  #carousel img {
+    display: hidden; /* hide images until carousel prepares them */
+    cursor: pointer; /* not needed if you wrap carousel items in links */
+  }
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="./lib/jquery.waterwheelCarousel.min.js"></script>
+<script type="text/javascript">
+   $(function(){
+      var car = $("#carousel").waterwheelCarousel({
+         autoPlay:-1,		//양수:right->left, 음수:left->right
+         speed:1000
+      });
+      
+      $("#prev").click(function() {
+      	car.prev();
+      	return false;
+      });
+      
+      $("#next").click(function() {
+      	car.next();
+      	return false;
+      });     
+   });
+</script>
+</head>
+<body>
+   <h1>Carousel Demo</h1>
+   <div id="carousel">
+      <a href="#"><img src="image/1.jpg"></a>
+      <a href="#"><img src="image/2.jpg"></a>
+      <a href="#"><img src="image/3.jpg"></a>
+      <a href="#"><img src="image/4.jpg"></a>
+      <a href="#"><img src="image/5.jpg"></a>
+      <a href="#"><img src="image/6.jpg"></a>
+      <a href="#"><img src="image/7.jpg"></a>
+      <a href="#"><img src="image/8.jpg"></a>
+      <a href="#"><img src="image/9.jpg"></a>
+   </div>
+   
+   <a href="#" id="prev">prev</a> 	|	<a href="#" id="next">next</a>
+</body>
+</html>

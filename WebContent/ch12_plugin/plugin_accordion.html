@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="./lib/jquery.accordionImageMenu.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="./lib/jquery-ui.min.js"></script>
+<script src="./lib/jquery.accordionImageMenu.min.js"></script>
+<script type="text/javascript">
+   $(function() {
+      $("#menu").AccordionImageMenu({
+         position:'horizontal',
+         openItem:0, //마우스를 올리지 않았을때 기본열려있는베너설정 index
+         openDim:500, //열려있는 베너의 ㄴ너비를 설정함
+         closeDim:250, //닫혀있는 베너의 넓이를 설정함
+         height:480, //베너 높이를 설정함
+         duration:300, //전환되는속도
+         effect:'easeOutBack', //전환될때 가속도를 향상
+         border:1 //선의 생성을설정
+      });
+   });
+</script>
+</head>
+<body>
+	<ul id="menu">
+		<li>
+			<a href="#">
+				<span>title 1</span>
+				<img src="image/pic_1.jpg">
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<span>title 2</span>
+				<img src="image/pic_2.jpg">
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<span>title 3</span>
+				<img src="image/pic_3.jpg">
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<span>title 4</span>
+				<img src="image/pic_4.jpg">
+			</a>
+		</li>
+	</ul>
+</body>
+</html>

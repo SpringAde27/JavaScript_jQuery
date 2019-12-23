@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+<title>Insert title here</title>
+<style type="text/css">
+	html, body, div, span, object, iframe, 
+	h1, h2, h3, h4, h5, h6, p, del, dfn, em, img, ins, kbd, q, samp, 
+	small, strong, b, i, dl, dt, dd, ol, ul, li, 
+	fieldset, form, label,
+	table, tbody, tfoot, thead, tr, th, td, 
+	article, aside, footer, header, nav, section {
+	  margin:0;
+	  padding:0;
+	  border:0;
+	  outline:0;
+	  font-size:100%;
+	  vertical-align:baseline;
+	  background:transparent;
+	}
+    .swipe {
+	  overflow: hidden;
+	  visibility: hidden;
+	  position: relative;
+	}
+	.swipe-wrap {
+	  overflow: hidden;
+	  position: relative;
+	}
+	.swipe-wrap > li {
+	  float:left;
+	  width:100%;
+	  position: relative;	  
+	}
+	
+	li{list-style: none;}
+	
+	#mySwipe{
+		width: 500px;
+		margin: 0 auto;
+	}
+	
+	img{width: 100%; margin-bottom: 30px;}
+	
+	.btn_wrap{ text-align: center;}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="./lib/swipe.js"></script>
+<script type="text/javascript">
+   $(function(){
+      var mySwipe = $("#mySwipe").Swipe({
+         startSlide:0,		//초기에 첫번째 배너가 노출
+         auto:3000,			//3초 이후 자동으로 배너가 이동
+         continuous:true, 	//배너가 반복되어 롤링
+      }).data("Swipe");
+      
+      $(".prevBtn").click(function() {
+      	mySwipe.prev();
+      });
+      
+      $(".nextBtn").click(function() {
+        	mySwipe.next();
+        });
+   });
+</script>
+</head>
+<body>
+   <div id="mySwipe" class="swipe">
+      <ul class="swipe-wrap">
+         <li><img src="image/slide-1.jpg"></li>
+         <li><img src="image/slide-2.jpg"></li>
+         <li><img src="image/slide-3.jpg"></li>
+         <li><img src="image/slide-4.jpg"></li>
+      </ul>
+   </div>
+   <div class="btn_wrap">
+      <button class="prevBtn">prev</button>
+      <button class="nextBtn">next</button>
+   </div>
+</body>
+</html>

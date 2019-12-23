@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="./lib//coin-slider.min.js"></script>
+<link rel="stylesheet" href="./lib/coin-slider-styles.css">
+<style type="text/css">
+	#wrapper{
+		width: 750px;
+		margin: 30px auto;	
+	}
+	
+	#coin-slider{
+		margin: 0 auto;
+	}
+</style>
+<script type="text/javascript">
+	$(function(){
+		$("#coin-slider").coinslider();
+	});
+</script>
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			<h1>String</h1>
+		</header>
+      
+		<section>
+			<div id="coin-slider">
+				<a href="#">
+					<img src="image/slide-1.jpg">
+					<span>첫번째 그림의 캡션</span>
+				</a>
+				<a href="#">
+					<img src="image/slide-2.jpg">               
+				</a>
+				<a href="#">
+					<img src="image/slide-3.jpg">               
+				</a>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

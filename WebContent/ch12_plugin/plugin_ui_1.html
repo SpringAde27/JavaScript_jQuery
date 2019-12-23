@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="./lib/jquery-ui.css">
+<style type="text/css">
+	#drag{
+		width: 300px;
+		height: 300px;
+		border: 5px solid orange;
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="./lib/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#drag").draggable();
+		$("h1").draggable();
+	});
+</script>
+</head>
+<body>
+	<div id="drag" class="ui-widget-content">
+		<p>Drag me around</p>
+	</div>
+	
+	<h1>테스트</h1>
+</body>
+</html>
