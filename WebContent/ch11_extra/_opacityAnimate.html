@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	header h1{
+		width: 960px;
+		height: 80px;
+		margin: 0 auto;
+		padding-left: 10px;
+		font-size: 25px;
+		font-weight: normal;
+		line-height: 80px;
+		letter-spacing: 0.1em;
+	}
+	section{
+		background-color: #ff8873;
+	}
+	
+	section > div{
+		width: 960px;
+		margin: 0 auto;
+		padding: 50px 0px;
+	}
+	
+	section > div h2{
+		color: white;
+		text-align: center;
+		margin-bottom: 50px;
+		font-weight: normal;
+		letter-spacing: 0.15em;
+	}
+	
+	#main p{
+		width: 580px;
+		height:380px;
+		margin: 0 auto 80px;
+		overflow: hidden;
+		position: relative;
+	}
+	
+	#main p strong{
+		position : absolute;		
+		color: white;
+		background: rgba(0,0,0,0.5);
+		z-index: 1;
+		bottom: 0;
+		padding:20px;
+		width: 540px;
+		height: 30px;
+		display: block;
+		font-size: 20px;
+		opacity: 0;
+	}
+	
+	footer{
+		background-color: #656565;
+	}
+	
+	footer small{
+		display: block;
+		color: #fff;
+		font-size: 11px;
+		text-align: right;
+		width: 960px;
+		margin: 0 auto;
+		height: 120px;
+		line-height: 120px;
+		letter-spacing: 0.15em;
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#main").find("p").hover(function() {
+			$(this).find("strong").animate({"opacity":"1"}, 500);
+		}, function() {
+			$(this).find("strong").animate({"opacity":"0"}, 500);
+		});
+	});
+</script>
+</head>
+<body>
+	<header>
+		<h1>Creative jQuery Sample</h1>		
+	</header>
+	
+	<section>
+		<div id="main">
+			<h2>IMAGE</h2>
+			<div class="inner">
+				<p><img src=image/01_img.jpg><strong>Hummingbird</strong></p>
+				<p><img src=image/02_img.jpg><strong>Sitta</strong></p>
+				<p><img src=image/03_img.jpg><strong>Bee-eater</strong></p>
+			</div>
+		</div>
+	</section>
+	
+	<footer>
+		<small class="copyright">COPYRIGHT &copy;
+			<a href="http://www.dgit.or.kr" target="_black">대구아이티교육원</a>			
+		</small>
+	</footer>
+</body>
+</html>

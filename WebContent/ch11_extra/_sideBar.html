@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	header h1{
+		width: 960px;
+		height: 80px;
+		margin: 0 auto;
+		padding-left: 10px;
+		font-size: 25px;
+		font-weight: normal;
+		line-height: 80px;
+		letter-spacing: 0.1em;
+	}
+	
+	section > div{
+		text-align: center;
+	}
+	
+	section >aside{
+      position:fixed;
+      background: rgba(0,0,0,0.8);
+      width:350px;
+      height:100%;
+      top:0;
+      left: -350px;
+   }
+   
+   section > aside ul{
+      list-style:none;
+      margin:0;
+      padding:0;
+      
+      position:absolute;
+      top:50px;
+      left:114px;
+   }
+   
+   section>aside button{
+      position:absolute;
+      top:150px;
+      left:350px;
+      background-color: rgba(0,0,0,0.8);
+      margin:0;
+      padding:0;
+      border:none;
+   }	
+	
+	button{
+		background: rgba(0,0,0,0.8);
+		position: absolute;
+		left: 300px;
+		top: 100px;
+	}
+	
+	footer{
+		background-color: #656565;
+	}
+	
+	footer small{
+		display: block;
+		color: #fff;
+		font-size: 11px;
+		text-align: right;
+		width: 960px;
+		margin: 0 auto;
+		height: 120px;
+		line-height: 120px;
+		letter-spacing: 0.15em;
+	}
+s</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("aside").find("button").on("click", function(){
+			//가상 오픈 클래스를 넣었다가 뺏다가 처리를 함.
+			$("aside").toggleClass("open");
+			
+			if($("aside").hasClass("open")){
+				$("aside").animate({"left":"0px"}, 300);
+				$(this).find("img").attr("src","image/btn_close.png");
+			}else{
+				$("aside").animate({"left":"-350px"}, 300);
+				$(this).find("img").attr("src","image/btn_open.png");
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<header>
+		<h1>Creative jQuery Sample</h1>		
+	</header>
+	
+	<section>
+		<!-- side bar menu -->
+		<aside>
+			<ul>
+				<li><a href="#"><img src="image/01_aside.png"></a></li>
+				<li><a href="#"><img src="image/02_aside.png"></a></li>
+				<li><a href="#"><img src="image/03_aside.png"></a></li>
+			</ul>
+			<button><img src="image/btn_close.png"></button>
+		</aside>
+		<!-- 메인화면 -->		
+		<div>	
+			<h2>Content영역</h2>
+			<img src="image/photo8.jpg">
+		</div>
+	</section>
+	
+	<footer>
+		<small class="copyright">COPYRIGHT &copy;
+			<a href="http://www.dgit.or.kr" target="_black">대구아이티교육원</a>			
+		</small>
+	</footer>
+</body>
+</html>
