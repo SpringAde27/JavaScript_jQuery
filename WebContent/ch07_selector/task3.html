@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#div{
+		color: red;
+	}
+</style>
+<style type="text/css">
+	div{
+		width : 500px;
+		height : 200px;
+		border : 5px solid black;
+		margin-bottom: 20px;
+		text-align: center;
+		line-height: 200px;
+		font-size: 30px;
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){		
+		$("button").eq(0).click(function(){
+			$("div").css("color","red");
+		});
+		
+		$("button").eq(1).click(function(){
+			$("div").css("color","green");
+		});
+		
+		$("button").eq(2).click(function(){
+			$("div").css("color","blue");
+		});
+		
+		$("button").eq(3).click(function(){
+			$("div").css("background-color","red");
+		});
+		
+		$("button").eq(4).click(function(){
+			$("div").css("background-color","green");
+		});
+		
+		$("button").eq(5).click(function(){
+			$("div").css("background-color","blue");
+		});
+		
+		$("button").eq(6).click(function(){
+			$("div").css("width","50%");
+		});
+		$("button").eq(7).click(function(){
+			$("div").css("width","auto");
+		});
+		
+		$("button").eq(8).click(function(){
+			$("div").css("border","10px solid pink");
+		});
+		$("button").eq(9).click(function(){
+			$("div").css("border","20px dotted orange");
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="test">테스트 영역 입니다.</div>
+	<button>(폰트)red</button>
+	<button>(폰트)green</button>
+	<button>(폰트)blue</button>
+	<button>(배경)red</button>
+	<button>(배경)green</button>
+	<button>(배경)blue</button><br>
+	<button>width=50%</button>
+	<button>width=auto</button>
+	<button>border 10px solid pink</button>
+	<button>border 20px dotted orange</button>
+</body>
+</html>

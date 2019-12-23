@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	h1{
+		color : lime;
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		/* 
+		$("#menu li:first").css("background-color", "skyblue");	
+		$("#menu li:last").css("background-color", "pink"); */
+		
+		/* 
+		$("#menu li:even").css("background-color", "lightblue");	// 인덱스번호로 짝수 
+		$("#menu li:odd").css("background-color", "gray");			// 인덱스번호로 홀수 */
+		
+		/* 
+		$("li:last-of-type").css("background-color", "pink");	// 요소들 중 마지막 선택	
+		$("li:first-of-type").css("background-color", "purple"); // 요소들 중 첫번재 선택 */
+		
+		
+		/* 
+		$("li:nth-child(2n)").css("background-color", "orange");	 // 배수
+		$("li:only-child").css("background-color", "purple");		 // 단독적인 하나뿐인 li 선택
+		$("#menu li").slice(2).css("background-color", "pink");	// 인덱스2번부터 형제들 모두 선택 */
+		
+		$("#menu li:eq(0)").css("background-color", "orange");
+		$("#menu li").eq(1).css("background-color", "pink");
+	});	
+</script>
+
+</head>
+<body>
+	<h1>탐색선택자</h1>
+	<ul id="menu">
+		<li>내용1</li>
+		<li>내용2</li>
+		<li>내용3</li>
+		<li>내용4</li>
+	</ul>
+	<ul>
+		<li>내용1</li>
+		<li>내용2</li>
+		<li>내용3</li>
+		<li>내용4</li>
+	</ul>
+	<ul>
+		<li>내용5</li>		
+	</ul>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		// i : index, obj : object
+		$("li").each(function(i, obj) {
+			console.log( i+" : "+obj );
+			$(obj).html("바꿔보자" + i); 
+		});
+	
+		$.each($("li"), function(i, o) {
+			console.log( i+" : "+o );
+		});
+	});
+</script>
+</head>
+<body>
+	<ul>
+		<li>내용1</li>
+		<li>내용2</li>
+		<li>내용3</li>
+		<li>내용4</li>
+	</ul>
+</body>
+</html>

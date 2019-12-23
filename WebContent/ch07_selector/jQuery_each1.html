@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var obj = [
+			{"area" : "서울"}, {"area" :  "부산"}, {"area" : "대구"}
+		];
+		
+		$(obj).each(function(i, o){
+			console.log(i + " : ", o);
+		});
+		console.log("==============================");
+		
+		$.each($("#menu1 li"), function(i, o){
+			console.log(i + " : ", o);
+		});
+		console.log("==============================");
+		
+		$.each($("#menu2 li"), function(i){ // 선택한 요소만큼 메서드 반복 실행
+			console.log(i + " : ", $(this));
+		});
+	});
+</script>
+</head>
+<body>
+	<h2>each() : 배열에 저장된 요소에 순차적으로 하나씩 접근할 때 사용</h2>
+	<h3>탐색 선택자</h3>
+	<ul id="menu1">
+		<li>내용1-1</li>
+		<li>내용1-2</li>
+		<li>내용1-3</li>
+	</ul>
+	<ul id="menu2">
+		<li>내용2-1</li>
+		<li>내용2-2</li>
+		<li>내용2-3</li>
+	</ul>
+</body>
+</html>

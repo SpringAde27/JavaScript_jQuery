@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div{
+		width: 300px;
+		text-align: center;
+	}
+	input{
+		background-color: pink;
+		border-radius: 5px;
+	}
+	img{
+		margin-top: 20px;
+	}
+</style>
+
+<!-- <script src="../js/jquery-1.12.4.min.js"></script> --> <!-- jQuery 라이브러리 연동 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> <!-- jQuery 라이브러리 CDN 연동 -->
+
+<script type="text/javascript">
+	function showMe(){
+		/* var img=document.getElementsByTagName("img")[0];
+		img.style.visibility = "visible"; */		
+		$("img").show();
+	}
+	
+	function hideMe(){
+		/* var img=document.getElementsByTagName("img")[0];
+		img.style.visibility = "hidden"; */
+		$("img").hide();
+	}
+</script>
+</head>
+<body>
+	<div>
+		<h1>jQuery맛보기</h1>
+		<p>
+			<input type="button" value="표시하기" onclick="showMe()">
+			<input type="button" value="감추기" onclick="hideMe()">
+		</p>
+		<img src="image/logo.png" style="visibility:hidden;">
+	</div>
+</body>
+</html>

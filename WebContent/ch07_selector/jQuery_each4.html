@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){		
+		var imgPath=["h2.jpg","t2.jpg","m2.jpg","l2.jpg","5-2.jpg"];
+		$("img").each(function(i, element) {
+			$(element).click(function(){
+				$(element).attr("src","image/"+imgPath[i]);
+			});
+		});
+		
+		$("p").each(function(i, element) {
+			$(element).click(function(){
+				$(element).html("정신차리자"+(i+1));
+			});
+		});	
+	});
+</script>
+</head>
+<body>
+	<h1>each()를 이용하여 이미지를 변경하여 보자.</h1>
+	<img src="image/h.jpg">
+	<img src="image/t.jpg">
+	<img src="image/m.jpg">
+	<img src="image/l.jpg">
+	<img src="image/5.jpg">
+	
+	<p>선택1</p>
+	<p>선택2</p>
+	<p>선택3</p>
+	<p>선택4</p>
+</body>
+</html>

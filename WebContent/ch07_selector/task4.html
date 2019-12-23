@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	table{
+		border: 1px solid gray;
+		border-collapse: collapse;
+		width: 600px;
+		height : 200px;
+		text-align: center;
+	}
+	td{
+		border: 1px solid gray;
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var total = 13450000;		
+			$("input").each(function(i, e) {
+				$(e).click(function() {
+					if($(e).prop("checked")){
+						total += Number($(e).val());
+						$("#total").html(total);
+					}else{
+						total -= Number($(e).val());
+						$("#total").html(total);
+					}
+				});
+			});
+	});
+</script>
+</head>
+<body>
+	<h1>자동차 견적</h1>
+	<img src="image/car1.jpg">
+	<table>
+		<tr>
+			<td>옵션</td>
+			<td>추가 가격</td>
+			<td>선택</td>
+		</tr>
+		
+		<tr>
+			<td>인조가죽시트</td>
+			<td>250000</td>
+			<td><input type="checkbox" value="250000" id="chk1"></td>
+			
+		</tr>
+		
+		<tr>
+			<td>내비게이션</td>
+			<td>250000</td>
+			<td><input type="checkbox" value="250000" id="chk2"></td>
+		</tr>
+		
+		<tr>
+			<td>선루프</td>
+			<td>440000</td>
+			<td><input type="checkbox" value="440000"  id="chk3"></td>
+		</tr>
+		
+		<tr>
+			<td>(기본)차량가격</td>
+			<td colspan="2"" id="total">13450000</td>		
+		</tr>
+	</table>
+</body>
+</html>

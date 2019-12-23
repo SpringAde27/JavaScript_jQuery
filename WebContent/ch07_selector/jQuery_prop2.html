@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){		
+		$("#num").click(function() {
+			var path=$("#num").prop("src");			// 상황에 따라 prop, attr의 반환값 string을 사용
+			if(path.indexOf("image/two.jpg")>0){		// 반환값은 경로의 인덱스값이다.
+				$("#num").prop("src","image/four.jpg");
+			}else{				
+				$("#num").prop("src","image/two.jpg");
+			}			
+		});
+		
+		$("#address").click(function(e) {
+			e.preventDefault();		// 클릭 시, 이벤트 정보를 받아오며, 링크를 막는다.
+			var add=$("#address").prop("href");
+			if(add.indexOf("title")>0){
+				$("#address").prop("href","test");
+			}else{
+				$("#address").prop("href","title");
+			}
+		});		
+	});
+</script>
+</head>
+<body>
+	<img src="image/two.jpg"  id="num">
+	<br>
+	<a href="title"  id="address">주소 변경</a>
+</body>
+</html>

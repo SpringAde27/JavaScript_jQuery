@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	var imgPath = [
+					["image/h.jpg", "image/h2.jpg"],
+					["image/t.jpg", "image/t2.jpg"],
+					["image/m.jpg", "image/m2.jpg"],
+					["image/l.jpg", "image/l2.jpg"],
+					["image/5.jpg", "image/5-2.jpg"]
+				  ];
+					 
+	$(function(){		
+		$("img").each(function(i, element) {			
+			$(element).click(function() {
+				var path = $(element).attr("src");
+				
+				if(path.indexOf(imgPath[i][0])>=0)
+					$(element).attr("src", imgPath[i][1]);
+				else
+					$(element).attr("src", imgPath[i][0]);
+			});			
+		});		
+	});	
+</script>
+</head>
+<body>
+	<h1>each()를 이용하여 이미지를 변경해보자.</h1>
+	<img src="image/h.jpg">
+	<img src="image/t.jpg">
+	<img src="image/m.jpg">
+	<img src="image/l.jpg">
+	<img src="image/5.jpg">
+</body>
+</html>

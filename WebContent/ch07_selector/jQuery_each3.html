@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	
+	#container{
+		width: 800px;		
+		margin : 30px auto;
+		text-align : center;
+		border: 1px solid red;
+		overflow: hidden;
+	}		
+	
+	ul{
+		width: 170px;
+		list-style : none;
+		float: left;
+	}
+	
+	ul img{
+		width: 150px;
+		height: 140px;		
+	}
+	
+	div #bigImg{
+		float: left;
+		width: 600px;
+		height : 300px;
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){		
+	/* 	$("img").eq(2).click(function() {
+			$("#bigImg").attr("src", $("img").eq(2).attr("src"));
+		});
+	 */
+		$("#left img").each(function(i, element) {
+			$(element).click(function() {
+				var path = $(element).attr("src");
+				$("#big").attr("src", path);
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="container">		
+		<ul id="left">
+			<li><img src="image/20.jpg"></li>
+			<li><img src="image/22.jpg"></li>
+			<li><img src="image/23.jpg"></li>
+		</ul>		
+		
+		<div id="bigImg">
+			<img src="image/20.jpg"  id="big">
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		console.log( $("#menu li:eq(0)").is(":visible") );	
+		console.log( $("#menu li:eq(1)").is(":visible") );
+		
+		console.log( $("#chk1").is(":checked") );
+		console.log( $("#chk2").is(":checked") );
+	});
+</script>
+</head>
+<body>
+	<h1>탐색 선택자</h1>
+	<ul id="menu">
+		<li style="display: none;">내용1</li>
+		<li>내용2</li>
+	</ul>
+	
+	<p>
+		<input type="checkbox" id="chk1" checked="checked">
+		<label for="chk1">체크1</label>
+	</p>
+	
+	<p>
+		<input type="checkbox" id="chk2">
+		<label for="chk2">체크2</label>
+	</p>
+</body>
+</html>

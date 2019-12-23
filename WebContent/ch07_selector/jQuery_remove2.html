@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#box{
+		width: 300px;
+		height: 200px;
+		border: 1px solid red;
+		overflow: scroll;
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("button").eq(0).click(function() {
+			$("#box li:last").append("<li>레몬</li>");	
+		});
+		
+		$("button").eq(1).click(function() {
+			$("#box li:last").remove();
+		});
+	});
+</script>
+</head>
+<body>
+	<ul id="box">
+		<li>자몽</li>
+		<li>오렌지</li>
+		<li>딸기</li>
+		<li id="item">레몬</li>
+	</ul>
+	
+	<button>Add</button>
+	<button>Del</button>
+	
+</body>
+</html>

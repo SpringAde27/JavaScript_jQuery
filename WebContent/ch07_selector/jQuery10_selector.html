@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	table{
+		border: 1px solid red;
+		border-collapse: collapse;
+	}
+	
+	tr,td,th{
+		border: 1px solid red;
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">	
+	$(function(){
+		$("#btn1").click(function(){
+			$("body").css("background-color","skyblue");
+		});
+		
+		$("#btn2").click(function(){
+			$("#container>p").css("color","red");
+		});
+		
+		$("#btn3").click(function(){
+			$("ul").next().css("border","1px solid blue");
+			$("ul").next().find("td,th").css("border","1px solid blue");
+		});
+		
+		$("#btn4").click(function(){
+			$("#second").prev().html("햇병아리");
+		});
+		
+		$("#btn5").click(function(){
+			$("#memo p").css("border-bottom","2px solid blue");
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="container">
+		<p>학년별 엠티 일정입니다.</p>
+		<p>자신의 학년을 클릭하면 엠티 일정을 볼 수 있습니다.</p>
+		<ul>
+			<li>1학년</li>
+			<li id="second">2학년</li>
+			<li>3학년</li>
+			<li>4학년</li>
+		</ul>
+		
+		<table class="schedule">
+			<caption>1학년 엠티 공고</caption>
+			<tr>
+				<th>날짜</th>
+				<td>4월 7일 ~ 4월 10일</td>
+			</tr>
+			<tr>
+				<th>장소</th>
+				<td>가평 휴양림</td>
+			</tr>
+			<tr>
+				<th>집결장소</th>
+				<td>4/7 오후2시까지 학생회관 앞</td>
+			</tr>
+		</table>
+		
+		<table class="schedule">
+			<caption>2학년 엠티 공고</caption>
+			<tr>
+				<th>날짜</th>
+				<td>4월 7일 ~ 4월 10일</td>
+			</tr>
+			<tr>
+				<th>장소</th>
+				<td>가평 휴양림</td>
+			</tr>
+			<tr>
+				<th>집결장소</th>
+				<td>4/7 오후2시까지 학생회관 앞</td>
+			</tr>
+		</table>
+		
+		<div id="memo">
+			<p>여러 사람이 함께 움직이므로 반드시 시간 엄수해 주세요.</p>
+			<p>엠티 비용은 학년 관계없이 5만원입니다. 과대표에게 수납해주세요./</p>
+		</div>
+	</div>
+	
+	<button id="btn1">전체 배경색을 하늘색으로</button>
+	<button id="btn2">#container 자식p의 글자색을 빨강색으로</button>
+	<button id="btn3">ul의 다음 형제에게 border색상 변경</button>
+	<button id="btn4">#second의 위의 형제의 내용을 '햇병아리'로 변경</button>
+	<button id="btn5">#memo아래 모든 자손 p에 밑줄 넣기</button>
+</body>
+</html>

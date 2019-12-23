@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){	
+		$("button").eq(0).click(function(){
+			$("h2").html("<a href='#'>내용변경</a>");		// 매개변수가 있으면 매개변수를 입력받아 작동
+		});
+	
+	/* 	$("button").eq(1).click(function(){
+			//alert( $("h2").html() );		// 매개변수가 없으면 get()함수로 작동
+			
+			var h1_html = $("h1").html();
+			$("#test").html(h1_html);
+		});	 */		 
+		 
+		$("button").eq(1).click(function(){		
+			$("#test").html($("h1").html());
+		});
+		
+		$("button").eq(2).click(function(){
+			$("#test2").html($("h2").html());
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>
+		<strong>객체 조작 및 생성</strong>
+	</h1>
+	<h2>
+		<em>html()</em>
+	</h2>
+	
+	<div id="test"> </div>
+	<p id="test2"></p>
+	
+	<button>h2의 내용 변경</button>
+	<button>h1의 내용을 div에 변경</button>
+	<button>h2의 내용을 p에 변경</button>	
+</body>
+</html>

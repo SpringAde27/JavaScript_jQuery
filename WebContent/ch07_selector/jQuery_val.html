@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("button").click(function() {
+			var value=$("#user_name").val(); //get
+			$("#my_name").val(value); //set
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="text" id="user_name" value="잘 될거야!"/><br>
+	<input type="text" id="my_name"/><br><br>
+	<button>변경</button>
+</body>
+</html>

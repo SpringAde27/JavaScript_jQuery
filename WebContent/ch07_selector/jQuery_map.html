@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var arr1 = [
+			{"area" : "서울", "name" : "무대리"},
+			{"area" :  "부산", "name" : "김과장"},
+			{"area" : "대구", "name" : "빅마마"}
+		];
+		
+		var arr2 = $.map(arr1, function(obj, i) {
+			if(obj.area == "서울") {
+				return obj;
+			}
+		});
+		console.log(arr2);
+		
+		var arr3 = $.grep(arr1, function(obj, i) {
+			if(obj.area == "대구") {
+				return true;
+			} else {
+				return false;
+			}
+		});
+		console.log(arr3);
+	});
+</script>
+</head>
+<body>
+	<h2>map() : 배열의 값을 재가공하여 새로운 배열 객체를 만들 때 사용 - return obj</h2>
+	<h2>grep() : 배열의 값을 재가공하여 새로운 배열 객체를 만들 때 사용 - return true</h2>
+</body>
+</html>

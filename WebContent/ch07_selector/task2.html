@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("button:first").click(function(){
+			$("img").attr("src","image/on.jpg");
+		});
+		
+		$("button:last").click(function(){
+			$("img").attr("src","image/off.jpg");
+		});
+	});
+</script>
+</head>
+<body>
+	<button>On</button>
+	<button>Off</button>
+	<img src="image/off.jpg">
+</body>
+</html>

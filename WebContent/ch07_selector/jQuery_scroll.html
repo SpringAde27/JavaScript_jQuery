@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body{
+		background-color: #eee;
+		padding-top: 240px;
+	}
+	
+	.page-header{
+		background-color: white;
+		width: 100%;
+		height: 100px;
+		box-shadow: 1 1px 1px rgba(0,0,0,0.25); 
+	}
+	
+	.page-header > .inner{
+		width: 960px;
+		margin: auto;	
+		overflow: hidden;	
+	}
+	
+	.site-logo{
+		float: left;		
+	}
+	
+	.primary-nav{
+		float: right;
+	}
+	
+	.primary-nav ul{
+		list-style: none;
+		margin-top: 30px;
+	}
+	
+	.primary-nav ul li{
+		display: inline;
+		margin: 0 15px;
+	}
+	
+	.primary-nav ul li a{
+		color: #666;
+		text-decoration: none;
+		font-size: 25px;
+	}
+	.dummy{
+		width: 960px;
+		font-size: 18px;
+		margin: 0 auto;
+	}
+	
+	.page-header.sticky-header{
+		position: fixed;
+		top:0px;
+		background-color: black;
+		height: 50px;		
+	}
+	
+	.primary-nav ul.sticky-ul{
+		margin-top: 10px;		
+	}
+	
+	.primary-nav ul li a.sticky-a{
+		color: white;
+		font-size: 20px;
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var headerOffsetTop=$(".page-header").offset().top;
+
+		$(window).on("scroll", function(){
+			if( $(window).scrollTop() > headerOffsetTop){
+				//메뉴변경
+				$(".page-header").addClass("sticky-header");
+				$(".site-logo").find("img").hide();
+				$(".primary-nav").find("a").addClass("sticky-a");
+				$(".primary-nav").find("ul").addClass("sticky-ul");
+			}else{
+				//메뉴 원래대로 변경
+				$(".page-header").removeClass("sticky-header");	
+				$(".site-logo").find("img").show();
+				$(".primary-nav").find("a").removeClass("sticky-a");
+				$(".primary-nav").find("ul").removeClass("sticky-ul");
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<header class="page-header">
+		<div class="inner">
+			<h1 class="site-logo">
+				<a href="#">
+					<img src="image/orange.png" height="65" width="200">
+				</a>
+			</h1>
+			
+			<nav class="primary-nav">
+				<ul>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Work</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Recruit</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	
+	<div class="dummy">
+		<p>Handling user uploaded images on your website can be a time consuming task. In this post, 
+		we'll show how Cloudinary's cloud-based image management service can help you turn user uploading 
+		into a lightweight operation that bypasses your servers altogether. 
+		How do you handle user uploads today? 
+		If images are uploaded directly to your servers, 
+		this requires some heavy server-side processing, 
+		bandwidth and storage space. One way to offload images is to transfer them 
+		to cloud storage. But if you're handling the upload operation on your own servers
+		(and then transferring them to the cloud), this is still wasteful of server resources.
+		</p>
+		<p>
+		A smarter option is to enable uploading of images 
+		directly from users' browsers to the cloud. 
+		In a previous post, we showed how to do this with Cloudinary's cloud-based image management solution, 
+		via our jQuery plugin. We also enable this for mobile apps via the iOS and Android SDKs. 
+		But this still requires a small server-side component to handle authentication. 
+		Now we're happy to introduce a new option 
+		that simplifies the upload process and 
+		completely bypasses your servers - Direct unsigned upload. 
+		You can now upload directly from the browser or app to Cloudinary with no predefined authentication. 
+		Instead, upload options are controlled by centralized configuration. 
+		This is easier to implement and is more suitable for modern client-side and mobile apps with a fast, dynamic UI.
+		</p>		
+		<p>Direct unsigned uploading of images to the cloud: how it works
+		Cloudinary is an image management solution that allows you to upload your images to the cloud, 
+		perform powerful image manipulations on-the-fly, and deliver them to users via a fast CDN. 
+		Previously, we required that all images uploaded are signed with your account's API secret. 
+		Now, you can call Cloudinary's upload API without signing with your API secret (we call this 'unsigned'). 
+		This allows you to perform upload directly from a browser or mobile app without going through your servers at all. 
+		For security reasons, not all upload parameters can be specified directly when performing unsigned upload calls.
+		First, you need to enable unsigned uploading for your Cloudinary account from the Upload Settings page. 
+		If you don't have a Cloudinary account already, you can set it up for free.
+		</p>
+		<p>Handling user uploaded images on your website can be a time consuming task. In this post, 
+		we'll show how Cloudinary's cloud-based image management service can help you turn user uploading 
+		into a lightweight operation that bypasses your servers altogether. 
+		How do you handle user uploads today? 
+		If images are uploaded directly to your servers, 
+		this requires some heavy server-side processing, 
+		bandwidth and storage space. One way to offload images is to transfer them 
+		to cloud storage. But if you're handling the upload operation on your own servers
+		(and then transferring them to the cloud), this is still wasteful of server resources.
+		</p>
+		<p>
+		A smarter option is to enable uploading of images 
+		directly from users' browsers to the cloud. 
+		In a previous post, we showed how to do this with Cloudinary's cloud-based image management solution, 
+		via our jQuery plugin. We also enable this for mobile apps via the iOS and Android SDKs. 
+		But this still requires a small server-side component to handle authentication. 
+		Now we're happy to introduce a new option 
+		that simplifies the upload process and 
+		completely bypasses your servers - Direct unsigned upload. 
+		You can now upload directly from the browser or app to Cloudinary with no predefined authentication. 
+		Instead, upload options are controlled by centralized configuration. 
+		This is easier to implement and is more suitable for modern client-side and mobile apps with a fast, dynamic UI.
+		</p>		
+		<p>Direct unsigned uploading of images to the cloud: how it works
+		Cloudinary is an image management solution that allows you to upload your images to the cloud, 
+		perform powerful image manipulations on-the-fly, and deliver them to users via a fast CDN. 
+		Previously, we required that all images uploaded are signed with your account's API secret. 
+		Now, you can call Cloudinary's upload API without signing with your API secret (we call this 'unsigned'). 
+		This allows you to perform upload directly from a browser or mobile app without going through your servers at all. 
+		For security reasons, not all upload parameters can be specified directly when performing unsigned upload calls.
+		First, you need to enable unsigned uploading for your Cloudinary account from the Upload Settings page. 
+		If you don't have a Cloudinary account already, you can set it up for free.
+		</p>
+	</div>
+</body>
+</html>

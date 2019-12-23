@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	var index=0;
+	var color=["white","skyblue","aqua","pink"];	
+	$(function(){
+		$("button").click(function(){
+			index++;
+			 if(index >= color.length) index=0;
+			$("body").css("background-color",color[index % color.length]);  //0%4=0, 1%4=1, 2%4=2 ....
+		});
+	});
+	
+	$(function(){
+		$("#btn").click(function(){
+			$("#text").css("color","red").css("font-style","italic");
+			$("#btn").css("border-color","blue");
+		});
+	});
+</script>
+</head>
+<body>
+	<button>배경색 바꾸기</button>
+	<br>
+	<br>
+	<p id="text">This is paragraph.</p>
+	<button id="btn">눌러보세요.</button>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#hideAll").click(function(){
+			$(".daynight").hide();
+		});
+		
+		$("#showAll").click(function(){
+			$(".daynight").show();
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" id="hideAll" value="감추기!">
+	<input type="button" id="showAll" value="보이기!">
+	<br><br>
+	<img src="image/sun.jpg" class="daynight">
+	<img src="image/moon.jpg" class="daynight">
+</body>
+</html>

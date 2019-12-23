@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	h1{
+		color:fuchsia;
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("a[title]").css("background-color","orange");
+		$("a[href='http://www.nate.com']").css("background-color","lime");
+		$("a[href^='mailto']").css("background-color","skyblue");
+		$("a[href$='net']").css("background-color","pink");
+		$("a[href*='google']").css("background-color","aqua");
+	});
+</script>
+</head>
+<body>
+	<h1>탐색 선택자</h1>
+	<ul>
+		<li><a href="http://www.naver.com" title="네이버 이동">네이버</a></li>
+		<li><a href="mailto:ciycc@naver.com">관리자에게 메일 보내기</a></li>
+		<li><a href="http://www.nate.com">네이트</a></li>
+		<li><a href="http://www.daum.net">다음</a></li>
+		<li><a href="http://www.google.com">구글</a></li>
+	</ul>
+</body>
+</html>

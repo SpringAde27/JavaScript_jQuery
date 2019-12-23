@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	*{margin: 0; padding: 0;}
+	
+	#wrap{
+		width: 300px;
+		height: 200px;
+		background-color: #ccc;
+		position: relative;
+		top : 50px;
+		margin: 0 auto;
+	}
+	#box{
+		width: 50px;
+		height: 50px;
+		background-color: aqua;
+		position: absolute;
+		top: 50px;
+		left: 100px;
+	}
+	
+	body{
+		height: 4000px;
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {		
+		var top1 = $("#box").position().top;		// 상대적인 위치 값
+		$("#t1").text(top1);
+		
+		var top2 = $("#box").offset().top;		// 브라우저부터의 절대 위치 값
+		$("#t2").text(top2);
+		
+		$(window).scrollTop(2000);		//스크롤의 위치가 2000으로 이동
+		alert( $(window).scrollTop() );
+	});
+</script>
+</head>
+<body>
+	<p id="t1"></p>
+	<p id="t2"></p>
+	<div id="wrap">
+		<p id="box">박스</p>
+	</div>
+</body>
+</html>

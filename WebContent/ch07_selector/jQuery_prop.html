@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){		
+		$("button").eq(0).click(function() {
+			$("#st_1").prop("title", "단락태그");
+			$("#st_1").html( $("#st_1").prop("title") );
+		});
+		
+		$("button").eq(1).click(function() {
+			var tagName = $("#st_1").prop("tagName");
+			$("#txt1").html(tagName);
+		});
+		
+		$("button").eq(2).click(function() {
+			var index = $("#sel").prop("selectedIndex");
+			$("#txt2").html(index);
+		});
+		
+		$("#btn1").click(function() {
+			var attr = $("#c1").attr("checked") ;	// html안의 내용을 가져옴
+			var prop = $("#c1").prop("checked");	// dom에서 사용 - 상태 값 (form요소)
+			$("#p1").text("attr : "+attr);			// 결과 : checked
+			$("#p2").text("prop : " + prop);		// 결과 : true, 체크 해제 하면 false
+		});
+	});
+</script>
+</head>
+<body>
+	<p id="st_1">내용1</p>
+	<p id="txt1">내용1</p>
+	<p id="txt2">내용1</p>
+	<select id="sel">
+		<option value="naver">네이버</option>
+		<option value="nate" selected="selected">네이트</option>
+		<option value="daum">다음</option>
+	</select>
+	<br>
+	<br>
+	<button>set,get</button>
+	<button>tagName get</button>
+	<button>select index get</button>
+	<br>
+	<br>
+	<hr>
+	<h1>attr()과 prop()의 차이는?</h1>
+	<input type="checkbox" id="c1" checked="checked">체크테스트
+	<p id="p1"></p>
+	<p id="p2"></p>
+	<button id="btn1">checkBox 값 보기</button>
+</body>
+</html>

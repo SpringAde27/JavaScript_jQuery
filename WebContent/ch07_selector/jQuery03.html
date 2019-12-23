@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#imgArea{
+		width: 350px;
+		height: 400px;
+		margin-top: 50px;
+	}
+</style>
+</head>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#day").click(function(){
+			$("#imgArea").html("<img src='image/sun.jpg'>"); //innerHTML과 같은 기능
+		});
+		
+		$("#night").click(function(){
+			$("#imgArea").html("<img src='image/moon.jpg'>");
+		});
+		
+		$("#two").click(function(){
+			$("#imgArea").html("<img src='image/two.jpg'>")
+		});
+	});
+</script>
+<body>
+	<input type="button" id="day" value="낮이라면 클릭!">
+	<input type="button" id="night" value="밤이라면 클릭!">
+	<input type="button" id="two" value="number">
+	<div id="imgArea"></div>
+</body>
+</html>

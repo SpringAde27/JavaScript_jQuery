@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("button").click(function() {
+			var val1=Number($("#num1").val());
+			var val2=Number($("#num2").val());
+			var sum = val1+val2;
+			$("h1").html("두 수의 합 : "+sum);
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="text" id="num1" placeholder="숫자입력"/><br>
+	<input type="text" id="num2" placeholder="숫자입력"/><br><br>
+	<button>숫자 두개 더하기</button>
+	<h1>내용</h1>
+</body>
+</html>

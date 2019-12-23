@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("button").eq(0).click(function(){
+			$("img").attr("src","image/math_img_2.jpg");
+		});
+		
+		$("button").eq(1).click(function(){
+			var path=$("img").attr("src");
+			alert(path);
+		});
+		
+		//html(),text(),css(),attr() : get일 때 반환값은 String이다.
+	});
+</script>
+</head>
+<body>
+	<img src="image/math_img_1.jpg" width="100">
+	
+	<button>이미지 변경</button>
+	<button>이미지 경로 보기</button>
+</body>
+</html>
