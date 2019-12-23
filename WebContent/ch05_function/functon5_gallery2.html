@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	*{padding: 0; margin: 0;}
+	li{list-style: none;}
+	a{text-decoration: none; color: #000;}
+	
+	#gallery{
+		width: 350px;
+		margin: 30px auto;
+		border: 1px solid #999;
+		box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+	}
+	
+	#gallery h1{
+		text-align: center;
+	}
+	
+	#gallery img{
+		border : 1px solid #666;
+	}
+	
+	#photo{
+		text-align: center;
+	}
+	
+	#gallery ul{
+		width: 800px;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	
+	#gallery ul li{
+		width: 100px;
+		float: left;
+		text-align: center;
+	}
+	
+	#photo_list{
+		width: 300px;
+		overflow: hidden;		/* 실제로 존재하지만 width만큼 자름 */
+		margin: 10px auto; 
+	}
+	.btn_wrap{
+		text-align: center;
+	}
+	
+	.btn_wrap a{
+		font-weight: bold;
+		font-size: 30px;
+	}	
+</style>
+<script type="text/javascript">
+window.onload = function(){ // body를 다 인식한 후에 실행이 된다.
+	var index=0;
+	
+	var before_btn = document.getElementById("before_btn");
+	before_btn.onclick = function(){
+		var inner_list = document.getElementById("inner_list");
+		if(index <= 0) return;			// 첫장일때 동작 못하게
+		
+		index--;
+		inner_list.style.marginLeft = index*100+"px";		// ul전체를 -100px왼쪽으로 이동
+	}
+	
+	var next_btn = document.getElementById("next_btn");
+	next_btn.onclick = function(){
+		var inner_list = document.getElementById("inner_list");
+		
+		if(index >= 5) return;		// 작은 이미지들의 개수 - 화면에 보이는 개수 => (8-3=5), 화면에 3개만 보이도록
+		index++;
+		inner_list.style.marginLeft = (index*-100)+"px";
+	}
+	
+	var ulObj=document.getElementById("inner_list");
+	var arrATag = ulObj.getElementsByTagName("a");
+	
+	for(var i=0; i<arrATag.length; i++){
+		arrATag[i].onclick=function(){
+			//a태그가 가지고 있는 href값을 큰 이미지의 경로로 넣어준다.
+			var bigImg = document.getElementById("bigImg");
+			bigImg.src = this.href;
+			return false;
+		}
+	}
+}
+</script>
+</head>
+<body>
+	<div id="gallery">
+		<h1>동해안 갤러리</h1>
+		
+		<p id="photo">
+			<img src="image/pic_1.jpg" width="320" id="bigImg">			
+		</p>
+		
+		<div id="photo_list">
+			<ul id="inner_list">
+				<li>
+					<a href="image/pic_1.jpg">
+						<img src="image/pic_t1.jpg">
+					</a>
+				</li>
+				
+				<li>
+					<a href="image/pic_2.jpg">
+						<img src="image/pic_t2.jpg">
+					</a>
+				</li>
+				
+				<li>
+					<a href="image/pic_3.jpg">
+						<img src="image/pic_t3.jpg">
+					</a>
+				</li>
+				
+				<li>
+					<a href="image/pic_4.jpg">
+						<img src="image/pic_t4.jpg">
+					</a>
+				</li>
+				
+				<li>
+					<a href="image/pic_5.jpg">
+						<img src="image/pic_t5.jpg">
+					</a>
+				</li>
+				
+				<li>
+					<a href="image/pic_6.jpg">
+						<img src="image/pic_t6.jpg">
+					</a>
+				</li>
+				
+				<li>
+					<a href="image/pic_7.jpg">
+						<img src="image/pic_t7.jpg">
+					</a>
+				</li>
+				
+				<li>
+					<a href="image/pic_8.jpg">
+						<img src="image/pic_t8.jpg">
+					</a>
+				</li>				
+			</ul>			
+		</div>
+		<p class="btn_wrap">
+			<a href="#" id="before_btn">&lt</a>
+			<a href="#" id="next_btn">&gt</a>
+		</p>
+	</div>
+</body>
+</html>

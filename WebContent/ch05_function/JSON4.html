@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>	
+	<script type="text/javascript">
+	window.onload = function(){
+
+		var keyword={
+				"r1":{"k":"HTML5","s":"+", "v":178},
+				"r2":{"k":"CSS3","s":"new", "v":150},
+				"r3":{"k":"JQuery","s":"+", "v":135}
+		};
+		
+		var ulTag=document.getElementById("rank");
+			ulTag.innerHTML += "<li>"+keyword.r1.k+"("+keyword.r1.s+keyword.r1.v+")"+"</li>";
+			ulTag.innerHTML += "<li>"+keyword.r2.k+"("+keyword.r2.s+keyword.r2.v+")"+"</li>";
+			ulTag.innerHTML += "<li>"+keyword.r3.k+"("+keyword.r3.s+keyword.r3.v+")"+"</li>";
+	}
+	</script>
+	
+	<h1>인기 검색어 순위</h1>
+	<ul id="rank"></ul>
+</body>
+</html>

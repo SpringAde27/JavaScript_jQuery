@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	form{
+		width: 200px;
+	}
+	#btn_wrap input{
+		width: 27px;
+	}
+</style>
+
+<script type="text/javascript">
+	var t="";
+	
+	function calculator(num){
+		var winObj = document.getElementById("win");
+		if(num == '='){
+			winObj.value = eval(t);
+			return;
+		}else if (num=='C'){
+			winObj.value="";
+			t="";
+			return;
+		}
+		
+		t+=num;
+		winObj.value=t;		
+	}
+	
+	window.onload = function(){			// html문서를 다 읽은 후, 실행되는 함수
+		var arrInput=document.getElementById("btn_wrap").getElementsByTagName("input");
+	
+		for(var i=0; i<arrInput.length; i++){
+			arrInput[i].onclick = function(){
+				calculator(this.value);
+				//this : onclick을 달은 객체
+				//this.value : input객체의 value 값
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<form id="calc">
+		<fieldset>
+			<legend>계산기</legend>
+			<p>
+				<input type="type" id="win" readonly="readonly"><br>
+			</p>
+			<p id="btn_wrap">
+				<input type="button" value='1'>
+				<input type="button" value='2'>
+				<input type="button" value='3'>
+				<input type="button" value='4'>
+				<input type="button" value='5'>
+				<br><br>
+				<input type="button" value='6'>
+				<input type="button" value='7'>
+				<input type="button" value='8'>
+				<input type="button" value='9'>
+				<input type="button" value='10'>
+				<br><br>
+				<input type="button" value="/">
+				<input type="button" value="*">
+				<input type="button" value="-">
+				<input type="button" value="+">
+				<input type="button" value="=">
+				<br><br>
+				<input type="button" value="C">
+			</p>
+		</fieldset>
+	</form>
+</body>

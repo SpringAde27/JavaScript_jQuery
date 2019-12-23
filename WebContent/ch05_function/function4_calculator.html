@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	form{
+		width: 200px;
+	}
+	#btn_wrap input{
+		width: 27px;
+	}
+</style>
+
+<script type="text/javascript">
+	var t="";
+	
+	function calculator(num){
+		var winObj = document.getElementById("win");
+		if(num =='='){
+			winObj.value = eval(t);
+			return;
+		}else if (num=='C'){
+			winObj.value="";
+			t="";
+			return;
+		}
+		
+		t+=num;
+		winObj.value=t;	
+	}
+</script>
+</head>
+<body>
+	<form id="calc">
+		<fieldset>
+			<legend>계산기</legend>
+			<p>
+				<input type="type" id="win" readonly="readonly"><br>
+			</p>	
+			<p id="btn_wrap">
+				<input type="button" value="1" onclick="calculator('1')">
+				<input type="button" value="2" onclick="calculator('2')">
+				<input type="button" value="3" onclick="calculator('3')">
+				<input type="button" value="4" onclick="calculator('4')">
+				<input type="button" value="5" onclick="calculator('5')">
+			<br>
+			
+				<input type="button" value="6" onclick="calculator('6')">
+				<input type="button" value="7" onclick="calculator('7')">
+				<input type="button" value="8" onclick="calculator('8')">
+				<input type="button" value="9" onclick="calculator('9')">
+				<input type="button" value="10" onclick="calculator('10')">
+			<br>
+			
+				<input type="button" value="/" onclick="calculator('/')">
+				<input type="button" value="*" onclick="calculator('*')">
+				<input type="button" value="-" onclick="calculator('-')">
+				<input type="button" value="+" onclick="calculator('+')">
+				<input type="button" value="=" onclick="calculator('=')">
+			<br>
+			
+				<input type="button" value="C" onclick="calculator('C')">
+			</p>
+		</fieldset>
+	</form>
+</body>
+</html>

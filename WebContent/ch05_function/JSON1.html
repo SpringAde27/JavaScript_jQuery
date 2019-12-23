@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var ju = {
+				"name" : "라라라",
+				"age" : "20",
+				"gender" : "여자",
+				"visual" : "이름"
+		};
+		document.write("<h1>"+ju.name+"</h1>")
+		document.write("<h1>"+ju.age+"</h1>")
+		document.write("<h1>"+ju.gender+"</h1>")
+		document.write("<h1>"+ju.visual+"</h1>")
+		
+		
+		var json={
+			"nation" : ["대한민국", "프랑스", "스위스", "이탈리아", "독일"]		
+		};
+		
+		document.write("<p>"+json.nation[2]+"</p>");
+		
+		for(var i=0; i<json.nation.length; i++){
+			document.write("<p>"+json.nation[i]+"</p>");
+		}
+	</script>
+</body>
+</html>

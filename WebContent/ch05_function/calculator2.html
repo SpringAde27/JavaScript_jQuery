@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	function calculator(a, b, c){		
+		var result=0;		
+		if(typeof a == "string"){
+			result = eval(b+a+c);		// 문자열  수식 계산			
+		}else if(typeof b == "string"){
+			result = eval(a+b+c);
+		}else if(typeof c == "string"){
+			result = eval(a+c+b);
+		}	
+		return result;
+	}
+	
+	var hap;
+	hap = calculator(1, 2, "+");
+	document.write(hap+"<br>");
+	
+	hap = calculator('-',10, 5);
+	document.write(hap+"<br>");
+	
+	hap = calculator(10,'*', 10);
+	document.write(hap+"<br>");
+	
+	hap = calculator(20, 2, '/');	
+	document.write(hap+"<br>");
+	
+	hap = calculator(54, 4, '-');
+	document.write(hap+"<br>");
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var i=0;
+	
+	function change(){
+		i++;
+		
+		var arrColor=["white","yellow","aqua","purple", "red", "blue", "black"];
+				
+		i = Math.floor(Math.random()*arrColor.length);
+		
+		var bodyTag=document.getElementsByTagName("body")[0];
+		bodyTag.style.backgroundColor=arrColor[i];		
+	}	
+</script>
+</head>
+<body>
+	<h1>버튼을 클릭 시 배경색이 바뀝니다.</h1>
+	<button onclick="change()">배경색 바꾸기</button>
+</body>
+</html>

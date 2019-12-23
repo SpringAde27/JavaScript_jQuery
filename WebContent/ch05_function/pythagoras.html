@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+
+	function pythagoras(width, height){
+		function square(x){	 // 내부함수(지역함수)
+			return x*x;
+		}		
+		var result = Math.sqrt(square(width) + square(height));	// 루트 : Math.sqrt
+		return result;
+	}	
+	alert(pythagoras(3,4));
+	
+	
+	// 삼각형이 직각인지 아닌지 확인
+	function square(w, h, c){ // 함수 이름이 똑같으면 마지막 함수로 덮어쓰게 된다.
+		if(w*w + h*h == c*c){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	alert(square(3, 4, 5));
+	
+</script>
+</body>
+</html>
