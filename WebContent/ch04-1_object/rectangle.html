@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	function Rectangle (width, height){
+		this.width = width;
+		this.height = height;
+		
+		this.getWidth = function(){
+			return width;
+		}
+		
+		this.setWidth = function(width){
+			if(width < 0){
+				width=1
+			}
+			this.width = width;
+		}
+	}
+	
+	Rectangle.prototype.getSize = function(){
+		return this.width * this.height;
+	}
+	
+	var rectang = new Rectangle(5, 7);  // new를 해야지 객체가 메모리에 올라간다.
+	rectang.width = -2;		// -14
+ 	// rectang.setWidth(-2);	// 7
+	document.write("사각형의 크기 : "+rectang.getSize());
+</script>
+</body>
+</html>

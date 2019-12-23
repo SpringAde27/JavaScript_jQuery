@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// test();  // 익명함수는 호이스팅 지원 안한다. (변수로 인식 하기 때문에 함수 호출을 첫 줄에 쓰면 결과가 안나온다.)
+
+		var test = function() { // 익명 함수
+			var output = prompt("숫자를 입력하세요", "숫자");
+			alert(output); // 화면에 [결과 창]으로 출력
+		}
+
+		var test = function() {
+			alert("함수 호출 2");
+		}
+
+		test();
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	var people = {
+			이름 : "황인영",
+			나이 : "7살",
+			성별 : "여",
+			키 : "100cm",
+			몸무게 : "20kg",
+			국적 : "대한민국",
+			주민번호 : "000606-4564321"
+	};
+	
+	var output="";
+	
+	with(people){
+		output += "이름 : "+이름+"<br>";
+		output += "나이 : "+나이+"<br>";
+		output += "성별 : "+성별+"<br>";
+		output += "키 : "+키+"<br>";
+		output += "몸무게 : "+몸무게+"<br>";
+		output += "국적 : "+국적+"<br>";
+		output += "주민번호 : "+주민번호+"<br>";
+	}
+	
+	/* document.write(people.이름+"<br>"); 
+	document.write(people.나이+"<br>");
+	document.write(people.성별+"<br>");
+	document.write(people.키+"<br>"); */
+	
+	document.write(output);
+</script>
+</body>
+</html>

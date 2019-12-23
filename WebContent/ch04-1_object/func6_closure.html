@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+ 	function test(name){
+		var output = "Hello" + name + "..!"; // output은 지역변수
+		
+		return function(){	// closure(클로저 함수) : 내부함수안에서는 외부함수의 변수뿐만 아니라 파라미터 까지 사용할 수 있습니다.
+			alert(output);	// (지역변수의 값을 알고 싶을 때)=>클로저 함수는 내부함수에서만 살아있다.			
+		}
+	}
+ 	
+	test("JavaScript")();  // 리턴되는 내부함수 실행. 내부함수가 리턴되기 때문에 ()가 붙는다.	
+	test("이쁘니")();
+	
+
+  	function test2(name){
+		var output = "Hello" + name + "..!";
+		
+		return function(){
+			console.log(output);
+			return output;
+		}
+	}
+  	
+	var result = test2("Java")();
+	
+ 	alert(result);
+</script>
+</body>
+</html>

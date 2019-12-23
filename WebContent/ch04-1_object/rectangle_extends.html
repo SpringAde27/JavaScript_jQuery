@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	function Rectangle (w, h){		
+		// 지역변수는 {}안에서만 살아있으니, 클로저 개념을 사용하여 지역변수에 접근 가능하도록 한다.
+		var width = w;
+		var height = h;
+		
+		this.getWidth = function(){
+			return width;
+		}		
+		this.setWidth = function(w){
+			if(w<0)					// 예외처리 개념
+				w = 1;
+			width = w;
+		}		
+		this.getHeight = function(){
+			return height;
+		}
+		this.setHeight = function(h){
+			if(h<0)					// 예외처리 개념
+				h = 1;
+			height = h;			
+		}		
+	}
+	
+	Rectangle.prototype.getArea = function(){
+		return this.getWidth() * this.getHeight();
+	}
+	
+	var rect = new Rectangle(5, 7);  // new를 해야지 객체가 메모리에 올라간다.
+	
+	rect.width = -2;		// 논리적 오류를 수정해야한다.	무시되버림.
+// 	rect.setWidth(-2);  	// 결과 값 : 7 
+	document.write("면적 : "+rect.getArea()+"<br>");
+	document.write("<br>");
+	document.write("==============================<br>");
+	document.write("<br>");
+	
+	
+	
+	/* 상속 1 */	
+	function Square(length){
+		Rectangle.call(this, length, length); // 내가 상속받는다는 것을 명시하는 this이다
+	}
+		
+	Square.prototype = Rectangle.prototype;	// 상속명시
+	Square.prototype.constructor = Square;	// 상속명시로 인해 생성자가 덮어써짐으로 다시 정의해야한다
+	
+	var rect2 = new Rectangle(10, 5);
+	var s = new Square(10);
+	
+	document.write("사각형 면적 : "+rect2.getArea() + "<br>");
+	document.write("정사각형 면적 : "+s.getArea() + "<br>");
+
+	
+	/* 상속2 */	
+	function Square(length) { 
+		this.base = Rectangle; 
+		this.base(length, length);
+	}
+	Square.prototype = Rectangle.prototype;	// 상속명시
+	
+	var rect2 = new Rectangle(10, 5);
+	var s = new Square(10);
+	
+</script>
+</body>
+</html>

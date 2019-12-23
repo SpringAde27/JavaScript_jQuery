@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/* callback 함수
+			1) 어떤 함수의 인자로 사용되는 함수 
+			2) 어떤 이벤트에 의해 호출되는 함수 
+		*/
+		function just1() {
+			alert("Hello~");
+		}
+		
+		function call(callback) {
+			for (var i = 0; i < 5; i++) {
+				callback(); // just1();
+			}
+		}
+		
+		call(just1); // 함수를 매개변수로 넘길 때는 ()를 붙이지 않는다.
+	</script>
+</body>
+</html>

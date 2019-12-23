@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+
+	/* 상속 : 코드 재사용성,  중복 코드 제거 , 확장성, */
+	
+	function Person(n) {
+		var name = n;
+		this.getName = function() {
+			return name;
+		}
+		this.setName = function(n) {
+			name = n;
+		}
+	}
+
+	function Nation(n, c) {
+		Person.call(this, n, c); // 내가 상속받는다는 것을 명시하는 this
+
+		var city = c;
+		this.getCity = function() {
+			return city;
+		}
+		this.setCity = function(c) {
+			city = c;
+		}
+	}
+
+	Nation.prototype = Person.prototype;	// 상속명시
+	Nation.prototype.constructor = Nation; // 상속명시로 인해 생성자가 덮어써짐으로 다시 정의해야한다
+
+	Nation.prototype.getDisplay = function() {
+		return this.getName() +" : "+ this.getCity();
+	}
+
+	var p2 = new Nation("ruru", "Korea");
+	document.write(p2.getDisplay());
+</script>
+</body>
+</html>

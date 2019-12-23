@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	function test(){ // 선언적 함수
+		alert("함수 호출");
+	}		// 1번으로 인식
+	
+	// 일반 함수 정의는 함수 호출 시 호이스팅 지원. 
+	test(); // 3번으로 인식
+	
+ 	function test(){
+		alert("또 호출"); // 2번으로 인식
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	function Person(n, nick){
+		var name = n;
+		var nickname = nick;
+		
+		this.getName = function(){
+			return name;
+		}		
+		this.setName = function(n){
+			if(typeof n == "string")
+				name=n;
+		}		
+		this.getNick = function(){
+			return nickname;
+		}
+		this.setNick = function(nick){
+			if(typeof nick == "string")				
+				nickname = nick;				
+		}
+	}	
+	
+	Person.prototype.display = function(){
+		document.write(this.getName() + " :" + this.getNick() + "<br>");
+	}
+	
+	var a = new Person("루루", "똑똑이");
+	a.display();
+	
+	a.setNick(1); // 조건 type에 맞지 않아 무시됨.
+	a.display();
+</script>
+</body>
+</html>

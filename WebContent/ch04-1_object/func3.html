@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+
+ 	function f(x){		// 선언적 함수에 매개변수 지정(매개변수에서는 타입 지정 안한다.)
+		var result = x + x;
+		alert(result);		
+	}
+ 	
+	f("안녕");		// 선언 시, 매개변수 타입 지정을 안하기 때문에 무슨 타입의 값이든 모두 들어갈 수 있다.
+	f(2);
+	f(true);
+
+
+ 	function x(y){
+		return y * y;
+	}
+ 	
+	alert(x("1","2","3"));		
+	// 매개변수는 하나만 받을 수 있어서 뒤에 2개, 3개는 무시된다.
+
+</script>
+</body>
+</html>

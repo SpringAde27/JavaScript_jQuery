@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// [생성자가 있는 객체]는 함수처럼 정의해서 사용해야 한다. 하나의 객체를 여러개로 만들 수 있다.
+		function Student(name, kor, eng, math) {
+			this.name = name;
+			this.kor = kor;
+			this.eng = eng;
+			this.math = math;
+		}
+
+		// 메서드는 외부에 prototype으로 정의하는 것을 권장
+		Student.prototype.getSum = function() {
+			return this.kor + this.eng + this.math;
+		}
+
+		Student.prototype.getAvg = function() {
+			return this.getSum() / 3;
+		}
+
+		Student.prototype.toString = function() {
+			return this.name + " " + this.getSum() + " " + this.getAvg();
+		}
+
+		var stdArray = [];
+		stdArray.push(new Student("가", 50, 90, 55));
+		stdArray.push(new Student("나", 30, 40, 55));
+		stdArray.push(new Student("다", 40, 20, 80));
+
+		// stdArray배열안에 담겨진 객체들의 이름, 총합, 평균을 출력
+		for (var i = 0; i < stdArray.length; i++) {
+			document.write(stdArray[i] + "<br>");
+		}
+	</script>
+</body>
+</html>

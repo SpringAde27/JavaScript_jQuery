@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	function People(name) {
+		this.name = name;
+	}
+	
+	People.prototype.toString = function(){
+		return this.name;
+	}	
+	
+	var nameArr = [];
+	nameArr.push(new People("K"));
+	nameArr.push(new People("U"));
+	nameArr.push(new People("K"));
+	nameArr.push(new People("U"));
+	nameArr.push(new People("O"));
+	nameArr.push(new People("N"));
+	nameArr.push(new People("A"));
+	
+	for(var i=0 ; i<nameArr.length ; i++){
+		document.write(nameArr[i]);	
+	}
+</script>
+</body>
+</html>

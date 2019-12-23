@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	var student = {
+			name : "ruru",
+			kor : 55,
+			math : 30,
+			eng : 80,
+			eating : '아직 못먹음'
+	}
+	student.hobby = "java공부";		// 객체에 변수 동적 추가
+	
+	student.eat = function(food){	// 객체에 함수 동적 추가
+		return student.eating = food+"먹었음";
+	}
+	
+	student.toString = function() {
+		var output = "";
+		for (var key in this){
+			if(key != "toString" && key !="eat") { 
+				output += key + ":"+this[key]+"<br>";	// [key] : 키가 갖고 있는 값의 배열
+			}
+		}
+		return output;
+	}
+	
+	document.write(student);
+	
+	document.write(student.eat('바나나'));
+	
+	/* 	
+	// 객체에 변수 삭제
+	delete(student.math);
+	document.write(student);
+	*/
+	
+	/*
+	// student객체 안에 name변수가 있는지 확인
+	document.write('name' in student);		
+	document.write('kor' in student);
+	document.write('math' in student);
+	document.write('eng' in student);
+	document.write('history' in student);
+	*/
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	var product = {					
+			name : 'eclipse',
+			price : '1,000,000원',
+			language : '한국어'			
+	};
+	
+	var output = "";
+	
+	for (var key in product) {
+		output += key + " : "+ product[key]+"<br>";
+	}
+	
+	document.write(output);
+	
+	document.writeln(product.language);
+</script>
+</body>
+</html>

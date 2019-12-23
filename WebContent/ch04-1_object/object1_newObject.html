@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	var product = {		 // 객체 선언 및 생성			
+		제품명 : '망고젤리',  // 변수 : 값 (JSON형태)
+		유형 : '당절임',
+		성분 :'설탕',
+		원산지 : '필리핀',
+		display : function(){
+			return this.제품명 + this.유형 + this.성분 + this.원산지;
+		}
+	};
+	
+	document.write(product.제품명+"<br>"); 
+	document.write(product.유형+"<br>");
+	document.write(product.성분+"<br>");
+	document.write(product.원산지+"<br>");
+	document.write(product.display());
+	
+/* 	
+	var tv = new Object();
+
+	tv.width = "30cm";
+	tv.height = "25cm";
+	tv.color = "red";
+	tv.weight = "20kg";
+	
+	tv.off = function(){
+		document.write("전원off");
+	}
+		
+	document.write(tv.color,"<br>");
+
+	tv.off();
+	
+ */	
+	
+</script>
+</body>
+</html>
