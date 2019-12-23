@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	document.write("<h1>컴퓨터 가위, 바위, 보 맞추기</h1>");
+	
+	var t = prompt("[가위, 바위, 보] 중 선택하세요.", "가위");
+	
+	var useNum;
+	switch(t){
+	case "가위" :
+		useNum = 1;
+		break;
+	case "바위" :
+		useNum = 2;
+		break;
+	case "보":
+		useNum = 3;
+		break;
+	default:
+		alert("잘못 작성하셨습니다.");
+		location.reload(); 		//브라우저를 처음부터 새로 시작하게 한다.
+		break;
+	}
+	
+	// 컴퓨터가 1~3사이의 난수를 구한다.
+	var computer =  Math.floor(Math.random()*3)+1;
+	
+	if(useNum == computer){
+		document.write("<h3> 맞췄습니다.</h3>");
+	}else{
+		document.write("<h3> 틀렸네요.</h3>");
+	}
+	// 컴퓨터가 지정한 숫자에 해당하는 가위, 바위, 보 이미지가 나타남. 
+	document.write("<img src='image/math_img_"+computer+".jpg'>");
+</script>
+</body>
+</html>

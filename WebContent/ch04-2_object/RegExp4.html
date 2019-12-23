@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+
+	// 아이디 형식 : 숫자, 영어, 언더바(_)
+	// 비밀번호 형식 : 숫자, 영어, 특수문자(!@#$%^&*), 공백여부 확인  
+		
+	var id = prompt("아이디를 입력하세요","7~15자리");
+	var pass = prompt("비밀번호를 입력하세요","8~16자리");
+	
+	
+	var reg = /^\w{7,15}/;
+	if(reg.test(id)==true){
+		document.write("아이디로 사용 가능합니다.");
+	}else{
+		document.write("아이디로 사용할 수 없습니다.");
+	}
+
+	
+	var res1= /^[a-z][a-z0-9!@#$%^&*]{8,16}$/i;
+	var res2= /\s+/;  // 공백판단
+	
+		
+	if(reg1.test(pass)==true && reg2.test(pass)!=true){
+			document.write("비밀번호로 사용 가능합니다.");
+		}else{
+			document.write("비밀번호로 사용할 수 없습니다.");
+	}
+	
+</script>
+</body>
+</html>

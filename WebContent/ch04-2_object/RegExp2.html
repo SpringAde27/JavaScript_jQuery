@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	var id = prompt("주민등록번호를 입력하세요.");
+	var reg = /[0-9]{6}-[1-4]{1}[0-9]{6}/;		// 주민등록번호 체크하는 정규표현
+	
+	var result = reg.test(id);
+	if(result==true){
+		document.write("유효한 주민등록번호 입니다.");
+	}else {
+		document.write("주민등록번호가 올바르지 않습니다.");
+	}
+</script>
+</body>
+</html>

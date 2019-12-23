@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	var num = prompt("당신의 전화번호는?", "");
+	var result = num.substring(0, num.length-4)+"****";
+	document.write(result+"<br>"); // 0101234****
+	
+	var text = "1234567890";	
+	document.write(text.slice(6, 9)+"<br>"); // 789
+	
+	var i = "This is Sunny.";
+	document.write(i.substring(2)+"<br>"); // is is Sunny.
+	document.write(i.substring(3,-3)+"<br>"); // Thi
+	document.write(i.lastIndexOf("S")+"<br>"); // 8
+	document.write(i.slice(i.lastIndexOf("S"), i.length)+"<br>"); // Sunny.
+	
+	var x = "mmc/app/index.html";	
+	document.write(x.slice(x.lastIndexOf("/")+1, x.lastIndexOf("."))+"<br>"); // index
+	
+</script>
+</body>
+</html>

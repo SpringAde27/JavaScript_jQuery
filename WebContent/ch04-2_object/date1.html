@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+
+	var t = new Date(); //device의 시간이 들어간다.
+	
+	var year = t.getFullYear();
+	var month = t.getMonth();  // -1이 된 값을 반환. 0부터 시작하기 때문에
+	var date = t.getDate();
+	var week = t.getDay(); 		// 요일 정보
+	var arWeek = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
+
+	
+	document.write("년 : "+year+"<br>");
+	document.write("월 : "+month+"<br>");		// 1월:0
+	document.write("일 : "+date+"<br>");
+	document.write("요일 : "+arWeek[week]+"<br>"+"<br>");	
+	
+	
+	var hours = t.getHours();
+	var minutes = t.getMinutes();
+	var seconds = t.getSeconds();
+	var miliseconds = t.getMilliseconds();
+	var time = t.getTime();
+	document.write("시간 : "+hours+" "+minutes+" "+seconds+"<br>");
+	
+	
+	
+	var t2 = new Date(2002, 4, 31);		// 2002년 5월 31일
+	document.write("년 : "+t2.getFullYear()+"<br>");
+	document.write("월 : "+(t2.getMonth()+1)+"<br>");		// 1월:0
+	document.write("일 : "+t2.getDate()+"<br>");
+	document.write("요일 : "+arWeek[t2.getDay()]+"<br>");
+	document.write(t2.getHours()+"시 "+t2.getMinutes()+"분"+"<br>"+"<br>");
+	
+	
+	//2017년 2월 14일	
+	var t3 = new Date(2017, 1, 14);
+	document.write("년 : "+t3.getFullYear()+"<br>");
+	document.write("월 : "+(t3.getMonth()+1)+"<br>");		// 1월:0
+	document.write("일 : "+t3.getDate()+"<br>");
+	document.write("요일 : "+arWeek[t3.getDay()]+"<br>");
+	document.write(arWeek[t3.getDay()]+"<br>");
+	
+	//7일 이후의 날짜를 구해보자.
+	t3.setDate(t3.getDate()+7);
+	document.write((t3.getMonth()+1)+"월"+t3.getDate()+"일");
+</script>
+</body>
+</html>

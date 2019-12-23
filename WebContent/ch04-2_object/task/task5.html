@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	// 사용자
+	var num = [];	
+	for(var i=0 ; i<6 ; i++){
+		var input = prompt("1~45사이의 숫자 하나를 입력하세요");
+		num[i] = Number(input);
+	}	
+	document.write("사용자가 선택한 로또 번호 : " + num +"<br>");
+	
+	
+	// 컴퓨터
+	var com = [];
+	for(var j=0 ; j<6 ; j++){
+		var computer = Math.floor(Math.random()*45)+1;
+		com[j] = Number(computer);
+		for(var k=0 ; k<j ; k++){			
+				if(com[j] == com[k]){
+					j--;
+				}
+		}
+	}	
+	document.write("컴퓨터가 선택한 로또 번호 : " + com +"<br>");
+	
+	// 등수
+	var cnt=0;
+	for(var i=0 ; i<6 ; i++){
+		for(var k=0 ; k<6 ; k++){
+			if(num[i] == com[k]){
+				cnt++;
+			}
+		}			
+	}
+	
+	switch(cnt){
+	case 3 :
+		document.write("4등 당첨");
+		break;
+	case 4 : 
+		document.write("3등 당첨");
+		break;
+	case 5 : 
+		document.write("2등 당첨");
+		break;
+	case 6 : 
+		document.write("1등 당첨");
+		break;
+	default:
+		document.write("다음 기회에...");
+		break;
+	}
+	
+</script>
+</body>
+</html>

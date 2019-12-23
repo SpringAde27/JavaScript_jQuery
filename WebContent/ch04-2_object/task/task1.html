@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	var last = new Date("2012/12/24");
+	var today = new Date();
+	
+	var day = today-last;
+	
+	var result=Math.ceil(day/(60*1000*60*24));
+	document.write("철수와 영희가 만난지 몇 일 되는 날일까요? : "+result+"<br>");
+	
+	
+	var day2 = last.setDate(last.getDate()+1000);
+	var date = (last.getFullYear())+"년"+(last.getMonth()+1)+"월"+last.getDate()+"일";
+	document.write("철수와 영희의 1000일? : "+date+"<br>");
+</script>
+</body>
+</html>

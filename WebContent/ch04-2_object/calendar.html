@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">	
+	
+	var date = new Date();			// 시스템 오늘 날짜
+	
+	var y = date.getFullYear();		// 오늘 날짜를 구한 date변수로 Year를 가져온다.
+	var m = date.getMonth();		// 오늘 날짜를 구한 date변수로 Month를 가져온다. 2월(1)
+	
+	var theDate = new Date(y, m, 1);	// 달력에 사용할 year,month,1 정보를 theDate변수에 넣는다.	
+	var theDay = theDate.getDay(); 		// (요일 정보) 2월 1일 :수요일(3)이다.
+	
+	
+	var last = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];		// 월별 마지막 날짜를 변수에 넣는다.
+	
+	// 윤년 : 4년주기이고, 100년 주기 아닐 때 또는 400년 주기	
+	if((y%4 == 0 && y%100 != 0) || (y%400 ==0)){
+		last[1] = 29;
+	}
+	
+	var lastDate =  last[m];	// 해당하는 월 가져오기, 현재 월을 구한 m으로 배열에서 월을 찾는다. 2월(1)
+	
+	var row = Math.ceil((theDay+lastDate)/7);  		// 행의 개수 (공백을 더해줘야한다) 4주인데, 5주로 만들어야한다. : (3+28)/7
+	
+	document.write("<h1>"+y+"년 "+(m+1)+"월</h1>");	// 달력 제목 
+	
+	
+	var table = "<table border='1'>";		
+	table += "<tr>";					// 첫번째 행 (1주)
+		table += "<th>일</th>";
+		table += "<th>월</th>";
+		table += "<th>화</th>";
+		table += "<th>수</th>";
+		table += "<th>목</th>";
+		table += "<th>금</th>";
+		table += "<th>토</th>";			
+	table += "</tr>";	
+	
+	var num = 1;						// 요일 시작 변수	
+	for (var i=1 ; i <=row; i++){		// 두번째부터 마지막까지 행, row = Math.ceil((theDay+lastDate)/7); (2~5주)
+		table +="<tr>";
+			for(var k=1 ; k<=7; k++){	// col
+				if(i==1 && k<=theDay || num>lastDate){			// theDay:3(수), lastDate:28
+					table += "<td> </td>";						// 공백 삽입
+				}else{
+					table += "<td>"+num+"</td>";
+					num++;	
+				}								
+			}
+		table +="</tr>";
+	}
+	table += "</table>";
+	
+	document.write(table);	
+	
+</script>
+</body>
+</html>

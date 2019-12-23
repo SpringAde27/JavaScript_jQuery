@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	var t = "Hello Thank you good luck to you";
+	
+	document.write(t.charAt(7)+"<br>"); // h
+	document.write(t.indexOf("you")+"<br>"); // 12
+	document.write(t.lastIndexOf("you")+"<br>"); // 29
+	document.write(t.substring(6, 11)+"<br>"); // Thank
+	document.write(t.replace("you", "me")+"<br>"); // Hello Thank me good luck to you
+	document.write(t.toUpperCase()+"<br>");
+	document.write(t.toLowerCase()+"<br>");
+	document.write(t.length+"<br>"); // 32
+	
+	var s = t.split(" "); // [Hello,Thank,you,good,luck,to,you]
+	document.write(s+"<br>");	
+	
+</script>
+</body>
+</html>

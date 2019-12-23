@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	var today = new Date();
+	var last = new Date(today.getFullYear(),11,31);
+	
+	var diff = last.getTime() - today.getTime();  // milliseconds
+	var day = Math.ceil(diff / (1000*60*60*24)); //	Math.ceil : 정수로 바꿔줌
+	
+	document.write("현재일로 부터 올해 말까지 "+day+"일 남았습니다."+"<br>");	
+	
+	var arWeek = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
+	
+	// 1년 전 오늘은 언제 일까요?
+	var todaya = new Date();
+	todaya.setFullYear(todaya.getFullYear()-1);	
+	
+	document.write("1년 전 오늘은 언제 일까요? ", todaya.getFullYear()+" "+ (todaya.getMonth()+1)+" "+todaya.getDate()+""+arWeek[todaya.getDay()]+"<br>");
+	
+	
+	// 100일 후는 언제 일까요?
+	var today = new Date();
+	/* today.setDate(today.getDate()+100);
+	document.write("100일 후는 언제 일까요? ",today.getFullYear()+"년"+(today.getMonth()+1)+"월"+today.getDate()+"일"+"<br>"); */
+	
+	
+	// **일 후는 언제 일까요?
+	var date = Number(prompt("**일 후는 언제 일까요?"));
+	today.setDate(today.getDate()+date);
+	document.write(date+"일 후 : "+today.getFullYear()+"년"+(today.getMonth()+1)+"월"+today.getDate()+"일");
+
+</script>
+</body>
+</html>

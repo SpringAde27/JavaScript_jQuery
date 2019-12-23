@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	td{
+		text-align: center;
+		font-weight: bold;
+	}
+
+	td:FIRST-CHILD {
+		color:red;
+						
+	}
+	
+	td:LAST-CHILD {
+		color:blue;
+	}
+	
+</style>
+</head>
+<body>
+<script type="text/javascript">
+	var year = prompt("년도를 입력하세요");
+	var month = prompt("월을 입력하세요");
+	
+	var theDate = new Date(year, (month-1), 1);
+	
+	var theDay = theDate.getDay();  // 요일정보 (2016.5.1 일=0)
+	
+	
+	var last = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+	var lastDate = last[theDate.getMonth()];
+	var row = Math.ceil((theDay+lastDate)/7);
+	
+	
+	document.write("<h1>"+year+"년 "+month+"월</h1>");	// 달력 제목 
+	
+	
+	var table = "<table border='1'>";
+	table+="<tr>";
+		table += "<th>일</th>";
+		table += "<th>월</th>";
+		table += "<th>화</th>";
+		table += "<th>수</th>";
+		table += "<th>목</th>";
+		table += "<th>금</th>";
+		table += "<th>토</th>";	
+	table+="</tr>";
+	
+	
+	var num = 1;
+	for (var i=1 ; i<=row ; i++){
+		table +="<tr>";
+			for(var k=1 ; k<=7; k++){
+				if(i==1 && k<=theDay || num>lastDate){
+					table += "<td> </td>"
+				}else{
+					table += "<td>"+num+"</td>";
+					num++;
+				}
+			}
+			table += "<tr>";
+	}
+	
+	table+="</table>";
+	
+	document.write(table);	
+// 	document.write(theDate);
+// 	document.write(row);
+
+	
+</script>
+</body>
+</html>

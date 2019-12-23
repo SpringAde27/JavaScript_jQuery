@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	var num=0;	
+	var sum=0;
+	var input = prompt("더해질 숫자를 입력하세요");		// num = 12345
+	var flag = /^[0-9]*$/;		
+	
+	var result = flag.test(input);
+	
+	if(result==true){
+		for(var i=0 ; i<input.length ; i++){
+			num = Number(input.charAt(i));
+			sum = sum + num;
+		}	
+		document.write(input+"의 합은? "+sum+"<br>");
+	}else{
+		document.write("숫자만 입력하세요"+"<br>");
+	}		
+</script>
+</body>
+</html>

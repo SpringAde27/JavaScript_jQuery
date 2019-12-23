@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	document.write("<h1>컴퓨터 가위, 바위, 보 맞추기</h1>");
+	
+	var t = prompt("가위, 바위, 보 중 선택하세요.", "가위");
+	
+	var useNum;
+	switch(t){
+	case "가위" :
+		useNum = 1;
+		break;
+	case "바위" :
+		useNum = 2;
+		break;
+	case "보":
+		useNum = 3;
+		break;
+	default:
+		alert("잘못 작성하셨습니다.");
+		location.reload(); 		//브라우저를 처음부터 새로 시작하게 한다.
+		break;
+	}
+	
+	// 컴퓨터가 1~3사이의 난수를 구한다.
+	var computer =  Math.floor(Math.random()*3)+1;
+		
+	if(useNum == computer){
+		document.write("비겼습니다."+"<br>");
+	}else if(useNum==1 && computer==3 || useNum==2 && computer==1 || useNum==3 && computer==2){
+		document.write("이겼습니다."+"<br>");
+	}else{
+		document.write("졌습니다."+"<br>");
+	}	
+		
+		
+	// 숫자에 해당하는 가위, 바위, 보 이미지가 나타남. 
+	document.write("사용자 : "+"<br>"+"<img src='image/math_img_"+useNum+".jpg'>"+"<br>");
+	document.write("컴퓨터 : "+"<br>"+"<img src='image/math_img_"+computer+".jpg'>"+"<br>");
+</script>
+</body>
+</html>
+
+
+<!-- <script type="text/javascript">
+		document.write("<h1>컴퓨터 가위, 바위, 보 맞추기</h1>");
+		var t = prompt("가위, 바위, 보 중 선택하세요", "가위");
+		var computer = (Math.floor(Math.random() * 3)) + 1;
+		var ct = "";
+		var useNum; // 사용자가 선택한 값.
+		var tab;
+
+		switch (t) {
+		case "가위":
+			useNum = 1;
+			break;
+		case "바위":
+			useNum = 2;
+			break;
+		case "보":
+			useNum = 3;
+			break;
+		default:
+			alert("잘못 작성하셨습니다.");
+			location.reload(); // 브라우저를 처음부터 새로 시작하게 한다.
+			break;
+		}
+
+		switch (computer) {
+		case 1:
+			ct = "가위";
+			break;
+		case 2:
+			ct = "바위";
+			break;
+		case 3:
+			ct = "보";
+			break;
+		}
+
+		/* if (useNum == computer){
+			document.write("<h3>맞췄습니다!! 축하합니다!!!</h3>");
+		}else {
+			document.write("<h3>틀렷네요. 다음기회에  또 도전하세요!</h3>");
+		}
+		 */
+
+		tab = "<table>
+				<tr align='center'>
+					<td><img src='image/math_img_"+computer	+".jpg'></td>
+					<td><img src='image/math_img_"+useNum+".jpg'></td>
+					</tr>
+				<tr align='center'>
+					<td>컴퓨터 : "+ ct + "</td>
+					<td>사용자 : " + t + "</td>
+					</tr>
+				</table>";
+
+		document.write(tab);
+		
+		if (useNum > computer) {
+			if (Math.abs(useNum - computer) == 1) {
+				document.write("<h3>컴퓨터에게 이겼습니다!</h3>");
+			} else {
+				document.write("<h3>컴퓨터에게 졌습니다.</h3>");
+			}
+		} else if (useNum == computer) {
+			document.write("<h3>컴퓨터와 비겼습니다</h3>");
+		} else if (useNum < computer) {
+			if (Math.abs(useNum - computer) == 1) {
+				document.write("<h3>컴퓨터에게 졌습니다.</h3>");
+			} else {
+				document.write("<h3>컴퓨터에게 이겼습니다!</h3>");
+			}
+		}
+	</script> -->

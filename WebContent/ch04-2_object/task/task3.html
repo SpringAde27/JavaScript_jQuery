@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	var sum = 0;
+	var array = [];
+	for(var i=0 ; i<5; i++){
+		var input = prompt("점수를 입력하세요");
+		array[i] = Number(input);
+		sum = sum+array[i];
+	}
+	
+	var avg = sum/5;	
+	document.write("총합 : "+sum+"<br>");
+	document.write("평균 : "+avg+"<br>");
+	document.write("최고점수 : "+Math.max.apply(null,array)+"<br>");
+	document.write("최저점수 : "+Math.min.apply(null,array));
+	
+</script>
+</body>
+</html>

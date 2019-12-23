@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	function Student(n, k, m, e){
+		var name = n;  
+		var kor = k;
+		var math = m;
+		var eng = e;
+		var sum = 0;
+		var avg = 0;
+		
+		this.getName = function(){
+			return name;
+		}
+		this.getSum = function(){
+			return kor + math + eng;			
+		}
+		this.getAvg = function(){			
+			return this.getSum()/3;
+		}
+		this.toString = function(){
+			return this.getName() +" "+ this.getSum()+" "+ this.getAvg(); 
+		}
+	}
+	
+	var array =[];
+	
+	array.push(new Student("이교민",97,87,68));
+	array.push(new Student("허강민",87,87,68));
+	array.push(new Student("김성환",77,66,93));
+	array.push(new Student("이원준",95,96,56));
+	array.push(new Student("이승우",88,88,92));
+	array.push(new Student("김두환",88,76,94));
+	array.push(new Student("조시은",66,88,90));
+	array.push(new Student("설동훈",83,79,61));
+	array.push(new Student("황인영",93,99,91));
+	array.push(new Student("신진욱",83,88,61));
+	array.push(new Student("이준욱",83,79,87));
+	array.push(new Student("김동욱",80,79,61));
+	
+	// 내림차순 정렬	
+	array.sort(function(left, right){
+		if(left.getSum() > right.getSum()) return -1;
+		if(left.getSum() > right.getSum()) return 1;
+		return 0;		
+	});	
+	
+	
+	// 배열 출력 : Student toString()이 화면에 나타나면 됨.
+	for (i in array){						
+		document.write(array[i]+"<br>");
+	}
+
+</script>
+</body>
+</html>

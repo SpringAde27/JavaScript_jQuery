@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	var str = "Html Css Jquery";
+	var reg1 = /css/;
+	
+	var result = reg1.test(str);
+	document.write(result+"<br>");
+	
+	var reg2 = /css/i;	
+	var result2 = reg2.test(str);
+	document.write(result2+"<br>");
+	
+	var str2 = "test S123 s-45 s-8m s-12345TM";
+	var reg3 =  /[sS]-[0-9]*tm/i;
+	
+	var result3 = reg3.exec(str2);
+	document.write(result3+"<br>");	
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	// 비밀번호 자리 : 10~20, 영어와 숫자만 입력, 영어와 숫자가 반드시 한 글자 이상
+	
+	var pass = prompt("비밀번호를 입력하세요");
+	
+	var flag1 = /^[0-9a-zA-Z]{10,20}$/;
+	var flag2 = /[0-9a-zA-Z]+/;
+		
+	
+	if(flag1.test(pass)==true && flag2.test(pass)==true){
+		document.write("사용가능한 비밀번호입니다.");		
+	}else{
+		document.write("비밀번호 형식이 잘못 되었습니다.");
+	}	
+</script>
+</body>
+</html>

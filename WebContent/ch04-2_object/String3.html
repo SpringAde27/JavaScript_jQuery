@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+
+	var useEmail = prompt("당신의 이메일 주소는?","");
+	
+	var check1 = false;  // @여부
+	var check2 = false;	// @뒤의 형식
+	
+	// @여부
+	if (useEmail.indexOf("@") > 0)
+		check1 = true;
+	
+	
+	// @뒤에 형식일치 하는가?
+	var arrUrl = [".co.kr", ".com", ".net", ".or.kr", ".go.kr"];	
+	for (var i=0 ; i<arrUrl.length; i++){
+		if (useEmail.indexOf(arrUrl[i]) > 0){
+			check2 = true;
+			break;
+		}
+	}
+	
+	if (check1==true && check2==true){
+		document.write(useEmail+"는 사용 가능한 이메일 입니다.");
+	}else{
+		document.write("사용할 수 없습니다.");
+	}
+	
+</script>
+</body>
+</html>

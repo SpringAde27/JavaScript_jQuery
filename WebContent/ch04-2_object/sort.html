@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	var array = [52, 273, 103, 99];
+	
+	array.sort(function (left, right){ // 익명함수
+		// return left-right; // 오름차순
+		return right - left;  // 내림차순
+		
+	});
+	document.write("내림차순 정렬 만들기 : "+array+"<br>");
+	
+	
+	var array2 = [ "가나바", "하늘", "바다", "abc" ];
+	
+	// array2.sort(); // 오름차순 = abc,가나바,바다,하늘
+	
+	// 내림차순 정렬
+	array2.sort(function(left, right) { // string은 비교 연산자를 사용한다.
+		if(left > right) return -1;
+		if(left < right) return 1;
+		return 0;
+	});
+	
+	document.write(array2);
+</script>
+</body>
+</html>

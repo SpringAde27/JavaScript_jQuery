@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	table, td{
+		border : 1px solid red;
+		width : 600px;
+		height : 300px;		
+		text-align: center;
+		border-collapse: collapse;		
+	}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+	var row = 2;
+	var col = 3;	
+	var x = 0;
+	var title=["어서와 JAVA는 처음이지!" ,"Do It HTML5+CSS3웹 표준의 정석", "Do it! 자바스크립트+제이쿼리 입문",
+			   "안드로이드 프로그래밍 정복", "그림으로 쉽게 설명하는 안드로이드 프로그래밍", "Do it! 안드로이드 앱 프로그래밍"];	
+	
+	var book=["java.png", "html.png","js.png","book1.jpg","book2.jpg","book3.jpg"];
+		
+	
+	var t = "<table border=1>";	
+		for(var i=0; i<row ; i++){ //tr 2번
+			t+="<tr>";		
+						
+			for(var k=0; k<col ; k++){ //td 3번			
+				t+="<td>";
+				t+="<img src='../image/"+book[x]+"'>";
+				t+="<br/>"+title[x];
+				x++;
+				t+="</td>";
+			}
+			t+="</tr>";
+		}	
+	t+="</table>";
+	
+	document.write(t);
+</script>
+</body>
+</html>
