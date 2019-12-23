@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var imgPath = [
+			["image/h.jpg", "image/h2.jpg"],
+			["image/t.jpg", "image/t2.jpg"],
+			["image/m.jpg", "image/m2.jpg"],
+			["image/l.jpg", "image/l2.jpg"],
+			["image/5.jpg", "image/5-2.jpg"]
+		  ];
+		
+		$("img").click(function() {
+			var index = $("img").index(this);
+			
+			if($(this).attr("src") == imgPath[index][0]){
+				$(this).attr("src", imgPath[index][1]);
+			}else{
+				$(this).attr("src", imgPath[index][0]);
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<p>this, index사용하여 이미지 변경하기</p>
+	<img src="image/h.jpg">
+	<img src="image/t.jpg">
+	<img src="image/m.jpg">
+	<img src="image/l.jpg">
+	<img src="image/5.jpg">
+</body>
+</html>

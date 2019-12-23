@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div{
+		margin: 20px;
+	}
+	
+	#wrap{
+		background-color: #ccc;
+		padding: 50px;
+	}
+	#wrap2{
+		background-color: yellow;
+		padding: 50px;
+	}
+	p{
+		background-color: #999;
+		padding: 50px;
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#wrap").mouseout(function() {
+			$("#wrap p").css("border","5px solid red");
+		});
+		$("#wrap2").mouseleave(function() {
+			$("#wrap2 p").css("border","5px solid red");
+		})	
+	});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<p>Mouse</p>
+	</div>
+	
+	
+	<div id="wrap2">
+		<p>Mouse</p>
+	</div>	
+</body>
+</html>

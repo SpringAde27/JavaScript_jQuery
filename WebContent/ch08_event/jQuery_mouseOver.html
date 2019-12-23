@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#btn1").mouseover(function() {
+			$("p").css("background-color", "skyblue");	
+		});
+		
+		$("#btn1").mouseout(function() {
+			$("p").css("background-color", "pink");	
+		});	
+		
+		$("#btn2").hover(function() {
+			$("p").css("background-color", "red");	
+		}, function(){
+			$("p").css("background-color", "blue");	
+		});	
+	});
+</script>
+</head>
+<body>
+	<button id="btn1">mouse over / mouse out</button>
+	<button id="btn2">hover</button>
+	<p>마우스</p>
+</body>
+</html>

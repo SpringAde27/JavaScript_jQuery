@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("button").mouseover(function() {
+			$(this).css("border", "5px solid red");
+			$(this).text("마우스오버");
+		});
+		
+		$("ul a").mouseover(function() {
+		/* 	var text = $(this).text();
+			$("#txt").text(text);  */
+			
+			$("ul li a").css("background", "none");				// 싹 빼고
+			$(this).css("background-color", "pink");			// 선택자만 색상 배경
+			
+			var index = $("ul li a").index(this));
+			$("#txt").text("인덱스번호 : "+index);
+		});
+	});
+</script>
+</head>
+<body>
+	<button>This</button>
+	
+	<ul>
+		<li><a href="#">내용1</a></li>
+		<li><a href="#">내용2</a></li>
+		<li><a href="#">내용3</a></li>
+		<li><a href="#">내용4</a></li>
+	</ul>
+	
+	<p id="txt"></p>
+</body>
+</html>

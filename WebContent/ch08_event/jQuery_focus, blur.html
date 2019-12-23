@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("input[name='user_name']").focus(function(){
+			$("input[name='user_name']").val(""); // 포커스 발생 시 값이 사라지게 된다.
+		});
+		
+		$("input[name='user_name']").blur(function(){
+			$("input[name='user_name']").val("이름 입력"); // 포커스가 사라지면 기본값이 표시된다.			
+		});
+		
+		$("input[name]").focus(function(){
+			$(this).css("background-color", "pink");
+		});
+		
+		$("input[name]").blur(function(){
+			$(this).css("background-color", "white");
+		});
+		
+		$("input[name='user_name']").focus(); // 처음부터 포커스를 가지고 시작.
+		
+		$("input[name='user_id']").focus(function(){
+			$("input[name='user_id']").val(""); // 포커스시 발생 시 값이 사라지게 된다.			
+		});
+		
+		$("input[name='user_id']").blur(function(){
+			$("input[name='user_id']").val("아이디 입력"); // 포커스가 사라지면 기본값이 표시된다.			
+		});		
+	});	
+</script>
+</head>
+<body>
+	<p>
+		<input type="text" name="user_name" value="이름 입력">
+	</p>
+	<p>
+		<input type="text" name="user_id" value="아이디 입력">
+	</p>
+</body>
+</html>

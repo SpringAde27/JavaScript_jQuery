@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	img{
+		position: fixed;		
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(document).mousemove(function(e) {
+			var x = e.pageX;
+			var y = e.pageY;
+			$("p").text("x : "+x+", y : "+y);
+			
+			$("img").css("left",x+"px").css("top",y+"px");		// 마우스따라 그림움직이기
+		});
+	});
+</script>
+</head>
+<body>
+	<p></p>
+	<img src="image/icon_72_1.png">
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {	
+		var arrImg=["bee.jpg","h.jpg","icon_72_1.png","m.jpg","m2.jpg"];
+		
+		$("button").click(function() {
+			var index = Math.floor(Math.random()*arrImg.length);
+			var imgTag = $("<img>");
+			imgTag.attr("src", "image/"+arrImg[index]);
+			imgTag.css("width", "100");
+			imgTag.css("padding", "10");
+			$("div").append(imgTag);
+		});
+
+		$(document).on("click", "div img", function() {
+			$(this).remove("img");
+		});
+	});
+</script>
+</head>
+<body>
+	<button>이미지 추가</button>
+	<hr>
+	<div></div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+	/* 	$("h1 a").on("mouseover focus", function(){
+			$(this).css("color","red");
+		});
+	*/
+		$(document).on("mouseover focus", "h1 a", function(){ // 동적추가된 요소에도 이벤트가 적용됨.
+			$(this).css("color", "red");
+		});	
+	
+	/* 	$("h1 a").on("mouseout blur", function(){
+			$(this).css("color","orange");
+		});
+	*/;
+		
+		$(document).on("mouseout blur", "h1 a", function(){
+			$(this).css("color", "orange");
+		});
+		
+		$("button").eq(0).click(function() {
+			var aTag = $("<a>")
+			aTag.attr("href", "#");
+			aTag.html("네이버");
+			$("#test").append(aTag);	// 동적추가
+		})
+		
+		$("button").eq(1).click(function() {
+			var spanTag=$("<span>");
+			$("h2").append(spanTag);
+			$(spanTag).html("곧 쉬는 시간");
+		});
+		
+		$(document).on("mouseover", "h2 span", function(){
+			$(this).css("color","purple");			
+		});
+	});
+</script>
+</head>
+<body>
+	<h1><a href="#">버튼</a></h1>
+	<h1 id="test"></h1>
+	<button>a Tag 동적추가</button>
+	<button>h2안에 span Tag 동적추가</button>
+	<h2></h2>
+</body>
+</html>

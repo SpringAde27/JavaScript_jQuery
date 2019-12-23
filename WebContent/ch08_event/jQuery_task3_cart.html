@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	table {
+		border: 1px solid gray;	
+		border-collapse: collapse;
+		width: 900px;
+		text-align: center;		
+	}
+	tr:FIRST-CHILD{
+		height: 50px;
+		color: purple;
+		font-weight: bold;
+	}	
+	td {
+		border: 1px solid gray;		
+	}	
+	td:NTH-CHILD(4) {
+		width: 60px;		
+	}
+	td:NTH-CHILD(4) button{
+		margin: 10px 0;
+	}
+	td:NTH-CHILD(6) {
+		width: 150px;		
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	var total = 0;	
+	
+	$(function() {		
+		$(".add").click(function() {			
+			var idx = $(".add").index(this);		// 0, 1, 2
+			var price = $(".price").eq(idx).text();
+			var cnt = $(".cnt").eq(idx).text();		// 0, 1, 2		
+			
+			if(cnt<10){
+				cnt++;
+				$(this).parent().next().text(cnt);
+				total+= Number(price);			
+				$("#total").text(total+"원");				
+			}else{
+				alert("책의 총 주문 개수가 10개를 넘을 수 없습니다.");				
+			}
+		});	
+		
+		$(".del").click(function() {			
+			var idx = $(".del").index(this);		// 0, 1, 2		
+			var price = $(".price").eq(idx).text();
+			var cnt = $(".cnt").eq(idx).text();		// 0, 1, 2		
+			
+			if(cnt>0){
+				cnt--;
+				$(this).parent().next().text(cnt);
+				total-= Number(price);			
+				$("#total").text(total+"원");				
+			}
+		});	
+	});
+</script>
+</head>
+<body>
+	<h1>장바구니</h1>
+	<table>
+		<tr>
+			<td colspan="2">상품</td>
+			<td>가격</td>
+			<td>선택</td>
+			<td>개수</td>
+			<td>총 가격</td>
+		</tr>
+		
+		<tr>
+			<td><img src="./image/book1.jpg"></td>
+			<td>뭐 먹고 살지? 제주 라이프 길라잡이</td>
+			<td><span class="price">14400</span>원</td>
+			<td>
+				<button class="add">추가</button>
+				<button class="del">삭제</button>
+			</td>
+			<td class="cnt">0</td>
+			<td rowspan="3" id="total">0원</td>
+		</tr>
+		
+		<tr>
+			<td><img src="./image/book2.jpg"></td>
+			<td>내 남편의 아내가 되어줄래요</td>
+			<td><span class="price">13500</span>원</td>
+			<td>
+				<button class="add">추가</button>
+				<button class="del">삭제</button>
+			</td>
+			<td class="cnt">0</td>
+		</tr>		
+		<tr>
+			<td><img src="./image/book3.jpg"></td>
+			<td>부부가 끝까지 행복하게 사는 방법</td>
+			<td><span class="price">14400</span>원</td>
+			<td>
+				<button class="add">추가</button>
+				<button class="del">삭제</button>
+			</td>
+			<td class="cnt">0</td>
+		</tr>
+	</table>	
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	table {
+		border: 1px solid gray;	
+		border-collapse: collapse;
+		width: 400px;
+		height: 150px;
+		text-align: center;		
+	}
+	
+	td {
+		border: 1px solid gray;		
+	}
+	
+	span{
+		color: red;
+		font-weight: bold;
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	var total=0;	
+	var index=[15000, 25000, 30000];
+	
+	$(function() {		
+		$("input[type='button']").each(function(i, e) {
+			var cnt=0;
+			$(e).on("click", function() {				
+				total += index[i];				
+				cnt++;
+				$("#total").text(total+"원");
+				$(this).parent().next().text(cnt);
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<h3>주문목록</h3>
+	<table>
+		<tr>
+			<td>상품</td>
+			<td>수량</td>
+		</tr>
+		<tr>
+			<td>삼시세끼(15,000원) <input type="button" value="추가"></td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>냉장고를 부탁해(25,000원) <input type="button" value="추가"></td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>무한도전(30,000원) <input type="button" value="추가"></td>
+			<td>0</td>
+		</tr>			
+	</table>
+	
+	<h3>총 금액 : <span id="total"></span></h3>
+</body>
+</html>

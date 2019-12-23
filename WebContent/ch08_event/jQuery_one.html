@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title><script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var num=0;
+		$("button").one("click", function(){			// one() : 이벤트가 딱 한번 만 실행.
+			num++;
+			$("p").text(num);
+			});
+		});
+</script>
+</head>
+<body>
+	<button>추가</button>
+	<p>0</p>
+</body>
+</html>

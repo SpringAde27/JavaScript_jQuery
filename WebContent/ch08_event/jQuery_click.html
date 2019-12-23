@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#btn1").click(function() {
+			$("p").css("background-color", "skyblue");
+		});
+		
+		$("#btn2").dblclick(function() {
+			$("p").css("background-color", "pink");
+		});
+		
+		//$("#btn2").dblclick();		/* 강제 이벤트 발생 */
+	});
+</script>
+</head>
+<body>
+	<button id="btn1">click</button>
+	<button id="btn2">double click</button>
+	<p>마우스 이벤트</p>
+</body>
+</html>

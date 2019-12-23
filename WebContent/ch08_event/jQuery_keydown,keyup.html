@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#user_id").keydown(function(e) {
+			$("#user_id").css("background-color", "orange");
+			$("#txt1").text(e.keyCode);
+		});
+		
+		$("#user_id").keyup(function() {
+			$("#user_id").css("background-color", "pink");
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="text" id="user_id"/>
+	<p id="txt1"></p>
+	<p id="txt2"></p>
+</body>
+</html>

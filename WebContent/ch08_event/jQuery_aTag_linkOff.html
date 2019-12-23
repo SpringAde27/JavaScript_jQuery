@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#btn1").click(function() {
+			$("p").css("background-color", "skyblue");			
+		});
+		
+		$("#btn2").click(function() {
+			$("p").css("background-color", "orange");
+			return false;		// a태그 링크 방지
+		});
+		
+		$("#btn3").click(function(e) {
+			e.preventDefault();	 // 함수 초반에 먼저 호출한다. a태그 링크 방지
+			$("p").css("background-color", "pink");			
+		});
+	});
+</script>
+</head>
+<body>
+	<a href="http://www.naver.com" id="btn1">버튼1</a>
+	<a href="http://www.naver.com" id="btn2">버튼2</a>
+	<a href="http://www.naver.com" id="btn3">버튼3</a>
+	<p>a태그 링크 방지</p>
+</body>
+</html>

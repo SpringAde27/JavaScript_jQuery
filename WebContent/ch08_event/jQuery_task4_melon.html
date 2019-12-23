@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	h1{
+		text-align: center;
+		color: #22741C;
+	}
+	#text{
+		border-top: 5px solid green;
+		margin-top: 10px;
+	}
+	#text p:NTH-CHILD(2n-1) {
+		background-color: #BCE9B7;
+		padding:0;
+		margin: 0;		
+		padding-bottom: 5px;
+	}
+	#text p:NTH-CHILD(2n) {
+		padding:0;
+		margin: 0;
+		padding-bottom: 5px;
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	var song =	[
+					"RE-BYE - 악동뮤지션",
+					"CHEER UP -트와이스", 
+					"사람들이 움직이는 게 - 악동뮤지션",
+					"내 입술 따뜻한 커피처럼(Feat. 이성경) - 에디킴",
+					"하늘바라기(Feat.하림) - 정은지",
+					"새삼스럽게 왜 - 악동뮤지션",
+					"봄이 좋냐? - 10cm",
+					"Dream Girls - 아이오아이(I.O.I)",
+					"Toy - 블락비",
+					"초록창가 - 악동뮤지션"
+					];
+
+	$(function() {		
+		$(document).on("click", "#down", function() {
+			for(var i=0; i<song.length; i++){				
+					var pTag = $("<p>");
+					pTag.html("<input type='checkbox' class='song'> "+song[i]);
+					$("#text").append(pTag)
+				}
+			$(".song:odd").css("background-color", "#AAD7A5");
+		});	
+		
+		$(document).on("click", "#chkAll", function() {
+			if($("input[type='checkbox']").prop("checked")==false){			
+					$("input[type='checkbox']").prop("checked", true);
+					$("#chkAll").text("전체 해제");
+			}else{
+				$("input[type='checkbox']").prop("checked", false);
+				$("#chkAll").text("전체 선택");
+			}
+		});
+		
+		$(document).on("click", "#del", function(){
+			$("input[type='checkbox']").each(function(i, e) {
+				if($(e).prop("checked")){
+					$(e).parent().remove();
+				}
+			});
+		});
+		
+		$(document).on("click", "#delAll", function(){
+			$("#text p").remove();
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>멜론 TOP 10</h1>
+	
+	<button id="chkAll">전체 선택</button>
+	<button id="sound">듣기</button>
+	<button id="down">10곡 다운로드</button>
+	<button id="del">선택 삭제</button>
+	<button id="delAll">전체 삭제</button>
+	
+	<div id="text"></div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#btn1").click(function() {
+			/* var pTag = $("<p>"); // <p></p>	 // 태그를 객체로 만들어 추가
+			pTag.text("안녕"); //<p>안녕</p>
+			$("div").append(pTag); */
+			
+			$("div").append("<p>안녕</p>");
+		});
+		
+		$("#btn2").click(function() {
+			//$("div").append("<img src='image/bee.jpg'><br>");
+			var imgTag=$("<img>"); //<img>
+			imgTag.attr("src", "image/bee.jpg");	//<img src='image/bee.jpg'>
+			$("div").append(imgTag);					
+		});
+		
+		$("#btn3").click(function() {
+			var aTag=$("<a>");
+			aTag.attr("href","http://www.naver.com");
+			aTag.html("네이버");
+			$("div").append(aTag);	
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="btn1">p태그 추가</button>
+	<button id="btn2">이미지 추가</button>
+	<button id="btn3">a태그 추가</button>
+	<hr>
+	<div></div>
+</body>
+</html>

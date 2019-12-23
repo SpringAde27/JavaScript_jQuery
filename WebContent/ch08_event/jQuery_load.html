@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#wrap").append("<p>Ready완료</p>");
+		
+		$("#daum").load(function(){
+			$("#wrap").append("<p>Load완료</p>");
+		});
+		
+		$("#youtube").load(function() {		// 이미지 또는 동영상이 로딩완료 후, 이벤트 발생
+			$("#wrap").append("<p>Load완료</p>")
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="wrap"></div>
+	<iframe id="daum" src="http://www.daum.net" frameborder="0" width="300" height="200"></iframe>
+	<iframe id="youtube" width="560" height="315" src="https://www.youtube.com/embed/6xOzYCg06Iw" frameborder="0" allowfullscreen></iframe>	
+</body>
+</html>
