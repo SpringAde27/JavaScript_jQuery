@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.p3{
+		border-bottom: 1px solid gray;
+		padding-bottom: 20px;
+	}
+</style>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("button").click(function() {
+			$.ajax({
+				url : "json3_data.json",
+				type : "get",
+				dataType : "json",
+				success : function(res){
+					console.log(res);
+					
+					$(res.school.subject).each(function(i, obj) {
+						var p1 = $("<p>").html(obj.title);
+						var p2 = $("<p>").html(obj.time);
+						var p3 = $("<p>").attr("class","p3").html(obj.teacher);
+						$("div").append(p1).append(p2).append(p3);
+					});
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<button>json 파싱</button>
+	<div></div>
+</body>
+</html>

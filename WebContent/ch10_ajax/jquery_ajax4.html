@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#line{
+		border-bottom: 1px solid black;
+	}
+</style>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#myBtn").click(function() {
+			$.ajax({
+				url : "jquery_ajax4_data.xml",
+				type : "get",
+				dataType : "xml",
+				success : function(res){
+					console.log(res);
+					
+					$(res).find("subject").each(function(i, o) {
+						var title = $(o).find("title").text();
+						var time =$(o).find("time").text();
+						var teacher =$(o).find("teacher").text();
+						var pTag1 = $("<p>").text(title);
+						var pTag2 = $("<p>").text(teacher);
+						var pTag3 = $("<p id='line'>").text(time);
+						$("#result").append(pTag1).append(pTag2).append(pTag3);
+					}) 
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>$.ajax()함수를 이용한 XML데이터 읽기(2)</h1>
+	<button id="myBtn">xml 데이터 가져오기</button>
+	<hr>
+	<div id="result"></div>
+</body>
+</html>

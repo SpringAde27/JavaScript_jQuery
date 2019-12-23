@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#checkid").click(function() {
+			var value = $("input[name='user_id']").val();	
+		
+			if($("input[name='user_id']").val() == ""){
+				alert("아이디를 입력하세요");
+				$("input[name='user_id']").focus();
+				return false;
+			}
+			
+			$.ajax({
+				url : "jquery_ajax5_data.jsp",
+				data : {"user_id":value},		// jquery_ajax5_data.jsp에 데이터를 보낸다. 
+				success : function(res){
+					console.log(res);
+					
+					var result_text = $(res).find("result").text();	//반환값이 string타입이다.
+					var flag = eval(result_text);	//eval():문자열 실행 함수, boolean타입으로 변경한다.
+										
+					if(flag){
+						$("#result").html("아이디를 사용할 수 있습니다.");
+					}else{						
+						$("#result").html("아이디를 사용할 수 없습니다.");
+						$("input[name='user_id']").focus();
+					}
+				}
+			})
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>아이디 중복 검사</h1>
+	<form>
+		<input type="text" name="user_id">
+		<input type="button" id="checkid" value="중복검사">
+	</form>
+	<div id="result"></div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("button").click(function() {
+			$.ajax({
+				url : "json2_data.json",
+				type : "get",
+				dataType : "json",
+				success : function(res){
+					console.log(res);			
+					
+					// 1. for문
+ 					for(var i=0; i<res.rank.length; i++){
+						var liTag = $("<li>").html(res.rank[i].k);
+						$("#wrap").append(liTag);
+					}
+					
+ 					// 2. for .. in..
+					for(var i in res.rank) {
+						var liTag = $("<li>").html(res.rank[i].k);
+						$("#wrap").append(liTag);
+					}
+					 
+					// 3. $.each
+					$(res.rank).each(function(i, obj) {
+						var liTag = $("<li>").html(obj.k);		//obj : rank값이 각 1개씩 담겨서 옴
+						$("#wrap").append(liTag);
+					});
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>인기검색어</h1>
+	<button>가져오기</button><br>
+	<ol id="wrap">
+
+	</ol>
+</body>
+</html>

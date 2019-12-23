@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$.ajax({
+			url:"jquery_ajax3_data.xml",
+			type: "get",
+			dataType:"xml",
+			success:function(res){
+				console.log(res);
+				
+			/* 	for(var i=0; i < $(res).find("rank").size(); i++){
+					var text = $(res).find("rank").eq(i).find("k").text();
+				}
+			*/
+				
+				$(res).find("rank").each(function(i, o) {
+					var text = $(o).find("k").text();
+					var liTag = $("<li>").text(text);
+					$("#wrap ol").append(liTag);
+				})
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>인기 검색어</h1>
+	<div id="wrap">
+		<ol></ol>
+	</div>
+</body>
+</html>

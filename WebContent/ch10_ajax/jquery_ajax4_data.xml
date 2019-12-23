@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<school>
+	<subject>
+		<title>JavaScript+jQuery</title>
+		<time>매일 오후 1시 40분 ~ 4시 30분</time>
+		<teacher>정영화</teacher>		
+	</subject>
+	<subject>
+		<title>HTML5+CSS3기반의 반응형 웹</title>
+		<time>매주 화/목 오전 9시 ~ 12시</time>
+		<teacher>주영아</teacher>		
+	</subject>
+	<subject>
+		<title>Java 입문에서 활용까지</title>
+		<time>매일 오전 9시 ~ 12시</time>
+		<teacher>김민수</teacher>		
+	</subject>
+</school>

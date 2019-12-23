@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-1.12.4.min.js"></script>
+<!-- <script src="js/jquery.xdomainajax.js"></script> -->
+<script>
+	$(function(){
+		$.ajax({
+			url : "http://www.kma.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=108",
+			type: "get",
+			dataType:"xml",
+			success : function(res){
+				console.log(res);
+				
+				//var data = res.responseText; // 문자열로 응답데이터 받음.
+				
+				$(res).find("location").each(function(i, obj) {
+					var city = $(obj).find("city").text();		//location안의 city값만 추출
+					
+					var $data = $(obj).find("data").eq(0); //첫번째 data만 가져온다.					
+					
+					var temp = "";
+					temp+="최저 : "+$data.find("tmn").text();
+					temp+=", 최고 : "+$data.find("tmx").text();
+					temp+=", 운량 : "+$data.find("wf").text();
+					
+					var liTag = $("<li>").text("["+city+"] " + temp);
+					$("#list").append(liTag);
+				});
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>전국날씨</h1>
+	<ul id="list"></ul>
+</body>
+</html>

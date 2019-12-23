@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var g="https://ajax.googleapis.com/ajax/services/feed/load?v=2.0&num=10&callback=?&q=";		// 구글을 통해서 데이터 가져오는 방법 (서비스 중단)
+		
+		$("#news_wrap a").on("click", function(e){
+			e.preventDefault(); 
+			
+			$.ajax({
+				url:g+$(this).attr("href"),
+				dataType : "json",
+				success : function(data){
+					console.log(data)
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>조선닷컴</h1><!-- Ajax를 이용하여 외부 뉴스 데이터 RSS 연동하기 -->
+	<div id="news_wrap">
+		<h2><a href="http://myhome.chosun.com/rss/www_section_rss.xml" class="on">오늘의 주요 뉴스</a></h2>
+		<h2><a href="http://www.chosun.com/site/data/rss/ent.xml">엔터테인먼트</a></h2>
+		<h2><a href="http://www.chosun.com/site/data/rss/sports.xml">스포츠</a></h2>
+		
+		<ul id="news_list"></ul>
+	</div>
+</body>
+</html>

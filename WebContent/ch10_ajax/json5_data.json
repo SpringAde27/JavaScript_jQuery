@@ -1,0 +1,28 @@
+{
+    "title": "Javascript + jQuery 입문",
+    "description": "대구IT교육원에서 진행중인 Javascript 강의 Json 자료입니다.",
+    "total": 4,
+    "item": [
+        {
+            "no": "공지",
+            "subject": "'Javascript + jQuery 입문' 강의 자료실 입니다.",
+            "hit": 3,
+            "date": "2015.10.29"
+        }, {
+            "no": 3,
+            "subject": "Javascript + jQuery 입문 3일차 강의자료 입니다.",
+            "hit": 6,
+            "date": "2015.11.08"
+        }, {
+            "no": 2,
+            "subject": "Javascript + jQuery 입문 2일차 강의자료 입니다.",
+            "hit": 15,
+            "date": "2015.11.07"
+        }, {
+            "no": 1,
+            "subject": "Javascript + jQuery 입문 1일차 강의자료 입니다.",
+            "hit": 19,
+            "date": "2015.11.05"
+        }
+    ]
+}

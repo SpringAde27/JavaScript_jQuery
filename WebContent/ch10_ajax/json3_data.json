@@ -1,0 +1,21 @@
+{
+	"school":{
+		"subject":[
+			{
+			"title":"javaScript+jQuery",
+			"time":"매주 오후 1시40분 ~ 4시30분",
+			"teacher":"정영화"
+			},
+			{
+			"title":"HTML5+CSS3 기반의 반응형 웹",
+			"time":"매주 화/목  오후 7시30분 ~ 10시20분",
+			"teacher":"주영아"
+			},
+			{
+			"title":"JAVA입문에서 활용까지",
+			"time":"매주 화/목  오후 7시30분 ~ 10시20분",
+			"teacher":"이광호"
+			}
+		]
+	}
+}

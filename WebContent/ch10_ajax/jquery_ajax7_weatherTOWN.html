@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	li{
+		border-bottom: 1px dashed gray;
+		padding-bottom: 10px;
+		padding-top: 10px;
+	}
+</style>
+<script src="js/jquery-1.12.4.min.js"></script>
+<!-- 동일출처정책의 이슈인 크로스도메인 임시 해결 : 크롬 플러그인 설치(Moesif Orign & CORS Changer) -->
+<script>
+	$(function() {
+		$.ajax({
+			url : "http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=2723064500",
+			dataType : "xml",
+			type : "get",
+ 			success : function(res) {
+				console.log(res);
+				
+				$(res).find("data").each(function(i, obj) {
+					var day = $(obj).find("day").text();
+					if (day == 0) {
+						day = "오늘";
+					} else if (day == 1) {
+						day = "내일";
+					} else {
+						day = "모레";
+					}
+						
+					var hour = $(obj).find("hour").text();
+					var temp = $(obj).find("temp").text();
+					var cloud= $(obj).find("wfKor").text();
+										
+					var liTag=$("<li>").text("["+day+"]  " + hour+"시, " + temp +"도, "+ cloud);
+
+					$("#list").append(liTag);
+				});
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>기상청 날씨</h1>
+	<h3>대구 북구 대현동 날씨</h3>
+	<ul id="list"></ul>
+</body>
+</html>

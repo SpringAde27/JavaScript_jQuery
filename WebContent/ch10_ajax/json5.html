@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	h1{
+		border-left: 20px solid green;
+		padding:10px 20px;		
+		border-bottom: 1px solid green;		
+	}
+	h3{
+		border-bottom: 1px solid green;
+		padding-bottom: 20px;
+	}
+	p{
+		border-bottom: 1px solid green;
+		padding-bottom: 20px;
+		margin-bottom: 30px;
+	}
+	
+	ul{		overflow: hidden;
+			list-style: none;
+			margin: 0; padding-top: 10px;
+	}
+	
+	li{
+		float:left;
+		padding: 0 50px;
+		border-bottom: 1px solid gray;
+		padding-bottom: 10px;	
+		text-align: center;	
+	}
+	
+	.li1{
+		width : 50px;	
+	}
+	
+	.li2{
+		width : 600px;
+		
+	}
+	.li3{
+		
+		width : 50px;
+		
+	}
+	.li4{
+		width : 100px;
+		
+	}
+</style>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$.ajax({
+			url : "json5_data.json",
+			type : "get",
+			dataType : "json",
+			success : function(data){
+				console.log(data);				
+				
+				var title = $("h1").html(data.title);
+				var description = $("h3").html(data.description);
+				var total = $("span").html(data.total);
+				
+				$(data.item).each(function(i, obj) {					
+					var li1 = $("<li>").attr("class","li1").html(obj.no);
+					var li2 = $("<li>").attr("class","li2").html(obj.subject);
+					var li3 = $("<li>").attr("class","li3").html(obj.hit);
+					var li4 = $("<li>").attr("class","li4").html(obj.date);
+					var ulTag = $("<ul>").append(li1).append(li2).append(li3).append(li4);
+					
+					$("div").append(ulTag);
+				});
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<h1></h1>
+	<h3></h3>
+	<p>총 게시물 수 : <span></span></p>
+	
+	<div>
+		<ul>
+			<li class="li1">번호</li>
+			<li class="li2">제목</li>
+			<li class="li3">조회수</li>
+			<li class="li4">작성일시</li>
+		</ul>
+	</div>
+	
+</body>
+</html>

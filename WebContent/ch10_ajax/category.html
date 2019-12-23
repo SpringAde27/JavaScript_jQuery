@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	h1.title{
+		border-left : 10px solid #7baeb5;
+		border-bottom:1px solid #7baeb5;
+		padding: 10px;
+	}
+	div.exec, div.result{
+		padding : 20px 15px;
+		border-bottom:1px solid #7baeb5;
+	}
+</style>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#category1").load("category_data.html #category1-1");		//같은 서버에 있는 데이터 파일을 가져온다.
+				
+		$(document).on("change","#category1 > select", function(){
+			//#category3 select를 없앤다.
+			$("#category3 > select").remove();		
+			
+			//선택한 옵션의 data-target 속성 값을 받아온다.
+			var target=$(this).find("option:selected").attr("data-target");			
+			$("#category2").load("category_data.html "+target);			
+		});
+		
+		$(document).on("change","#category2 > select", function(){
+			var target=$(this).find("option:selected").attr("data-target");			
+			$("#category3").load("category_data.html "+target);				
+		});
+		
+		$(document).on("change", "#category3 > select", function(){
+			//c1, c2, c3의 선택된 값을 가져와서 화면 공간에 표시하기
+			var c1 = $("#category1 select").val();		// 셀렉트값 가져오기
+			var c2 = $("#category2 select").val();		// 셀렉트값 가져오기
+			var c3 = $("#category3 select").val();		// 셀렉트값 가져오기
+			var res = c1+" > "+ c2 + " > " + c3;
+			$(".result").html(res);				
+		});
+	});
+</script>
+</head>
+<body>
+	<h1 class="title">동적 드롭다운</h1>
+	<div class="exec">
+		<form>
+			<!-- 각 단계 별 dropDown을 넣을 span태그 -->
+			<span id="category1"></span>
+			<span id="category2"></span>
+			<span id="category3"></span>
+		</form>
+	</div>
+	
+	<!-- 최종 선택 결과물 표시 -->
+	<div class="result"></div>
+</body>
+</html>

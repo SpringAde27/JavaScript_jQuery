@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body{
+		background: #252422;
+	}
+	
+	ul{
+		padding: 0;
+		margin: 50px auto;
+		list-style: none;
+		width: 800px;
+	}
+	
+	h2{ padding: 0; margin: 0;	}
+	
+	.title > a{
+		padding-top: 12px;
+		font-size: 14px;
+		text-decoration: none;
+		font-weight: bold;
+		background: url("image/background.jpg");
+		color: white;
+		display: block;
+		padding-left: 15px;
+		height: 35px;
+	}
+	
+	.content{
+		margin: 0;
+		background: #D4D0C8;
+		padding: 10px;
+		height: 200px;
+	}
+	
+	.selected{
+		background: url("image/background-selected.jpg") !important;
+	}
+</style>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(".collapsible").eq(0).find(".content").load("txt/html5.txt");		/* 파일을 로드하여 .content에 삽입 */
+		$(".collapsible").eq(1).find(".content").load("txt/jquery.txt");
+		$(".collapsible").eq(2).find(".content").load("txt/bootstrap.txt");
+		
+		$(".collapsible").eq(0).find("a").addClass("selected");
+		
+		// 첫 번째 항목 이외의 나머지 항목들 안에 있는 content를 숨긴다.
+		$(".collapsible").not(":eq(0)").find(".content").hide();
+		
+		$(".collapsible a").click(function() {
+			// 클릭된 자기 자신은 selected 클래스를 적용한다. 만약 적용된 상태라면 제거한다.
+			$(this).toggleClass("selected");
+			
+			// 클릭된 나 자신을 제외한 나머지 링크들은 selected 클래스를 무조건 삭제한다.
+			$(".collapsible a").not(this).removeClass("selected");
+			
+			// 펼칠 대상(.content) 선택
+			var target = $(this).parent().next();
+			target.slideToggle(500);
+			
+			// 나머지 대상을 선택
+			var other = $(".collapsible a").not(this).parents(".collapsible").find(".content");
+			other.slideUp(200);
+			
+			return false; // a tag link 취소
+		});
+	});
+</script>
+</head>
+<body>
+	<ul>
+		<li class="collapsible">
+			<h2 class="title"><a href="">HTML5</a></h2>
+			<p class="content"></p>
+		</li>
+		
+		<li class="collapsible">
+			<h2 class="title"><a href="">jQuery</a></h2>
+			<p class="content"></p>
+		</li>
+		
+		<li class="collapsible">
+			<h2 class="title"><a href="">Bootstrap3</a></h2>
+			<p class="content"></p>
+		</li>	
+	</ul>
+</body>
+</html>

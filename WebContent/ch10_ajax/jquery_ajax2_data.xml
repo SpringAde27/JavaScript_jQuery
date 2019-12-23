@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<school>
+	<subject>
+		<title>JavaScript+jQuery</title>
+		<time>매일 오후 1시 40분 ~ 4시 30분</time>
+		<teacher>황인영</teacher>
+		<count>20</count>
+	</subject>
+</school>

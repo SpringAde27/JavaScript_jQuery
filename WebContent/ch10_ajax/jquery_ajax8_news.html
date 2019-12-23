@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Insert title here</title>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$.ajax({
+			url : "https://news.google.com/news?cf=all&hl=ko&pz=1&ned=kr&topic=t&output=rss",
+			type : "get",
+			dataType : "xml",
+			success : function(data){
+				//xml 본문 추출
+				//$.parseXML : xml개체로 인식되지 않는 문제점 해결
+				var xml = $.parseXML(data.responseText);
+				console.log(xml);
+				
+				// xml을 jQuery객체로 변환한 뒤, item태그 단위로 반복
+				$(xml).find("item").each(function(){					
+					var title = $(this).find("title").text();
+					//replace(/(<([^>]+)>)/ig, "") : 모든 html태그를 찾아내어 삭제하는 기능
+					var description = $(this).find("description").text().replace(/(<([^>]+)>)/ig, "");
+					var pubDate = $(this).find("pubDate").text();
+					var link = $(this).find("link").text();
+					
+					//요소의 동적 요소
+					var li = $("<li>");
+					var aTag = $("<a class='newsTag'>").attr("href",link).attr("target","_blank").html(title);
+					var span1 = $("<span>").html(pubDate);
+					var br =$("<br>");
+					var span2 = $("<span>").html(description);
+					
+					//조립한다.
+					var item = li.append(aTag);
+					
+					//출력한다.
+					$("#news_list").append(item);
+				});				
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="new_box">
+		<h3>News</h3>
+		<ul id="news_list"></ul>
+	</div>
+</body>
+</html>
