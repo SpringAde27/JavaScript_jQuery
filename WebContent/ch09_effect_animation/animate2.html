@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	h1{
+		width: 50px;
+		height: 30px;
+		background-color: red;
+		font-size: 22px;	
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {	
+		$("#btn1").click(function() {
+			$("h1").animate({"margin-left":"250px", "margin-top":"250px"}, 5000);
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="btn1">시작</button>
+	<h1>내용</h1>
+</body>
+</html>

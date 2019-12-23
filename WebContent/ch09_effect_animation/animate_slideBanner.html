@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	*{ margin: 0;	padding: 0;	}
+	h1{
+		text-align: center; margin-top: 20px;
+	}
+	p {
+		text-align: center;
+	    margin-top: 23px;
+    }
+	#frame{
+		overflow: hidden;
+		width: 240px;
+		height: 54px;
+		margin: 10px auto;	
+	}
+	ul#banner{
+		width: 800px;
+		overflow: hidden;
+	}
+	ul li{
+		list-style: none;
+		float: left;
+		width: 80px;
+	}
+	#banner_wrap{
+		width: 260px;
+		padding: 10px 20px;
+		margin: 0 auto;
+		border-width: 1px;
+		border-color: #aaa;
+		border-style: solid;
+	}
+	
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+   $(function(){
+     	var index=0;
+     	var total=$("#banner li").size();	 // 선택된 객체의 개수를 반환 : size() - 이미지 8개
+     	var li_width = $("#banner li:first").width();
+     	
+	   $(".next").click(function() {
+		   	if(index==total-3) return false;
+		   	
+			index++;
+	   		$("#banner").animate({"margin-left" : -li_width*index+"px"},500);
+	   		return false;		// 링크취소용
+		   	
+	   });
+     	
+	   $(".prev").click(function() {
+		   	if(index==0) return false;
+		   	
+	   		index--;
+	   		$("#banner").animate({"margin-left" : -li_width*index+"px"},500);
+	   		return false;		// 링크취소용
+	   });
+   });
+</script>
+</head>
+<body>
+	<h1>슬라이드 배너 만들기</h1>
+	<div id="banner_wrap">
+		<div id="frame">
+			<ul id="banner">
+				<li><a href="#"><img src="image/pic_t1.jpg"></a></li>
+				<li><a href="#"><img src="image/pic_t2.jpg"></a></li>
+				<li><a href="#"><img src="image/pic_t3.jpg"></a></li>
+				<li><a href="#"><img src="image/pic_t4.jpg"></a></li>
+				<li><a href="#"><img src="image/pic_t5.jpg"></a></li>
+				<li><a href="#"><img src="image/pic_t6.jpg"></a></li>
+				<li><a href="#"><img src="image/pic_t7.jpg"></a></li>
+				<li><a href="#"><img src="image/pic_t8.jpg"></a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<p>
+		<a href="#" class="prev"><img src="image/prev_btn.png"></a>
+		<a href="#" class="next"><img src="image/next_btn.png"></a>
+	</p>
+</body>
+</html>

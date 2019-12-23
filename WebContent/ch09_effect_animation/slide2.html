@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {	
+		$("#btn1").click(function() {
+			$("div").slideUp(2000);
+		});
+		
+		$("#btn2").click(function() {
+			$("div").slideDown(2000);
+		});
+		
+		$("#btn3").click(function() {
+			$("div").slideToggle(2000);
+		});
+	});
+</script>
+</head>
+<body>
+	<div><img src="image/summer.JPG"></div>
+	<p><b>한국의 여름</b> 초록 물이 뚝뚝 떨어질 것 같은 싱그러움</p>
+	<button id="btn1">Slide Up</button>
+	<button id="btn2">Slide Down</button>
+	<button id="btn3">Slide Toggle</button>
+</body>
+</html>

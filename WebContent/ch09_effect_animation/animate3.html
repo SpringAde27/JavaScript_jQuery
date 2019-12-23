@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	img{
+		width: 300px; 
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {	
+		$("#btn1").click(function() {
+			$("img").animate({"width":"600px"}, 1000);
+			$("img").animate({"height":"300px"}, 1000);
+			$("img").animate({"border-radius":"50px"}, 1000);
+		});
+		
+		$("#btn2").click(function() {
+			$("img").animate({"width":"600px","height":"300px","border-radius":"50px"}, 1000);			
+		});
+		
+		$("#btn3").click(function() {
+			$("img").animate({"width":"600px","height":"300px","border-radius":"50px"}, 1000, function(){
+				$("#result").html($("img").css("width"));
+			});	
+		});
+		
+		$("#btn4").click(function() {			
+			$("#gallery").animate({"margin-left":"+=300px"}, 1000);
+			$("p").delay(1000).animate({"font-size":"20px"},1000);
+			$("#gallery").delay(1000).animate({"margin-left":"-=300px"}, 1000);			
+		});
+		
+		$("#btn5").click(function() {
+			$("img")
+			.animate({"width":"+=100px"}, 1000)
+			.animate({"width":"-=100px"}, 1000);
+		});
+		
+		$("#btn6").click(function() {
+			/* $("img")
+			.animate({"height":"+=100px"}, 1000)
+			.animate({"height":"-=100px"}, 1000); */
+			$("img").animate({"width":"toggle"}, 1000);
+		});
+	});
+</script>
+</head>
+<body>	
+	<div id="gallery">
+		<img src="image/fall.JPG">
+		<p><b>한국의 가을</b> 마지막 절정을 향해 치닫는 빨간 얼굴.</p>
+	</div>
+	<button id="btn1">확대하기1</button>
+	<button id="btn2">확대하기2</button>
+	<button id="btn3">콜백넣기</button>
+	<button id="btn4">좌우 이동</button>
+	<button id="btn5">이미지 넓이 토글</button>
+	<button id="btn6">이미지 높이 토글</button>
+	
+	<div id="result"></div>
+</body>
+</html>

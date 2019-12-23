@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+   button{
+      width : 150px;
+      height : 30px;
+      border : 1px solid #ccc;
+      margin-bottom : 15px;
+      margin-left:50px
+   }
+   #gallery{
+      position : absolute;
+      width:100px;
+      height : 100px;
+      margin-left: 70px;
+      background-color : skyblue;
+      border : 1px solid #222;
+   }
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+   $(function(){
+      $("#btn1").click(function(){
+         var $Obj = $("#gallery");
+         $Obj
+         	.animate({"width":"300px"},1500)
+         	.animate({"height":"300px"},1500,function(){
+            	$Obj.css({"border-color":"red","background-color":"orange"});
+         	});
+         /* $Obj.queue(function(){
+	            $Obj.css({"border-color":"red","background-color":"orange"});
+	            $Obj.dequeue();
+         }); */
+         $Obj.animate({"border-radius":"20px"},1500);
+      });
+      $("#btn2").click(function(){
+         $("#gallery").clearQueue(); // 진행 중인 애니메이션 제외한 나머지 모두 취소
+      });
+      $("#btn3").click(function(){
+         $("#gallery").stop(); // 애니메이션 정지
+      });
+      $("#btn4").click(function(){
+         $("#gallery").finish(); // 애니메이션 완료 시점으로 이동 후 강제 종료
+      });
+   });
+</script>
+</head>
+<body>
+   <button id="btn1">확대하기</button>
+   <button id="btn2">멈추기(clearQue)</button>
+   <button id="btn3">멈추기(Stop)</button>
+   <button id="btn4">끝내기(Finish)</button>
+   <div id="gallery"></div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {	
+		$("#btn").click(function() {
+			var $imgObj = $("img");
+			$imgObj
+				.animate({"width":"600px"},1000)
+				.animate({"height":"400px"},1000);
+			$imgObj.queue(function(){
+				$(this).css("border","5px solid orange");
+				$(this).css("border-radius","50px");
+				$(this).css("box-shadow","5px, 5px, 5px, black");
+				$(this).dequeue();				
+			});
+			$imgObj.fadeOut("fast").fadeIn("fast");
+		});		
+	});
+</script>
+</head>
+<body>
+	<button id="btn">시작</button>
+	<br><br>
+	<div id="gallery">
+		<img src="image/fall.jpg" alt="유채꽃과 매화꽃" id="spring" width="200px">
+		<p><b>한국의 가을</b> 마지막 절정을 향해 치닫는 빨간 얼굴.</p>
+	</div>
+</body>
+</html>

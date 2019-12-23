@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	img{
+		width: 400px;
+	}
+	#gallary{
+		width: 400px;
+		border : 2px solid black;
+		border-radius: 10px;
+		text-align: center;
+		padding-top: 10px;
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {		
+		$("img").click(function () {
+			$(this).hide(1000, function(){		// 옵션, 콜백함수
+				$("#gallary").css("background-color", "pink");
+			});
+		});
+		
+		$("#btn1").click(function() {
+			$("img").hide(2000);
+			$("img").show(1000, function(){
+				$("#gallary").css("background-color", "pink");
+			});
+			//$("img").hide().show()
+		});
+		
+		$("#btn2").click(function() {
+			$("img").toggle(1000, function(){
+				alert("완료")
+			});
+		})
+	});
+</script>
+
+</head>
+<body>
+	<button id="btn1">사라졌다 나타나기</button>
+	<button id="btn2">Toggle</button>
+	<p>hide(fast)를 사용해 빠르게 사라지게 하자</p>
+	<div id="gallary">
+		<img src="image/spring.jpg">
+		<p><b>한국의 봄</b> 화사하게 피어난 분홍 매화꽃</p>
+	</div>
+</body>
+</html>

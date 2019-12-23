@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	button{
+		width: 100px;
+		margin-bottom: 10px;
+		margin-left: 90px;
+		
+	}
+	.wrap{
+		width : 300px;
+		height : auto;		
+		padding-left: 20px;		
+		float:left;
+		
+	}
+	.wrap div{
+		border: 1px solid black;
+		border-radius: 10px;
+		padding-left: 50px;
+		display: none;
+	}
+	
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {	
+		$("#btn1").click(function() {
+			$("#text1").slideToggle(1000);
+		})
+		
+		$("#btn2").click(function() {
+			$("#text2").fadeToggle();
+		})
+	});
+</script>
+</head>
+<body>
+	<h1>컴퓨터공학과 교수 소개</h1>
+	<div class="wrap">
+		<button id="btn1">홍길동 교수</button>
+		<div id="text1">
+			<p>소속 : 컴퓨터공학과</p>
+			<p>전공 : 프로그래밍 언어</p>
+			<p>전화 : xxx-xxxx-xxxx</p>
+			<p>연구실 : 공학관 103호</p>
+		</div>
+	</div>
+	
+	<div class="wrap">
+		<button id="btn2">한라산 교수</button>
+		<div id="text2">
+			<p>소속 : 컴퓨터공학과</p>
+			<p>전공 : 프로그래밍 언어</p>
+			<p>전화 : xxx-xxxx-xxxx</p>
+			<p>연구실 : 공학관 103호</p>
+		</div>
+	</div>
+</body>
+</html>

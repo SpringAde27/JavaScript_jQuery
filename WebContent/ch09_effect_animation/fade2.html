@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	img{
+		width: 400px;
+	}
+	#gallary{
+		width: 400px;
+		border : 2px solid black;
+		border-radius: 10px;
+		text-align: center;
+		padding-top: 10px;
+	}
+	button{
+		width: 130px;
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {	
+		$("#btn1").click(function() {
+			$("#gallary").fadeOut(1000);
+		});
+		
+		$("#btn2").click(function() {
+			$("#gallary").fadeIn(1000);
+		});
+		
+		$("#btn3").click(function() {
+			$("#gallary").fadeToggle();
+		});
+		
+		$("#btn4").click(function() {
+			$("#gallary").fadeTo(1000, 0.3);
+		});
+		
+		$("#btn5").click(function() {
+			$("#gallary").fadeTo(1000, 1);
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="btn1">Fade Out</button>
+	<button id="btn2">Fade In</button>
+	<button id="btn3">Fade Toggle</button>
+	<button id="btn4">투명도(30%)</button>
+	<button id="btn5">투명도(100%)</button>
+	<br>
+	<br>
+	<div id="gallary">
+		<img src="image/spring.jpg">
+		<p><b>한국의 봄</b> 화사하게 피어난 분홍 매화꽃</p>
+	</div>
+</body>
+</html>

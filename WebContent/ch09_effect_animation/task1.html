@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">	
+	div{
+		width:500px;
+		background-color: #ececec;		
+		border: 2px solid black;
+		border-radius: 10px;
+		display: none;
+	}
+	
+	a{
+		color: red;
+		text-decoration: none;
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {	
+		$("#box1").click(function() {
+			$("#text1").slideToggle();			
+		});
+		
+		$("#box2").click(function() {
+			$("#text2").slideToggle();		
+		});		
+	});
+</script>
+</head>
+<body>
+	<h3>바흐(Johann Sebastian Bach, 1685~1750)</h3>
+	<p>서양 음악의 아버지. 바로크 시대의 대작곡가 <a href="#" id="box1">[상세보기/닫기]</a></p>
+	<div id="text1">
+	독일 음악의 전통에 깊이 뿌리박고 있을 뿐 아니라, 그 위에 이탈리아나 프랑스의 양식을 채택하고 그것들을 융합하여
+	독자적 개성적인 음악을 창조하였다. 바로크 음악에 있어서 바흐는 대위법 기술의 정수를 다했을 뿐 아니라, 당시에
+	이미 궁정문화에 침투했던 프랑스나 이탈리아의 양식을 스스로 받아들여 칸타타에 아름다운 꽃을 피우기도 했다.
+	거기에 그가 직접적 간접적으로 배운 여러 나라의 온갖 요소가 모두 투입되어 그만이 지닐 수 있는 최고로 천재적인 용광로
+	속에서 융화되어 일치미를 이루고 있다.
+	</div>	
+	
+	<h3>헨델(Georg Friedrich Handel, 1685~1759)</h3>
+	<p>서양 음악의 어머니. 항상 간결, 명쾌하며 밝은 표현 <a href="#" id="box2">[상세보기/닫기]</a></p>
+	<div id="text2">
+	그의 음악은 명쾌하고 호탕하고 신선하여 생생한 리듬에 성악적이다
+	헨델은 그의 극적 작품에서 명성을 얻었지만 바로크적 협주양식에 기초를 두고 벨칸토의 성악적 멜로디와 결부하여
+	항상 간결, 명쾌하며 밝은 표현을 나타냈다. 또한 합창에서도 뛰어난 솜씨를 발휘했다.
+	</div>	
+	
+	<h3>비발디(Antonio Lucio Vivaldi, 1678~1741)</h3>
+</body>
+</html>

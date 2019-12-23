@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	h1{
+		width: 200px;
+		height: 200px;
+		background-color: red;
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {	
+		$("#btn").click(function() {
+			$("h1").fadeOut("fast").fadeIn("fast");
+			$("h1").animate({"margin-left":"300px"},1000);
+			//alert를 띄우고 싶다면?
+			$("h1").queue(function(){		// 애니메이션 중간에 무언가를 쓰고 싶을 때 queue사용. 이미지나 색상은 animate사용못함.
+				alert("큐 실행");
+				$(this).dequeue();			// dequeue : 큐에 담겨 있는 이후의 애니메이션을 동작하게 한다.
+			});
+			$("h1").slideUp(2000).slideDown(2000);
+			//$("h1").queue(); // queue()메서드 이후의 모든 애니메이션 취소
+			$("h1").animate({"margin-left":"0px"},1000);
+			//$("h1").clearQueue(); // 진행중인 첫 번째 애니메이션을 제외하고 이후의 모든 애니메이션 취소
+		})	
+	});
+</script>
+</head>
+<body>
+	<button id="btn">시작</button>
+	<h1>내용</h1>
+</body>
+</html>

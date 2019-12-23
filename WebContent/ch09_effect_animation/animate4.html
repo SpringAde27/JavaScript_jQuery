@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {	
+		//시작버튼 클릭시 이미지를 오른쪽으로 1초동안 300px이동, 왼쪽으로 1초 동안 300px이동, p태그의 글자크기 30px로 변경
+		$("#btn1").click(function() {
+			$("#spring").animate({"margin-left":"+=300px"},1000).animate({"margin-left":"-=300px"},1000);
+			$("p").delay(2000).animate({"font-size":"30px"},1000);
+		});
+		
+		//시작버튼 클릭시, 순서대로
+		$("#btn2").click(function() {
+			$("#spring").animate({"margin-left":"+=500px"},1000);
+			$("p").delay(1000).animate({"font-size":"30px"},1000);
+			$("#spring").delay(1000).animate({"margin-left":"-=500px"},1000);
+			$("p").delay(1000).animate({"font-size":"16px"},1000);
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="btn1">시작1</button>
+	<button id="btn2">시작2</button>
+	<br><br>
+	<div id="gallery">
+		<img src="image/fall.jpg" alt="유채꽃과 매화꽃" id="spring" style="width:200px;">
+		<p><b>한국의 가을</b> 마지막 절정을 향해 치닫는 빨간 얼굴.</p>
+	</div>
+</body>
+</html>

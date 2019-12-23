@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {	
+		$("img, p").click(function() {
+			$("img, p").animate({"margin-left":"500px"});
+			$("img").animate({"width":"+=150px", "height":"+=100px"});
+			$("img").animate({"width":"-=150px", "height":"-=100px"});
+			$("img").fadeOut();
+			$("p").queue(function(){
+				$("p").css("font-size","30px").css("color","red");
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<img src="image/car.png">
+	<p>Run, Run!</p>
+</body>
+</html>

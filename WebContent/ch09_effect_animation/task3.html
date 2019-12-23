@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	span{		
+		 color: blue;
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {	
+		$("button").click(function() {
+			$("img").animate({"width":"600px", "height":"400px", "border-radius":"50px"});
+			$("p").animate({"font-size":"27px"});
+			$("p").queue(function(){
+				$(this).css("font-style","italic");
+			});
+			$("img").queue(function(){
+				$(this).css("border","5px solid green")
+	    				.css("box-shadow","5px 5px 5px black");
+				$(this).dequeue();				
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<img src="image/winter.JPG"><br>
+	<p><span>한국의 겨울</span> 너의 부재를 덮어주는 사방의 눈</p>
+	<button>확대하기</button>	
+</body>
+</html>

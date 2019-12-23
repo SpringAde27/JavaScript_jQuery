@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#gallery{
+		width: 920px;
+		height: 190px;
+		background: #808080;
+		border : 1px solid black;
+		border-radius: 10px;
+		text-align: center;
+		position: relative;
+	}
+	
+	ul{
+		list-style: none;
+		padding: 0;
+		margin: 25px 0 0 0;		
+	}
+	
+	li{
+		display: inline;		
+	}
+	
+	.bigpic{
+		display: none;	/* 화면상 표시도 안되고 , 자리도 차지 안함 */
+		position: absolute;		/* 위치를 붕뜨게 만든다 */
+		width: 800px;
+		height: 530px;
+		left: 100px;
+		top: 200px;
+	}
+</style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$(".smallPic").click(function() {
+			var index = $(".smallPic").index(this);
+			$(".bigpic").not($(this)).css({display:"none"});
+			$(".bigpic").eq(index).fadeIn();
+		});
+		
+		$(".bigpic").click(function() {
+			$(this).fadeOut();
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>사용법</h1>
+	<ol>
+		<li>작은 이미지를 클릭하면, 큰 이미지가 나타납니다.</li>
+		<li>작은 이미지를 클릭하면, 큰 이미지가 사라집니다.</li>
+	</o1>
+	
+	<div id="gallery">
+		<ul>
+			<li>
+				<img src="image/spring-s.jpg" id="small1" class="smallPic">
+				<img src="image/spring.jpg" id="big1" class="bigpic">
+			</li>
+			<li>
+				<img src="image/summer-s.jpg" id="small2" class="smallPic">
+				<img src="image/summer.jpg" id="big2" class="bigpic">
+			</li>
+			<li>
+				<img src="image/fall-s.jpg" id="small3" class="smallPic">
+				<img src="image/fall.jpg" id="big3" class="bigpic">
+			</li>
+			<li>
+				<img src="image/winter-s.jpg" id="small4" class="smallPic">
+				<img src="image/winter.jpg" id="big4" class="bigpic">
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

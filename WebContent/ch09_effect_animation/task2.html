@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {	
+		$("#btn1").click(function() {
+			$("img").animate({"width":"+=100px"}, 1000, function() {
+				$("h3").text($("img").width());
+			});			
+		});
+		
+		$("#btn2").click(function() {
+			$("img").animate({"width":"+=300px"}, 1000, function(){
+				$("h3").text($("img").width());
+			});			
+		});
+		
+		$("#btn3").click(function() {
+			$("img").animate({"width":"+=500px"}, 1000, function(){
+				$("h3").text($("img").width())	
+			});			
+		});
+		
+		$("#btn4").click(function() {
+			$("img").animate({"width":"-=50px"}, 1000, function(){
+				$("h3").text($("img").width());
+			});
+		});
+		
+		$("#btn5").click(function() {
+			$("img").animate({"width":"+=50px"}, 1000, function(){
+				$("h3").text($("img").width());
+			});
+		});		
+	});
+</script>
+</head>
+<body>
+	<p>버튼을 누르면 이미지의 크기가 바뀝니다</p>	
+	<button id="btn1">가로100px</button>
+	<button id="btn2">가로300px</button>
+	<button id="btn3">가로500px</button>
+	<button id="btn4">50px씩 감소</button>
+	<button id="btn5">50px씩 증가</button>
+	<br><br>
+	<img src="image/summer.JPG"  width="100px">
+	<h3>width값 보기</h3>
+</body>
+</html>

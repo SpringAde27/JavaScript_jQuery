@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {		
+		$("#btn1").click(function() {
+			$("h1").hide(1000, function(){
+				alert("hide완료")
+			});			
+		});
+		$("#btn2").click(function() {
+			$("h1").show(1000, function(){
+				alert("show완료")
+			});
+		})
+	});
+</script>
+</head>
+<body>
+	<button id="btn1">Hide</button>
+	<button id="btn2">Show</button>
+	<h1>내용</h1>
+</body>
+</html>
