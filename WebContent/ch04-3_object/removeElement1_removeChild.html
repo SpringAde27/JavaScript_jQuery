@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function removeP1(){
+		var p1 = document.getElementById("p1");
+		p1.parentNode.removeChild(p1)  // 부모가 누구인지 알려주는 함수, 함수의 부모를 명확히 알 수 없을 때 사용
+	}
+
+	function removeP2(){
+		var parent = document.getElementById("target");
+		var child = document.getElementById("p2");
+		parent.removeChild(child);
+	}
+</script>
+</head>
+<body>
+	<div id="target">
+		<p id="p1">첫번째 자식</p>
+		<p id="p2">두번째 자식</p>		
+	</div>
+	<button onclick="removeP1()">첫번째 자식 지우기</button>
+	<button onclick="removeP2()">두번째 자식 지우기</button>
+</body>
+</html>

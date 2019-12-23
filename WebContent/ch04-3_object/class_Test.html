@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	p{
+		font-size: 20px;
+	}
+	.accent{
+		color: orange;
+	}
+</style>
+
+<script type="text/javascript">
+	function displayLength(){
+		var accent = document.getElementsByClassName("accent");
+		alert(accent.length);		
+	}
+		
+	function displayAccent(){
+		var accent = document.getElementsByClassName("accent");
+		alert(accent[0].innerHTML + " - " + accent[1].innerHTML);			  
+	}
+	
+	function displayChange(){
+		var accent = document.getElementsByClassName("accent");
+		accent[1].innerHTML = accent[0].innerHTML; 
+	}
+	
+	function displayTwoChange(){
+		var list = document.getElementsByClassName("list");
+		list[0].innerHTML = "짜장면";
+		list[1].innerHTML = "탕수육";
+		list[2].innerHTML = "볶음밥";
+	}
+</script>
+
+</head>
+<body>
+	<h1>스터디 회원 모집</h1>
+	<p class="accent">신입생 대상</p>
+	<p>
+		<span class="accent">웹 표준 기술</span>에 대해 같이 공부할 스터디 회원을 모집합니다.
+	</p>
+		
+	<ul>
+		<li class="list">사과</li>
+		<li class="list">바나나</li>
+		<li class="list">복숭아</li>
+	</ul>
+		
+	<button onclick="displayLength()">accent 클래스의 개수</button>
+	<button onclick="displayAccent()">accent 클래스안의 글자보기</button>	
+	<button onclick="displayChange()">accent 글자 바꾸기</button>
+	<button onclick="displayTwoChange()">과일을 중화요리로 바꿔보자</button>
+</body>
+</html>

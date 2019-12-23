@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#box{
+		width: 300px;
+		height: 300px;
+		border : 1px solid red;
+		overflow: auto;
+	}
+</style>
+
+<script type="text/javascript">
+	function addItem(){
+		var newli = document.createElement("li");
+		var newText = document.createTextNode("군만두");
+		newli.appendChild(newText);
+		var list = document.getElementById("list");
+		list.appendChild(newli);		
+	}
+	
+	function delItem(){	
+ 		var arrli = document.getElementsByTagName("li");
+ 		var li=arrli[arrli.length-1];
+ 		li.parentNode.removeChild(li);
+	}
+</script>
+</head>
+<body>
+	<form name="f1">
+		<div id="box">
+			<ol type="1" id="list">
+				<li>짜장면</li>
+				<li>우동</li>
+				<li>짬뽕</li>
+			</ol>
+		</div>
+	</form>
+	
+	<button onclick="addItem()">Add</button>
+	<button onclick="delItem()">Del</button>
+</body>
+</html>

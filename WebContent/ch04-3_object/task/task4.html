@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">	
+	div#x img{
+		width: 100px;
+		height: 100px;
+		margin-right: 10px;
+		margin-bottom: 5px;		
+	}
+	div#x{
+		float: left;
+	}
+	
+	div#y img{
+		width: 500px;
+		height: 320px;
+	}	
+</style>
+<script type="text/javascript">
+	function ch(ch){
+		var img = document.getElementsByTagName("img");
+		var big = document.getElementById("big");
+		big.src = img[ch].src;
+	}
+</script>
+</head>
+<body>
+	<div id="x">
+		<div><img src="../image/20.jpg" onclick="ch(0)"></div>
+		<div><img src="../image/22.jpg" onclick="ch(1)"></div>
+		<div><img src="../image/23.jpg" onclick="ch(2)"></div>
+	</div>
+	<div id="y">
+		<img src="..//image/20.jpg" id="big">
+	</div>
+</body>
+</html>

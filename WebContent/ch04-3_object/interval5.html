@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	var arrayImg = ["image/car1.jpg", "image/car2.jpg", "image/car3.jpg",
+					"image/22.jpg", "image/23.jpg", "image/big2.jpg",
+					"image/20.jpg", "image/flower1.jpg", "image/flower2.jpg"]
+	
+	var index;
+	var id;
+	
+	function changeImage(){
+		var img = document.getElementById("img");
+		
+		index = Math.floor(Math.random() * arrayImg.length); // 랜덤으로 그림 추출	
+		
+		img.src = arrayImg[index % arrayImg.length];
+	}	
+	
+	function startInterval(){
+		id = setInterval(changeImage, 1500);
+	}	
+	function stopInterval(){
+		clearInterval(id);
+	}
+
+	</script>
+</head>
+<body>
+	<img src="image/flower3.jpg" id="img" alt="test" width="350px" height="250px"><br>	
+	<button onclick="startInterval()">Start</button>
+	<button onclick="stopInterval()">Stop</button>
+</body>
+</html>

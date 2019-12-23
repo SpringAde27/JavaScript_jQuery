@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function showId(){
+		var a = document.log_f.user_id; //(단, 폼의 name과 폼 내용 안에 태그에도 name이 있어야 한다.)
+		alert(a.value);
+	}
+	
+	function showPw(){
+		alert(document.log_f.user_pw.value);		
+	}
+</script>
+</head>
+<body>
+	<form name="log_f">
+		<fieldset>
+			<p>
+				<label for="user_id">아이디</label>
+				<input type="text" name="user_id" id="user_id">		
+			</p>
+			<p>
+				<label for="user_pw">비밀번호</label>
+				<input type="password" name="user_pw" id="user_pw">
+			</p>
+		</fieldset>
+	</form>
+	<button onclick="showId()">아이디 보기</button>
+	<button onclick="showPw()">비밀번호 보기</button>
+</body>
+</html>

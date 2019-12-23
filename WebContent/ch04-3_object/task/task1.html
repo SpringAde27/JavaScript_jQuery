@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function change(){
+		var img = document.getElementById("img");
+		
+		if(img.src.indexOf("two.jpg")>0){
+			img.src="../image/four.jpg";			
+		}else{
+			img.src="../image/two.jpg";
+		}
+	}
+</script>
+</head>
+<body>
+	<img src="../image/two.jpg" id="img" onmouseover="change()" onmouseout="change()">
+</body>
+</html>

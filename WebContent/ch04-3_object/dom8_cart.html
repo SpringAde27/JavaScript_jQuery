@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="f1">
+		<fieldset>
+			<legend>check테스트</legend>
+				<input type="checkbox" name="all" onclick="allChecked()">전체선택<br>
+				<input type="checkbox" name="num0" value="1000" class="chk" onclick="changeValue()">1000<br>
+				<input type="checkbox" name="num1" value="2000" class="chk" onclick="changeValue()">2000<br>
+				<input type="checkbox" name="num2" value="3000" class="chk" onclick="changeValue()">3000<br>
+		</fieldset>	
+	</form>
+	
+	<p>결과 : <span id="result">0</span></p>
+	
+	<script type="text/javascript">
+		var chk = document.getElementsByClassName("chk");
+		
+		// 개별 선택
+		function changeValue(){
+			var total = 0;
+			var cntChk = 0;
+			
+			for(var i=0; i<chk.length; i++) {
+				if(chk[i].checked) {
+					total += Number(chk[i].value);
+					cntChk++;
+				}
+			}
+			
+			if(chk.length == cntChk) {
+				document.f1.all.checked = true;
+			} else  {
+				document.f1.all.checked = false;
+			}
+					
+			var result = document.getElementById("result");
+			result.innerHTML = total;	
+		}
+		
+		// 전체 선택
+		function allChecked(){
+			var flag = document.f1.all.checked;
+			for(var i=0; i<chk.length; i++) {
+				chk[i].checked = flag;
+			}
+			
+			changeValue();
+		}
+	</script>
+</body>
+</html>

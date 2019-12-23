@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="f1">
+		<input type="text" name="id">
+		<span>@</span>		
+		<select name="send">
+			<option value="daum.net">daum.net</option>
+			<option value="hanmail.net">hanmail.net</option>
+			<option value="naver.com">naver.com</option>
+			<option value="gmail.com">gmail.com</option>
+			<option selected>이메일을 선택하세요.</option>
+		</select>
+		
+		<input type="button" value="선택" name="selBtn">
+	</form>
+
+	<p id="result">선택한 이메일 표시</p>
+
+	<script type="text/javascript">
+		document.f1.selBtn.onclick = function() {
+			var id = document.f1.id.value;
+			var index = document.f1.send.selectedIndex;
+			var value = document.f1.send.options[index].value;
+
+			document.getElementById("result").innerHTML = id + "@" + value;
+		}
+	</script>
+</body>
+</html>

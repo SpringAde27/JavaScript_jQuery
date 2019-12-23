@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>	
+	#wraper{
+		width: 800px;
+		text-align: center;
+	}
+	table {
+		border-collapse: collapse;
+		text-align: center;
+		margin-left: 90px;
+		width: 600px;
+		height: 150px;
+	}
+	tr,td {border:1px solid gray;}	
+</style>
+
+<script type="text/javascript">
+	function price(){
+		var sum = 13450000;
+		var total = document.getElementById("total");		
+		
+		var op1 = document.getElementById("op1");
+		if(op1.checked){
+			sum += Number(op1.value);
+		}
+		
+		var op2 = document.getElementById("op2");
+		if(op2.checked){
+			sum += Number(op2.value);
+		}
+		var op3 = document.getElementById("op3");
+		if(op3.checked){
+			sum += Number(op3.value);
+		}
+				
+		total.innerHTML = sum;
+	}
+</script>
+
+</head>
+<body>
+	<div id="wraper">
+		<h1>자동차 견적</h1>
+		<div id="img">
+			<img src="image/car2.jpg" alt="">
+		</div>		
+		<table>
+			<tr>
+				<td>옵 션</td>
+				<td>추가 가격</td>
+				<td>선택</td>
+			</tr>
+			
+			<tr>
+				<td>인조가죽시트</td>
+				<td>250000</td>
+				<td><input type="checkbox" value ="250000" id="op1" onclick="price()"></td>			
+			</tr>
+			
+			<tr>
+				<td>네비게이션</td>
+				<td>250000</td>
+				<td><input type="checkbox" value ="250000" id="op2" onclick="price()"></td>
+			</tr>
+			
+			<tr>
+				<td>선루프</td>
+				<td>440000</td>
+				<td><input type="checkbox" value ="440000" id="op3" onclick="price()"></td>
+			</tr>
+			
+			<tr>
+				<td>(기본)차량가격</td>
+				<td colspan="2" id="total">13450000</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

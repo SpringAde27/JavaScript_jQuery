@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>인접관계선택자 호환성 문제 해결</title>
+</head>
+<body>
+	<div id="wrap">
+		<p>내용1</p>
+		<p>내용2</p>
+		<p>내용3</p>
+		<p>내용4</p>
+	</div>
+	
+	<script type="text/javascript">
+	
+	/* 
+		document.getElementById("wrap").firstChild.style.color="red";
+		var pArr = document.getElementsByTagName("p"); // p태그가 배열형태로 저장
+		pArr[1].nextSibling.style.backgroundColor = "yellow"; // 익스플로러 버전 문제로 실행 안될 수 있다.
+		
+		// 최신버전의 익스플로러(IE8이상)는 div태그에 자식으로 공백태그가 노드 추가 되어버려서 인식 못함, 파이어폭스-크롬에서 실행x 
+		
+ 	*/		
+
+		document.getElementById("wrap").children[0].style.color="red";
+	
+		var pArr = document.getElementsByTagName("p");
+		var nextObj = pArr[1].nextSibling;
+		
+		// 1:element , 2:attribute , 3:text : 다음 태그의 속성 체크
+		while(nextObj.nodeType != 1){
+			nextObj = nextObj.nextSibling;
+		}
+		nextObj.style.backgroundColor = "yellow";
+	</script>
+</body>
+</html>

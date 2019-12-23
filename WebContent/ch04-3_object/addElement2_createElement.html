@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function addImage(){
+		var newImg = document.createElement("img");
+		var newSrc = document.createAttribute("src");
+		var newAlt = document.createAttribute("alt");
+		
+		newSrc.value = "image/logo.png";
+		newAlt.value = "logo"; 
+		
+		newImg.setAttributeNode(newSrc);
+		newImg.setAttributeNode(newAlt);
+		
+		document.getElementById("test").appendChild(newImg);
+	}
+</script>
+</head>
+<body>
+	<h1>스터디 회원 모집</h1>
+	<a href = "#" onclick="addImage()">더 보기!!</a>
+	<div id="test"></div>
+</body>
+</html>

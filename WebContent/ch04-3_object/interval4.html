@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function changeTime(){
+		var time = document.getElementById("time");
+		var date = new Date();
+		
+		time.innerHTML = date.toLocaleTimeString();		
+	}
+	
+	var id;
+	
+	function starInterval() {
+		id = setInterval(changeTime, 1000);
+	}
+	
+	function stopInterval() {
+		clearInterval(id);
+	}
+</script>
+</head>
+<body>
+	<h1 id="time"></h1>
+	<button onclick="starInterval()">Timer Start</button>
+	<button onclick="stopInterval()">Timer Stop</button>	
+</body>
+</html>

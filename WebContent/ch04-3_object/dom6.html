@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="f1">
+		<p>
+			<input type="checkbox" name="c1" id="c1" class="check1"/>수박<br>
+			<input type="checkbox" name="c2" id="c2" class="check1"/>참외<br>
+			<input type="checkbox" name="c3" id="c3" class="check1"/>오렌지<br>
+			<input type="checkbox" name="c4" id="c4" class="check1"/>바나나<br>
+		</p>	
+			<input type="button" value="전체선택" name="allCheck">
+			<input type="button" value="전체해제" name="allUncheck">		
+	</form>
+	
+	<script type="text/javascript">
+		document.f1.allCheck.onclick=function(){
+			document.f1.c1.checked = true;
+			document.f1.c2.checked = true;
+			document.f1.c3.checked = true;
+			document.f1.c4.checked = true;
+		}
+		
+		document.f1.allUncheck.onclick=function(){
+/* 			document.getElementById("c1").checked = false;
+			document.getElementById("c2").checked = false;
+			document.getElementById("c3").checked = false;
+			document.getElementById("c4").checked = false; */
+			
+			var check1 = document.getElementsByClassName("check1");
+			for(var i=0; i<check1.length; i++){
+				check1[i].checked = false;
+			}
+		}
+	</script>
+</body>
+</html>

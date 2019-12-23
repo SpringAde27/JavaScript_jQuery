@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+ 	var index=1;
+ 	var id;
+ 	var arrayImg = ["image/math_img_1.jpg", "image/math_img_2.jpg", "image/math_img_3.jpg"]
+ 		
+	function displayImage(){
+		var img = document.getElementById("img1");
+		index++;
+		img.src = arrayImg[index % arrayImg.length]; // (인덱스 % 배열.length) : 결과 값으로 나온 번지의 이미지를 보여줄 수 있다. if문과 동일한 기능
+		
+/* 		if(index==1){
+			img.src="image/math_img_1.jpg"; 
+		}else if(index==2){
+			img.src="image/math_img_2.jpg";		
+		}else if(index==3){
+			img.src="image/math_img_3.jpg";
+			index = 0;
+		}
+ */				
+	}
+
+	function startInterval(){
+		id = setInterval(displayImage, 1000);
+	}
+	
+	function stopInterval(){
+		clearInterval(id);
+	}	
+</script>
+</head>
+<body>
+	<button onclick="startInterval()">시작버튼</button><br>
+	<button onclick="stopInterval()">종료버튼</button><br>
+	<img src="image/math_img_1.jpg" id="img1" alt="test">
+</body>
+</html>

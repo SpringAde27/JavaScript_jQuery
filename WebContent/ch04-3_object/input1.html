@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function addText(){
+		var input1 = document.getElementById("input1");
+		var text = document.getElementById("text");
+		text.textContent = input1.value;
+	}
+	
+	function text(){
+		var text = document.getElementById("text");
+		var input1 = document.getElementById("input1");
+		input1.value = text.textContent;
+	}
+	
+	/* 
+		button의 text구하기 : innerHTML 
+		input의 text구하기 : value
+		tag(element)의 text구하기 : textContent
+	*/
+</script>
+</head>
+<body>
+	<input type="text" id="input1" placeholder="여기에 입력하세요">
+	<button onclick="addText()">추가</button>
+	<p id="text">여기에 나타납니다.</p>
+	
+	<button onclick="text()">input값 변경</button>
+</body>
+</html>

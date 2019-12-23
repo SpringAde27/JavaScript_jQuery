@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function addP(){
+		var newP = document.createElement("p");	// p태그 생성
+		var newText = document.createTextNode("안녕하세요"); // text생성
+		newP.appendChild(newText);  //<p>안녕하세요</p>
+		
+		var test = document.getElementById("test");
+		test.appendChild(newP); // 태그와 글자를 기존의 태그 사이에 추가 삽입
+	}
+	
+	function addH(){
+		var newH = document.createElement("p");
+		var newText = document.createTextNode("잉잉잉");
+		newH.appendChild(newText);
+		
+		var test2 = document.getElementById("test2");
+		test2.appendChild(newH);		
+	}
+	
+	function addRow(){				
+		var newTd = document.createElement("td");
+		var newText = document.createTextNode("자몽");
+		newTd.appendChild(newText);
+		
+		var newTr = document.createElement("tr");
+		newTr.appendChild(newTd);
+		
+		var table=document.getElementById("table");
+		table.appendChild(newTr);
+		// table.innerHTML += "<tr><td>자몽</td></tr>";
+	}
+</script>
+</head>
+<body>
+	<h1>스터디 회원 모집</h1>
+	<a href = "#" onclick="addP()">더 보기!!</a>
+	<div id="test"></div>
+	
+	<hr>
+	
+	<button onclick="addH()">글자추가</button>
+	<div id="test2"></div>
+	
+	<hr>
+	
+	<table id="table" border="1">
+		<tr>
+			<td>사과</td>
+		</tr>
+		<tr>
+			<td>바나나</td>
+		</tr>
+		<tr>
+			<td>수박</td>
+		</tr>
+		<tr>
+			<td>오렌지</td>
+		</tr>
+	</table>
+	<br>
+	<input type="button" value="행 추가" onclick="addRow()">
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	button{
+		width : 100px;
+		height: 70px;
+		background-color: skyblue;
+		margin: 30px;
+	}
+	div{
+		text-align: center;
+		border: 1px solid gray;
+		width: 400px;
+	}
+</style>
+<script type="text/javascript">
+	function on(){
+		var img = document.getElementById("img");
+		img.src="../image/on.jpg";
+	}
+	
+	function off(){
+		var img = document.getElementById("img");
+		img.src="../image/off.jpg";
+	}
+</script>
+</head>
+<body>
+	<div>
+		<button onclick="on()">on</button>
+		<button onclick="off()">off</button><br>
+		<img src="../image/off.jpg" id="img">
+	</div>
+</body>
+</html>

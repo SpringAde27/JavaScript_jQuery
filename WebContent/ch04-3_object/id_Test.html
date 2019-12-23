@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function displayImagePath(){
+		var img = document.getElementById("logo");
+		alert(img.src);
+	}
+	
+	function displayfromImgtoPtag(){
+		var img = document.getElementById("logo");
+		var p = document.getElementById("p1");
+		p.innerHTML = img.src;		
+	}
+	
+	function displayAlt(){		
+		var h1 = document.getElementById("h1");
+		var img = document.getElementById("logo");
+		h1.innerHTML = img.alt;
+	}
+	
+	function displayH1(){
+		var h1 = document.getElementById("h1");
+		alert(h1.innerHTML);
+	}
+	
+	function displayP(){
+		var h1 = document.getElementById("h1");
+		var p = document.getElementById("p1");
+		p.innerHTML = h1.innerHTML;
+	}
+</script>
+</head>
+<body>
+	<h1 id="h1">스터디 회원 모집</h1>
+	<img src="image/logo.png" id="logo" alt="HTML5 공식 로고">
+	<p id="p1">이미지<b>경로</b>가 나타날 자리</p>
+	
+	<button onclick="displayImagePath()">이미지 경로 보기</button>
+	
+	<button onclick="displayfromImgtoPtag()">이미지 경로 넣기</button>
+	
+	<button onclick="displayAlt()">alt 넣기</button>
+	
+	<button onclick="displayH1()">h1의 글자보기</button>
+	
+	<button onclick="displayP()">p에 innerHTML넣기</button>
+</body>
+</html>

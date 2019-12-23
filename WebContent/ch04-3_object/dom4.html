@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name ="f1">
+		<select name = "sel">
+			<option value="http://www.naver.com">네이버</option>
+			<option value="http://www.daum.net">다음</option>
+			<option value="http://www.google.com">구글</option>
+			<option selected>메뉴를 선택하세요.</option>
+		</select>
+		
+		<input type="button" value="open" name="open">
+	</form>
+	
+	<script type="text/javascript">
+		document.f1.sel.selectedIndex = 2; // index이므로 0부터 시작
+		
+		document.f1.open.onclick = function(){
+			var index = document.f1.sel.selectedIndex;
+			var value = document.f1.sel.options[index].value; 
+			
+			if(index != document.f1.sel.options.length-1){
+				location.href = value;
+			}		
+		}
+	</script>
+</body>
+</html>

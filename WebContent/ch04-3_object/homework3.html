@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	form{
+		width: 600px;
+		height: 100px;
+	}
+</style>
+</head>
+<body>
+	<form name="f1">
+		<fieldset>
+		<legend>D-day</legend>
+		<p>
+			<label>기준일</label>
+			<input type="text" name="date" id="date" placeholder="예)20100303">
+			<input type="reset" value="초기화">
+		</p>
+		
+		<p>
+			<input type="text" name="inday" id="inday">
+			<label>일째 되는 날은?</label>			
+			<button onclick="dDay(); return false;">계산</button>
+			
+			<input type="text" name="result" id="result" placeholder="결과날짜">
+		</p>		
+		</fieldset>
+	</form>
+	
+<script type="text/javascript">
+	function dDay(){
+		var date = document.getElementById("date").value;
+		var inday = document.getElementById("inday").value;
+		var result = document.getElementById("result");
+		
+		
+		var year = Number(date.substring(0, 4));
+		var month = Number(date.substring(4, 6))-1;		// 값을 넣을 때 : -1
+		var date = Number(date.substring(6, 8));
+		
+		var today = new Date(year, month, date);
+		today.setDate(today.getDate()+Number(inday)-1);		// 당일 - 100일  = 101일;
+		
+		result.value = (today.getFullYear())+"."+(today.getMonth()+1)+"."+(today.getDate()); // 값을 가져올 때 : +1
+	}	
+</script>
+</body>
+</html>

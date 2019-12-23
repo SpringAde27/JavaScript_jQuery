@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function addImage(){
+		var test = document.getElementById("test");
+		test.innerHTML += "<img src='image/logo.png'>";	
+	}
+	
+	function addName(){
+		var name = document.getElementById("name");
+		name.innerHTML += "잉 "
+	}
+	
+	function addRow(){
+		var table = document.getElementById("table");
+		table.innerHTML += "<tr><td>자몽</td></tr>";
+	}
+</script>
+</head>
+<body>
+	<a href="#">링크</a><br>
+	<div id="test"></div>
+	<input type="button" value="이미지추가" onclick="addImage()">
+	
+	<p id="name">
+		<input type="button" value="글자추가" onclick="addName()">
+	</p>
+	
+	
+	<table id="table" border="1">
+		<tr>
+			<td>사과</td>
+		</tr>
+		<tr>
+			<td>바나나</td>
+		</tr>
+		<tr>
+			<td>수박</td>
+		</tr>
+		<tr>
+			<td>오렌지</td>
+		</tr>
+	</table>
+	<br>
+	<input type="button" value="행 추가" onclick="addRow()">
+</body>
+</html>

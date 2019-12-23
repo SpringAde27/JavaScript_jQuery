@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function changeStyle(){
+		var h1 = document.getElementsByTagName("h1");
+		var title = document.getElementById("title");
+		var li = document.getElementsByTagName("li");
+		h1[0].style.color = "green";
+		title.style.color = "red";
+		li[1].style.backgroundColor="red";
+	}
+</script>
+</head>
+<body>
+	<h1>선호하는 음식</h1>
+	<div id="food_1">
+		<h2 id="title">한식</h2>1
+		<ol>
+			<li>
+				<a href="#">김치</a>
+			</li>
+			<li>불고기</li>
+			<li>비빔밥</li>
+		</ol>
+	</div>
+	<br>
+	<br>	
+	<button onclick="changeStyle()">요소의 속성 값 변경</button>	
+</body>
+</html>

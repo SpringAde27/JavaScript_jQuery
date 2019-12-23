@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	table{
+		width: 300px;
+		border-collapse: collapse; 		
+	}
+	td,tr{
+		border: 1px solid black;
+		text-align: center;		
+	}
+</style>
+<script type="text/javascript">
+	var imgs=['image/watermelon.png', 'image/orange.png', 'image/grape.jpg', 'image/peach.png'];
+	
+	function add(){
+		var select=document.getElementById("sel");
+		var buylist=document.getElementById("buylist");
+		var add_str="<tr>"
+						+"<td><img src='"+imgs[select.selectedIndex]+"'/></td>"	
+						+"<td>"+select.value+"</td>"
+						+"<td><input type='checkbox' class='check'></td>"
+					+"</tr>";
+		buylist.innerHTML += add_str;		
+	}
+	
+	function del(){
+		var check = document.getElementsByClassName("check");
+		//뒤에서 부터 삭제해야 인덱스 변화가 일어나지 않는다.
+		for(var i=check.length-1; i>=0; i--){
+			if(check[i].checked == true){
+				var trItem = check[i].parentNode.parentNode.parentNode; //input-td-tr-tbody
+				var parent = trItem.parentNode; //table
+				parent.removeChild(trItem);	//table.removeChild(tbody)
+			}
+		}
+	}
+</script>
+</head>
+<body>	
+	<h4>구매상품을 선택해주세요.</h4>
+	
+	<select id="sel">
+		<option>수박</option>
+		<option>오렌지</option>
+		<option>포도</option>
+		<option>복숭아</option>			
+	</select>
+	
+	<button onclick="add()">추가</button>
+
+	<table id="buylist">
+		<tr>
+			<td colspan="3">추가한 상품</td>			
+		</tr>
+	</table>
+	
+	<br>
+	
+	<button onclick="del()">상품 삭제</button>
+</body>
+</html>

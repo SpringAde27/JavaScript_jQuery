@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function getP1(){
+		var p1 = document.getElementById("p1");
+		alert(p1.textContent); // 태그 안의 텍스트만 가져오는 속성
+	}
+	
+	function setP1(){
+		var p1 = document.getElementById("p1");
+		//p1.textContent = "값을 변경합니다.<i>만나서 반갑습니다.</i><input type='text' value='안녕'>";
+		p1.innerHTML = "값을 변경합니다. <i>만나서 반갑습니다.</i><br><input type='text' value='안녕'>";
+	}
+	
+	function addP1(){
+		var h1 = document.getElementById("h1");
+		var p1 = document.getElementById("p1");		
+		h1.innerHTML += p1.innerHTML; 
+	}
+</script>
+</head>
+<body>
+	<h1 id="h1">스터디 회원 모집</h1>
+	<p id="p1">이미지 <b>경로</b>가 나타날 자리</p>
+	<button onclick="getP1()">값 가져오기</button>
+	<button onclick="setP1()">변경하기1</button>
+	<button onclick="addP1()">더하기</button>	
+</body>
+</html>

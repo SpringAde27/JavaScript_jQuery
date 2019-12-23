@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>JavaScript 클래스 제어</title>
+<style>
+	.mystyle {
+		  width: 100%;
+		  padding: 25px;
+		  background-color: coral;
+		  color: white;
+		  font-size: 25px;
+		  box-sizing: border-box;
+	}
+</style>
+<script type="text/javascript">
+	function addClass() {
+	   var div = document.getElementById("myDIV");
+	   div.classList.add("mystyle");
+	}
+	
+	function removeClass() {
+	   var div = document.getElementById("myDIV");
+	   div.classList.remove("mystyle");
+	}
+	
+	function containsClass() {
+	   var div = document.getElementById("myDIV");
+	   alert(div.classList.contains("mystyle"));
+	}
+	
+	function toggleClass() {
+	   var div = document.getElementById("myDIV");
+	   div.classList.toggle("mystyle");
+	}
+</script>
+</head>
+<body>
+	<p>"mystyle" class to the DIV element</p>
+	
+	<button onclick="addClass()">addClass</button>
+	<button onclick="removeClass()">removeClass</button>
+	<button onclick="containsClass()">containsClass</button>
+	<button onclick="toggleClass()">toggleClass</button>
+	
+	<div id="myDIV">
+		This is a DIV element.
+	</div>
+</body>
+</html>

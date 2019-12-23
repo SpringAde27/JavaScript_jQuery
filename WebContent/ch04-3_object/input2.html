@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function fun(op){
+		var input1 = Number(document.getElementById("input1").value);
+		var input2 = Number(document.getElementById("input2").value);
+		var result = document.getElementById("result");
+		result.textContent = eval(input1+op+input2);
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="input1" placeholder="숫자입력"><br>
+	<input type="text" id="input2" placeholder="숫자입력"><br>
+	<p id="result">숫자입력</p>
+	
+	<button onclick="fun('+')" id="te">숫자 두개 더하기</button>
+	<button onclick="fun('-')">숫자 두개 빼기</button>
+	<button onclick="fun('*')">숫자 두개 곱하기</button>
+	<button onclick="fun('/')">숫자 두개 나누기</button>
+</body>
+</html>

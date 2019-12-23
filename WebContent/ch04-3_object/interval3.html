@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var arrayLang = ["apple", "Banana", "Orange", "Grape"];
+	var index = 0;
+	var id;
+	
+	function displayFruits(){
+		var xx = document.getElementById("title");
+		xx.innerHTML = arrayLang[index % arrayLang.length];
+		index++;
+	}
+	
+	function startInterval(){
+		id = setInterval(displayFruits, 5000);
+	}
+	
+	function stopInterval(){
+		clearInterval(id);
+	}
+</script>
+</head>
+<body>
+	<h1 id="title">"여기에 과일이 나타납니다."</h1>
+	<button onclick="startInterval()">Start</button>
+	<button onclick="stopInterval()">Stop</button>
+</body>
+</html>

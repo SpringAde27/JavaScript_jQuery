@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	p{
+		font-size: 30px;
+	}
+</style>
+<script type="text/javascript">
+	function ch(){
+		var p = document.getElementById("p");
+		if(p.innerHTML == "안녕하세요"){
+			p.innerHTML="만나서 반갑습니다";		
+		}else{
+			p.innerHTML="안녕하세요";			
+			}
+		}
+</script>
+</head>
+<body>
+	<p id="p" onclick="ch()">안녕하세요</p>
+</body>
+</html>
