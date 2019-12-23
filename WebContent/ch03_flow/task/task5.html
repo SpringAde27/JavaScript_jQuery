@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	var num=1;
+	var c = prompt("총 수강생은 몇 명입니까?");
+	var r = prompt("한 줄에 몇 명씩 앉습니까?");
+	
+	document.write("<h1>컴퓨터공학과 자리배치도</h1>");
+	
+	var t = "<table border=1>";		
+	
+	for(var i=1 ; i<=r ; i++){
+		t+="<tr>";		
+		
+		for(var k=1 ; k<=r ; k++){
+			t+="<td>"+"컴공 "+num+"번"+"</td>";			
+			if(num==c){
+				break;
+			}
+			num++;
+		}		
+		t+="</tr>";	
+	}	
+	t+="</table>";
+	console.log(t);
+	document.write(t);	
+</script>
+</body>
+</html>

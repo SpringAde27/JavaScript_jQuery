@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+		background-color: black;
+		margin: 0 auto;
+		text-align: center;
+		padding-top: 200px;
+	}
+	.title1{			
+		color: white;
+		margin: 0 auto;
+		line-height: 	
+	}
+	.title1 span{
+		color: yellow;
+	}
+	.title2{
+		color: white;	
+	}
+	.title2 span{
+		color: red;
+	}
+	.title3{
+		color: white;	
+	}
+	.title3 span{
+		color: aqua;
+	}
+	.title4{
+		color: white;	
+	}
+	.title4 span{
+		color: lime;
+	}
+</style>
+</head>
+<body>	
+	<script type="text/javascript">
+	var title = prompt("학과 선택 [1:전기전자공학과, 2:건축공학과, 3:컴퓨터공학과, 4:신소재공학과]");
+	
+	switch(title){
+	case "1":
+		document.write("<h2 class='title1'>전기전자공학과는 <span>2011</span>입니다.</h2>");
+		break;
+	case "2":
+		document.write("<h2 class='title2'>건축공학과는<span>2014</span>입니다.</h2>");
+		break;
+	case "3":
+		document.write("<h2 class='title3'>컴퓨터공학과는 <span>2012</span>입니다.</h2>");
+		break;
+	case "4":
+		document.write("<h2 class='title4'>신소재공학과는 <span>2015</span>입니다.</h2>");
+		break;	
+	}	
+</script>
+</body>
+</html>

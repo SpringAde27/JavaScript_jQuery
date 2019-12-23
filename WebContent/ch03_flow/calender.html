@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	var year = prompt("현재 몇 년도 입니까?","0000");
+	var month = prompt("현재 몇 월 입니까?","0")
+	var last_day = 0;
+	
+	switch(month){
+	case "1":
+	case "3":
+	case "5":
+	case "7":
+	case "8":
+	case "10":
+	case "12":
+		last_day = 31;
+		break;
+	case "4":
+	case "6":
+	case "9":
+	case "11":
+		last_day = 30;
+		break;
+	case "2":
+		/* 현재 년도가 4년 주기이고 100년 주기는 아닌 경우
+			또는 400년 주기로 윤년이다.
+		*/
+		if(year%4==0 && year%100!=0 || year%400==0){
+			last_day = 29;
+		}else{
+			last_day = 28;
+		}
+		break;
+		
+	default:
+		document.write("잘못입력하셨습니다.");
+		break;		
+	}
+	
+	// 1일부터 마지막일까지 문서에 출력
+	for(var i=1 ; i<=last_day; i++){
+		document.write(i+"<br/>");
+	}
+</script>
+</body>
+</html>

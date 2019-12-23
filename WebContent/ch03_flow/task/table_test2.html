@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	tr{color:red;}
+	td{color:blue; text-align: center;}
+</style>
+
+<script type="text/javascript">
+	var num = 1;
+	
+	var table = "<table border=1>";
+	
+	for(var i=0; i<5; i++){
+		table += "<tr>";
+		for(var j=0; j<5; j++){
+			table += "<td>"+num+"</td>"
+			num++;
+		}
+		table += "</tr>";
+	}
+	table += "</table>";
+	
+	document.write(table);
+	console.log(table);
+</script>
+</head>
+<body>
+
+</body>
+</html>

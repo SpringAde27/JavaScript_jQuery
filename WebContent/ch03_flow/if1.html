@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var gender = prompt("당신의 성별은?(남:0, 여:1)", "0");
+	
+	if (gender == 0){
+		document.write("<img src='image/man.jpg'>");
+	}else if(gender ==1){
+		document.write("<img src='image/woman.jpg'>");
+	}else{
+		alert("잘못 입력하였습니다.");
+		location.reload();	// 브라우저 새로고침
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>
