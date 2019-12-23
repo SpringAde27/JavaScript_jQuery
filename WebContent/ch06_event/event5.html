@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 1. inline
+	function changeImg1(){
+		var imgTag = document.getElementById("img");
+			imgTag.src="image/four.jpg";	
+	}
+	
+	function changeImg2(){
+		var imgTag = document.getElementById("img");
+			imgTag.src="image/two.jpg";	
+	}
+	
+	window.onload = function(){
+		var imgTag = document.getElementById("img");
+		
+		// 2. script에서 DOM을 이용하여 지정한 요소에 event 등록 처리
+		/* imgTag.onmousemove = function(){
+			imgTag.src="image/four.jpg";
+		}
+		imgTag.onmouseout = function(){
+			imgTag.src="image/two.jpg";
+		} */
+		
+		// 3. addEventListener - 한 요소에 같은 이벤트를 중복으로 등록할 때 사용
+		imgTag.addEventListener("mouseover",function(){
+			imgTag.src="image/four.jpg";
+		}, false);
+		
+		imgTag.addEventListener("mouseout",function(){
+			imgTag.src="image/two.jpg";
+		}, true);
+	}
+</script>
+</head>
+<body>
+	<img src="image/two.jpg" id="img">
+<!-- 	<img src="image/two.jpg" alt="" id="img" onmouseover="changeImg1()" onmouseout="changeImg2()"> -->
+</body>
+</html>

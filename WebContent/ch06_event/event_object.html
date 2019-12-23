@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>이벤트 객체의 속성</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var f1 = document.f1;
+		var f2 = document.f2;
+		var eObj;
+		
+		document.onmousemove = function (e) {
+			eObj = e ? e : window.event;
+			
+			f1.client_x.value = eObj.clientX;
+			f1.client_y.value = eObj.clientY;
+			
+			f1.page_x.value = eObj.pageX;
+			f1.page_y.value = eObj.pageY;
+			
+			f1.screen_x.value = eObj.screenX;
+			f1.screen_y.value = eObj.screenY;
+			
+			f1.layer_x.value = eObj.layerX;
+			f1.layer_y.value = eObj.layerY;
+		}
+		
+		document.onkeydown = function (e) {
+			eObj = e ? e : window.event;
+			
+			f2.code.value = eObj.keyCode;
+			
+			if(eObj.ctrlKey == true && eObj.keyCode == 71) { // ctrl + G
+				alert("단축키 실행");
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>마우스 이벤트 객체 속성</h1>
+	<form name="f1" method="get" action="#">
+		<fieldset>
+			<legend>client : 마우스 이벤트가 발생한 좌표값 (스크롤바 무시)</legend>
+			<p>
+				<label for="client_x">clientX : </label>
+				<input type="text" name="client_x" id="client_x" />
+			</p>
+			<p>
+				<label for="client_y">clientY : </label>
+				<input type="text" name="client_y" id="client_y" />
+			</p>
+		</fieldset>
+		
+		<fieldset>
+			<legend>page : 마우스 이벤트가 발생한 좌표값 (스크롤바 포함)</legend>
+			<p>
+				<label for="page_x">pageX : </label>
+				<input type="text" name="page_x" id="page_x" />
+			</p>
+			<p>
+				<label for="page_y">pageY : </label>
+				<input type="text" name="page_y" id="page_y" />
+			</p>
+		</fieldset>
+		<fieldset>
+			<legend>screen :  모니터를 기준으로한 좌표값</legend>
+			<p>
+				<label for="screen_x">screenX : </label>
+				<input type="text" name="screen_x" id="screen_x" />
+			</p>
+			<p>
+				<label for="screen_y">screeneY : </label>
+				<input type="text" name="screen_y" id="screen_y" />
+			</p>
+		</fieldset>
+		<fieldset>
+			<legend>layer :  요소의 position을 기준으로한 좌표값</legend>
+			<p>
+				<label for="layer_x">layerX : </label>
+				<input type="text" name="layer_x" id="layer_x" />
+			</p>
+			<p>
+				<label for="layer_y">layerY : </label>
+				<input type="text" name="layer_y" id="layer_y" />
+			</p>
+		</fieldset>
+	</form>
+	
+	<h1>키보드 이벤트 객체 속성</h1>
+	<form name="f2" method="get" action="#">
+		<fieldset>
+			<legend>키 코드값</legend>
+			<p>
+				<label for="#">입력 키보드 : </label>
+				<input type="text" name="key" id="key" />
+			</p>
+			<p>
+				<label for="">유니코드 값 : </label>
+				<input type="text" name="code" id="code" />
+			</p>			
+		</fieldset>
+	</form>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>멜론 Top 10</title>
+<style type="text/css">
+	h1{
+		text-align: center;
+	}
+	
+	ul{
+		margin: 0;
+		padding: 0;
+	}
+	
+	ul li{
+	 list-style: none;	 
+	}
+	
+	li{
+		border-bottom: 1px dotted gray;
+		margin-bottom: 10px;
+	}
+	
+	#list{
+		width: 600px;
+	}
+</style>
+<script type="text/javascript">
+	function selAll(){
+		var song = document.getElementsByClassName("song");			
+		var all =document.getElementById("all");
+				
+		if(all.value=="전체 선택"){
+			for(var i=0 ; i<song.length; i++){
+				song[i].checked=true;
+			}
+			all.value="전체 해제";
+		}else if(all.value = "전체 해제"){
+			for(var i=0 ; i<song.length; i++){
+				song[i].checked=false;
+			}
+			all.value="전체 선택";
+		}
+	}
+	
+	function delItem(){
+		var song = document.getElementsByClassName("song");
+		for(var i=song.length-1; i>=0; i--){
+			if(song[i].checked==true){
+				var liObj = song[i].parentNode;
+				var ulObj = liObj.parentNode;
+				ulObj.removeChild(liObj);
+			}			
+		}
+	}
+	
+	function downList(){		
+		var liList = document.getElementById("liList");		
+			liList.innerHTML =
+			"<li><input type='checkbox' class='song' value='RE-BYE 악동뮤지션'> RE-BYE 악동뮤지션</li>"+
+			"<li><input type='checkbox' class='song' value='CHEER UP 트와이스'> CHEER UP 트와이스</li>"+
+			"<li><input type='checkbox' class='song' value='사람들이 움직이는 게 악동뮤지션'> 사람들이 움직이는 게 악동뮤지션</li>"+
+			"<li><input type='checkbox' class='song' value='내 입술 따뜻한 커피처럼 (Feat.이성경) 에디킴'> 내 입술 따뜻한 커피처럼 (Feat.이성경) 에디킴</li>"+
+			"<li><input type='checkbox' class='song' value='하늘바라기 (Feat.하림) 정은지'> 하늘바라기 (Feat.하림) 정은지</li>"+
+			"<li><input type='checkbox' class='song' value='새삼스럽게 왜 악동뮤지션'> 새삼스럽게 왜 악동뮤지션</li>"+
+			"<li><input type='checkbox' class='song' value='봄이 좋냐? 10cm'> 봄이 좋냐? 10cm</li>"+
+			"<li><input type='checkbox' class='song' value='Dream Girls I.O.I'> Dream Girls I.O.I</li>"+
+			"<li><input type='checkbox' class='song' value='Toy 블락비'> Toy 블락비</li>"+
+			"<li><input type='checkbox' class='song' value='초록창가 악동뮤지션'> 초록창가 악동뮤지션</li>";
+		}
+	
+</script>
+</head>
+<body>
+	<h1>멜론 Top 10</h1>
+	<input type="button" value="전체 선택" id="all" onclick="selAll()">
+	<input type="button" value="삭제" id="del" onclick="delItem()">
+	<input type="button" value="10곡 다운로드" id="down" onclick="downList()">
+	<hr>
+	<div>
+		<ul  id="liList"></ul>
+	</div>
+</body>
+</html>

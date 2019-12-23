@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chImage(obj){
+		obj.src="image/grape.jpg";		
+	}
+	
+	window.onload = function(){
+		var img2=document.getElementById("img2");
+		img2.onclick = function(){
+			this.src="image/grape.jpg";
+		}	
+	
+		var img3=document.getElementById("img3");
+		img3.addEventListener("click", function(){
+			this.src="image/grape.jpg";
+		}, false);
+	}
+</script>
+</head>
+<body>
+	<p>인라인-body안 태그 내부에 직접 연결</p>
+	<img src="image/orange.png" id="img1" onclick="chImage(this)">
+	<br>
+	<hr>
+	<p>body안은 수정업이 script영역에서 모두 처리</p>	 
+	<img src="image/peach.png" id="img2">
+	<br>
+	<hr>
+	<p>addEventListener이용</p>
+	<img src="image/watermelon.png" id="img3">
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function delItem(obj){
+		var liObj = obj.parentNode;	// li 
+		var ulObj = liObj.parentNode;// ul
+		
+		ulObj.removeChild(liObj);
+	}
+</script>
+</head>
+<body>
+	<ul>
+		<li>빨강색 <input type="button" value="삭제" onclick="delItem(this)"></li>		
+		<li>파랑색 <input type="button" value="삭제" onclick="delItem(this)"></li>		
+		<li>노랑색 <input type="button" value="삭제" onclick="delItem(this)"></li>		
+		<li>주황색 <input type="button" value="삭제" onclick="delItem(this)"></li>		
+		<li>초록색 <input type="button" value="삭제" onclick="delItem(this)"></li>		
+	</ul>
+</body>
+</html>

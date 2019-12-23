@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div{
+		background-color: pink;
+		border : 1px solid red;
+		padding : 20px;
+		width: 400px;
+	}
+</style>
+<script type="text/javascript">
+	window.onload = function () {
+		document.getElementById("myP").addEventListener("click", function() {
+			alert("P click 이벤트 실행!");
+		}, false);
+		
+		document.getElementById("myDiv").addEventListener("click", function() {
+			alert("Div click 이벤트 실행!");
+		}, false);
+		
+		
+		
+		document.getElementById("myP2").addEventListener("click", function() {
+			alert("P click 이벤트 실행!");
+		}, true);
+		
+		document.getElementById("myDiv2").addEventListener("click", function() {
+			alert("Div click 이벤트 실행!");
+		}, true);
+	}
+</script>
+</head>
+<body>
+	<p>addEventListener의 마지막 매개변수의 의미를 알아보자</p>
+	
+	<div id="myDiv">
+		<p id="myP">addEventListener에 false 지정</p>
+	</div>
+	
+	<br>
+	
+	<div id="myDiv2">
+		<p id="myP2">addEventListener에 true 지정</p>
+	</div>
+</body>
+</html>

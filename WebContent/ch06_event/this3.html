@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	label{
+		width: 100px;
+		float: left;
+	}
+	form{
+		width: 600px;
+	}
+</style>
+
+<script type="text/javascript">
+	window.onload = function(){
+		
+		document.getElementById("name").focus();
+		
+		document.f1.onsubmit=function(){
+			var reg1 = /^[가-힣]{2,5}$/;
+			var reg2 = /^(010|011|017)\d{3,4}\d{4}$/;
+			
+			
+			if(reg1.test(this.name.value) == false){
+				alert("이름을 잘못 입력하였습니다.");
+				this.name.value="";
+				this.name.focus();
+				return false;
+			}			
+			
+			if(reg2.test(this.tel.value) == false){
+				alert("전화번호를 잘못 입력하였습니다.");
+				this.tel.value="";
+				this.tel.focus();
+				return false;
+			}
+		}
+	}
+</script>
+
+</head>
+<body>
+	<form name="f1">
+		<fieldset>
+			<legend>회원가입</legend>
+			<p>
+				<label for="name">이름</label>
+				<input type="text" id="name" name="name">
+			</p>
+			<p>
+				<label for="tel">연락처</label>	
+				<input type="text" id="tel" name="tel">
+			</p>
+			<p>
+				<input type="submit" value="회원가입">
+				<input type="reset" value="가입취소">
+			</p>
+		</fieldset>
+	</form>	
+</body>
+</html>

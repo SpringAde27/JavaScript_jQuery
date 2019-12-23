@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>댓글추가 및 삭제</title>
+<style type="text/css">
+	#content{
+		width: 600px;
+		border: 1px solid gray;
+		text-align: center;
+	}
+	
+	ol{
+		text-align: left;
+	}
+	
+	li{
+		border-bottom: 1px dotted gray;
+		margin-bottom: 10px;
+	}
+</style>
+
+<script type="text/javascript">
+	function addText(){
+		var text = document.getElementById("text");		
+		var list = document.getElementById("list");
+		list.innerHTML+="<li>"+text.value+" <input type='button' value='삭제' onclick='delItem(this)'></li>";
+		text.value="";
+	}
+	
+	function delItem(obj){
+		var liObj = obj.parentNode;
+		var olObj = liObj.parentNode;
+		olObj.removeChild(liObj);
+	}
+	
+</script>
+</head>
+<body>
+	<div id="content">
+		<h1>댓글추가 및 삭제</h1>
+		
+		<textarea rows="5" cols="50" placeholder="여기에 댓글을 넣어주세요" id="text"></textarea>
+		
+		<input type="button" value="댓글달기" onclick="addText()">
+		
+		<ol type="1" id="list"></ol>
+	</div>
+</body>
+</html>
